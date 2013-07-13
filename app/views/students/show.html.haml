@@ -1,0 +1,63 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @student.first_name
+%p
+  %b Last name:
+  = @student.last_name
+%p
+  %b Cohort:
+  = @student.cohort
+%p
+  %b Address 1:
+  = @student.address_1
+%p
+  %b Address 2:
+  = @student.address_2
+%p
+  %b City:
+  = @student.city
+%p
+  %b State province:
+  = @student.state_province
+%p
+  %b Postal code:
+  = @student.postal_code
+%p
+  %b Country:
+  = @student.country
+%p
+  %b Phone number:
+  = @student.phone_number
+%p
+  %b User:
+  = @student.user
+%p
+  %b Linkedin:
+  = @student.linkedin_id
+%p
+  %b Github:
+  = @student.github
+%p
+  %b Twitter handle:
+  = @student.twitter_handle
+%p
+  %b Blog:
+  = @student.blog
+%p
+  %b Personal website:
+  = @student.personal_website
+%p
+  %b Mentor:
+  = @student.mentor
+%p
+  %b Job status:
+  = @student.job_status
+%p
+  %b Entrepreneur:
+  = @student.entrepreneur
+
+= link_to 'Edit', edit_student_path(@student)
+\|
+= link_to 'Back', students_path

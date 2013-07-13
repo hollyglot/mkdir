@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130713194540) do
+ActiveRecord::Schema.define(:version => 20130713211918) do
+
+  create_table "students", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "cohort"
+    t.string   "address_1"
+    t.string   "address_2"
+    t.string   "city"
+    t.string   "state_province"
+    t.string   "postal_code"
+    t.string   "country"
+    t.integer  "phone_number"
+    t.integer  "user_id"
+    t.string   "linkedin_id"
+    t.string   "github"
+    t.string   "twitter_handle"
+    t.string   "blog"
+    t.string   "personal_website"
+    t.string   "mentor"
+    t.string   "job_status"
+    t.string   "entrepreneur"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "students", ["user_id"], :name => "index_students_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

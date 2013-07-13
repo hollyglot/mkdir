@@ -1,4 +1,7 @@
 Mksdir::Application.routes.draw do
+  resources :students
+
+
   authenticated :user do
     root :to => 'home#index'
   end
