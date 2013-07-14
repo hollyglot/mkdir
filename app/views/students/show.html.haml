@@ -95,7 +95,7 @@
           -if (@student.entrepreneur)
             %a{:href=> "#{@student.entrepreneur}"}= @student.entrepreneur
 
--if (user.type) == 'admin'
+-if (current_user.status) == 'admin'
   = link_to 'Edit', edit_student_path(@student)
   \| 
 

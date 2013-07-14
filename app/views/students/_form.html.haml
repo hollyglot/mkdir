@@ -56,12 +56,12 @@
     = f.text_field :personal_website
   .field
     = f.label :mentor
-    = f.text_field :mentor
+    = f.select(:mentor, options_for_select([['I\'m a mentor', 'mentor'], ['I\'m looking for a mentor', 'looking'], ['I have a mentor', 'mentee']], 'looking'))
   .field
     = f.label :job_status
-    = f.text_field :job_status
+    = f.select(:job_status, options_for_select([['I\'m looking for a job', 'looking'], ['I\'m open to offers', 'offers'], ['I\'m insanely happy with my job', 'insane']], 'looking'))
   .field
     = f.label :entrepreneur
-    = f.text_field :entrepreneur
+    = f.select(:entrepreneur, options_for_select([['I\'m starting a business', 'startup'], ['I\'m looking for cofounders', 'cofounders'], ['My business is hiring', 'hiring'], ['I still work for the man', 'slave']], 'startup'))
   .actions
     = f.submit 'Save'

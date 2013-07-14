@@ -1,4 +1,4 @@
-%h2 Sign up
+%h2 Add User
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = devise_error_messages!
   %p
@@ -12,7 +12,7 @@
   %div
     = f.label :type
     %br/
-    = f.select_tag(:type, options_for_select([['Admin', 'admin'], ['Student', 'student']], 'student'))
+    = f.select(:status, options_for_select([['Admin', 'admin'], ['Student', 'student']], 'student'))
   %div
     = f.label :password
     %br/

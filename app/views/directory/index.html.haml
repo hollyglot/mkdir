@@ -1,1 +1,5 @@
-= link_to 'Students', student
+= link_to 'Students', students_path
+
+/ -if (user_signed_in?) 
+/   -if (user.status) == 'admin'
+/     = link_to 'Users', users_path
