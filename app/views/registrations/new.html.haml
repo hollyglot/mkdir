@@ -12,7 +12,7 @@
   %div
     = f.label :type
     %br/
-    = f.select(:status, options_for_select([['Admin', 'admin'], ['Student', 'student']], 'student'))
+    = f.collection_select :role, User::ROLES, :to_s, :humanize
   %div
     = f.label :password
     %br/

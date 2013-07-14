@@ -7,10 +7,13 @@ class Ability
       user ||= User.new # guest user (not logged in)
       if user.admin?
         can :manage, :all
-      else
+        can :access, :rails_admin
+      elsif user.student?
+        can :manage, :student
+      else 
         can :read, :all
       end
-      
+
     # The first argument to `can` is the action you are giving the user 
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
