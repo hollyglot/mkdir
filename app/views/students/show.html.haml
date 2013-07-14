@@ -1,63 +1,106 @@
 %p#notice= notice
 
 %p
-  %b First name:
-  = @student.first_name
-%p
-  %b Last name:
-  = @student.last_name
-%p
-  %b Cohort:
-  = @student.cohort
-%p
-  %b Address 1:
-  = @student.address_1
-%p
-  %b Address 2:
-  = @student.address_2
-%p
-  %b City:
-  = @student.city
-%p
-  %b State province:
-  = @student.state_province
-%p
-  %b Postal code:
-  = @student.postal_code
-%p
-  %b Country:
-  = @student.country
-%p
-  %b Phone number:
-  = @student.phone_number
-%p
-  %b User:
-  = @student.user
-%p
-  %b Linkedin:
-  = @student.linkedin_id
-%p
-  %b Github:
-  = @student.github
-%p
-  %b Twitter handle:
-  = @student.twitter_handle
-%p
-  %b Blog:
-  = @student.blog
-%p
-  %b Personal website:
-  = @student.personal_website
-%p
-  %b Mentor:
-  = @student.mentor
-%p
-  %b Job status:
-  = @student.job_status
-%p
-  %b Entrepreneur:
-  = @student.entrepreneur
+    / This will be linkedin image or gravatar
+    %img src="" width="160" height="160"
 
-= link_to 'Edit', edit_student_path(@student)
-\|
-= link_to 'Back', students_path
+%h3= @student.first_name @student.last_name
+%h4= @student.cohort
+%br
+%table.table.table-striped
+    %tr
+      %td Phone:
+      %td
+        %i.icon-bullhorn
+        - if (@student.phone_number) 
+          = @student.phone_number 
+
+    %tr
+      %td Email:
+      %td
+        %i.icon-envelope
+        %a{:href=> "mailto:#{@student.user.email}"}= @student.user.email
+
+    %tr
+      %td Address:
+      %td
+        %i.icon-home
+        - if (@student.address_1) 
+          = @student.address_1
+          %br
+
+        - if (@student.address_2)
+          = @student.address_2
+          %br
+
+        - if (@student.city)  
+          = @student.city + ","
+    
+        - if (@student.state_province)
+          = @student.state_province      
+
+        - if (@student.postal_code) 
+          &nbsp;
+          = @student.postal_code 
+                
+        -if (@student.country)
+          %br
+          = @student.country         
+
+      %tr
+        %td Twitter: 
+        %td
+          %i.icon-retweet
+          -if (@student.twitter_handle)
+            %a{:href=> "http://www.twitter.com/#{@student.twitter_handle}"}= @student.twitter_handle
+
+      %tr
+        %td Github:
+        %td
+          %i.icon-github
+          -if (@student.github)
+            %a{:href=> "#{@student.github}"}= @student.github
+      %tr
+        %td Blog: 
+        %td
+          %i.icon-blog
+          -if (@student.blog)
+            %a{:href=> "#{@student.blog}"}= @student.blog
+
+      %tr
+        %td Website:    
+        %td
+          %i.icon-website
+          -if (@student.website)
+            %a{:href=> "#{@student.website}"}= @student.website 
+
+      %tr
+        %td Mentor:   
+        %td
+          %i.icon-mentor
+          -if (@student.mentor)
+            %a{:href=> "#{@student.mentor}"}= @student.mentor 
+
+      %tr
+        %td Job Status:  
+        %td
+          %i.icon-job
+          -if (@student.job_status)
+            %a{:href=> "#{@student.job_status}"}= @student.job_status
+      
+      %tr
+        %td Entrepreneur: 
+        %td
+          %i.icon-entrepreneur
+          -if (@student.entrepreneur)
+            %a{:href=> "#{@student.entrepreneur}"}= @student.entrepreneur
+
+-if (user.type) == 'admin'
+  = link_to 'Edit', edit_student_path(@student)
+  \| 
+
+-if (current_user) == @student.user
+  = link_to 'Edit', edit_student_path(@student)
+  \|
+  
+= link_to 'Directory', directory

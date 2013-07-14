@@ -10,6 +10,10 @@
     %br/
     = f.email_field :email
   %div
+    = f.label :type
+    %br/
+    = f.select_tag(:type, options_for_select([['Admin', 'admin'], ['Student', 'student']], 'student'))
+  %div
     = f.label :password
     %br/
     = f.password_field :password
