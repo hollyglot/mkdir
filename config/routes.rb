@@ -8,5 +8,5 @@ Mksdir::Application.routes.draw do
     root :to => 'directory#index'
   end
   root :to => "directory#index"
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations" }
 end
