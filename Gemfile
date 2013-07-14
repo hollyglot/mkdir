@@ -11,6 +11,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro'
 gem 'haml-rails'
+gem 'linkedin-scraper'
+gem 'rails_admin'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]

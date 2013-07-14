@@ -1,4 +1,4 @@
-= link_to "Mksdir", root_path, :class => 'brand'
+= link_to "mkdir", root_path, :class => 'brand'
 %ul.nav
   - if user_signed_in?
     %li
@@ -9,6 +9,9 @@
   - if user_signed_in?
     %li
       = link_to 'Edit Account', edit_user_registration_path
-      - if (current_user.status) == 'student'
-        %li
-        = link_to 'Edit Profile', edit_student_path
+  - if user_signed_in? && (current_user.status) == 'student'
+    %li
+      = link_to 'Edit Profile', edit_student_path
+  / - if user_signed_in? && (current_user.status) == 'admin'
+  /   %li
+  /     = link_to 'Add User', new_user_registration_path

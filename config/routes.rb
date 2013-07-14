@@ -1,4 +1,6 @@
 Mksdir::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   resources :students
 
 
@@ -7,5 +9,4 @@ Mksdir::Application.routes.draw do
   end
   root :to => "directory#index"
   devise_for :users
-  resources :users
 end
