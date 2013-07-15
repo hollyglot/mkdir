@@ -9,6 +9,8 @@
         = javascript_include_tag "application"
         = csrf_meta_tags
         = yield(:head)
+    %link{:type => "text/css"}
+      = yield(:stylesheets)
   %body{:class => "#{controller_name} #{action_name}"}
     .navbar.navbar-fixed-top
       %nav.navbar-inner
@@ -16,11 +18,11 @@
           = render 'layouts/navigation'
     #main{:role => "main"}
       = render 'layouts/messages'
-      .container
-        .content
-          .row
-            .span12
-      = yield
+      .container#maincontainer
+        .content#maincontent
+          .row#mainrow
+            .span12#mainspan
+              = yield
       %footer
         %div.container-fluid.container-fluid-3
           %div.container
