@@ -1,134 +1,136 @@
 - profile = Linkedin::Profile.get_profile(@student.linkedin)
 
-%p#notice= notice
+.container#maincontainer
+  .content#maincontent
+    .row#mainrow
+      .span12#mainspan
+        %div.cohort
+          %h2
+            MakerSquare
+            %br
+            = @student.cohort
 
-%div.cohort
-  %h2
-    MakerSquare
-    %br
-    = @student.cohort
+        %div.float-left
+          - if (profile)
+            %div.linkedin-img
+              %img.shadow{:src => profile.picture}
+          %div.float-right
+            %h3
+              = @student.first_name 
+              = @student.last_name
 
-%div.float-left
-  - if (profile)
-    %div.linkedin-img
-      %img.shadow{:src => profile.picture}
-  %div.float-right
-    %h3
-      = @student.first_name 
-      = @student.last_name
+            - if (profile)  
+              - if (profile.current_companies)
+                %h4= profile.current_companies[0][:current_title]
+                %h5
+                  = profile.current_companies[0][:current_company]
+                  %br
+                  %a{:href=> "#{profile.current_companies[0][:website]}"}= profile.current_companies[0][:website] 
 
-    - if (profile)  
-      - if (profile.current_companies)
-        %h4= profile.current_companies[0][:current_title]
-        %h5
-          = profile.current_companies[0][:current_company]
-          %br
-          %a{:href=> "#{profile.current_companies[0][:website]}"}= profile.current_companies[0][:website] 
+        %table.table.table-striped
+          %tr
+            %td Phone:
+            %td
+              %i.icon-bullhorn
+              - if (@student.phone_number) 
+                = number_to_phone(@student.phone_number, area_code: true) 
 
-%table.table.table-striped
-  %tr
-    %td Phone:
-    %td
-      %i.icon-bullhorn
-      - if (@student.phone_number) 
-        = number_to_phone(@student.phone_number, area_code: true) 
+          %tr
+            %td Email:
+            %td
+              %i.icon-envelope
+              %a{:href=> "mailto:#{@student.user.email}"}= @student.user.email
 
-  %tr
-    %td Email:
-    %td
-      %i.icon-envelope
-      %a{:href=> "mailto:#{@student.user.email}"}= @student.user.email
+          %tr
+            %td Address:
+            %td
+              %i.icon-home
+              - if (@student.address_1) 
+                = @student.address_1
+                %br
 
-  %tr
-    %td Address:
-    %td
-      %i.icon-home
-      - if (@student.address_1) 
-        = @student.address_1
-        %br
+              %i.icon-address
+              - if (@student.address_2)
+                = @student.address_2
+                %br
 
-      %i.icon-address
-      - if (@student.address_2)
-        = @student.address_2
-        %br
+              %i.icon-address
+              - if (@student.city)  
+                = @student.city + ","
+          
+              - if (@student.state_province)
+                = @student.state_province      
 
-      %i.icon-address
-      - if (@student.city)  
-        = @student.city + ","
-  
-      - if (@student.state_province)
-        = @student.state_province      
+              - if (@student.postal_code) 
+                = @student.postal_code 
 
-      - if (@student.postal_code) 
-        = @student.postal_code 
+              %i.icon-address
+              -if (@student.country)
+                %br
+                = @student.country         
 
-      %i.icon-address
-      -if (@student.country)
-        %br
-        = @student.country         
+          %tr
+            %td Twitter: 
+            %td
+              %i.icon-retweet
+              -if (@student.twitter_handle)
+                %a{:href=> "http://www.twitter.com/#{@student.twitter_handle}"}= "@" + @student.twitter_handle
 
-  %tr
-    %td Twitter: 
-    %td
-      %i.icon-retweet
-      -if (@student.twitter_handle)
-        %a{:href=> "http://www.twitter.com/#{@student.twitter_handle}"}= "@" + @student.twitter_handle
+          %tr
+            %td Github:
+            %td
+              %i.icon-github
+              -if (@student.github)
+                %a{:href=> "#{@student.github}"}= @student.github
+          %tr
+            %td Blog: 
+            %td
+              %i.icon-file
+              -if (@student.blog)
+                %a{:href=> "#{@student.blog}"}= @student.blog
 
-  %tr
-    %td Github:
-    %td
-      %i.icon-github
-      -if (@student.github)
-        %a{:href=> "#{@student.github}"}= @student.github
-  %tr
-    %td Blog: 
-    %td
-      %i.icon-file
-      -if (@student.blog)
-        %a{:href=> "#{@student.blog}"}= @student.blog
+          %tr
+            %td Website:    
+            %td
+              %i.icon-user
+              -if (@student.personal_website)
+                %a{:href=> "#{@student.personal_website}"}= @student.personal_website 
 
-  %tr
-    %td Website:    
-    %td
-      %i.icon-user
-      -if (@student.personal_website)
-        %a{:href=> "#{@student.personal_website}"}= @student.personal_website 
+          %tr
+            %td Mentor:   
+            %td
+              %i.icon-mentor
+              -if (@student.mentor)
+                -if (@student.mentor) == 'looking'
+                  I'm looking for a mentor
+                - elsif (@student.mentor) == 'mentor'
+                  I'm a mentor
+                - else
+                  I'm a mentee
 
-  %tr
-    %td Mentor:   
-    %td
-      %i.icon-mentor
-      -if (@student.mentor)
-        -if (@student.mentor) == 'looking'
-          I'm looking for a mentor
-        - elsif (@student.mentor) == 'mentor'
-          I'm a mentor
-        - else
-          I'm a mentee
+          %tr
+            %td Job Status:  
+            %td
+              %i.icon-job
+              -if (@student.job_status)
+                -if (@student.job_status) == 'looking'
+                  I'm looking for a job
+                - elsif (@student.job_status) == 'offers'
+                  I'm open to offers
+                - else
+                  I'm insanely happy with my job
 
-  %tr
-    %td Job Status:  
-    %td
-      %i.icon-job
-      -if (@student.job_status)
-        -if (@student.job_status) == 'looking'
-          I'm looking for a job
-        - elsif (@student.job_status) == 'offers'
-          I'm open to offers
-        - else
-          I'm insanely happy with my job
-
-  %tr
-    %td Entrepreneur: 
-    %td
-      %i.icon-entrepreneur
-      -if (@student.entrepreneur)
-        -if (@student.entrepreneur) == 'startup'
-          I'm starting a business
-        - elsif (@student.entrepreneur) == 'cofounders'
-          I'm looking for cofounders
-        -elsif (@student.entrepreneur) == 'hiring'
-          My business is hiring
-        - else
-          I still work for the man
+          %tr
+            %td Entrepreneur: 
+            %td
+              %i.icon-entrepreneur
+              -if (@student.entrepreneur)
+                -if (@student.entrepreneur) == 'startup'
+                  I'm starting a business
+                - elsif (@student.entrepreneur) == 'cofounders'
+                  I'm looking for cofounders
+                -elsif (@student.entrepreneur) == 'hiring'
+                  My business is hiring
+                - else
+                  I still work for the man
 
