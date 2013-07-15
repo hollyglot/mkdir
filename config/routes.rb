@@ -9,4 +9,9 @@ Mksdir::Application.routes.draw do
   end
   root :to => "directory#index"
   devise_for :users, :controllers => { :registrations => "registrations" }
+
+  # get '/users/sign_out' => 'devise/sessions#destroy'
+
+
+
 end
