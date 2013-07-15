@@ -1,9 +1,11 @@
 %h1 MakerSquare Students
 
+-if current_user.admin?
+  = link_to 'New Student Profile', new_student_path
+
 -if (@students)
   - @students.each do |student|
     = link_to "#{student.first_name} #{student.last_name}", student
 %br
 
--if current_user.admin?
-  = link_to 'New Student Profile', new_student_path
+

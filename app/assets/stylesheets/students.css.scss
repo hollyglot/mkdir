@@ -1,3 +1,13 @@
 // Place all the styles related to the Students controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.icon-github {
+  background: url('octocat.png') -3px -1px / 140%;
+}
+.cohort {
+  float: right;
+}
+
+.linkedin {
+  float: left;
+}
