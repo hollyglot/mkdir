@@ -1,6 +1,7 @@
 !!!
 %html
   %head
+    / %link{href="https://fonts.googleapis.com/css?family=Limelight|Flamenco|Federo|Yesteryear|Josefin Sans|Spinnaker|Sansita One|Handlee|Droid Sans|Oswald:400,300,700" media="screen" rel="stylesheet" type="text/css"}
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
       %title= content_for?(:title) ? yield(:title) : "mkdir"
       %meta{:content => content_for?(:description) ? yield(:description) : "mkdir", :name => "description"}
@@ -11,15 +12,28 @@
   %body{:class => "#{controller_name} #{action_name}"}
     .navbar.navbar-fixed-top
       %nav.navbar-inner
-        .container
+        .responsive-container
           = render 'layouts/navigation'
     #main{:role => "main"}
+      = render 'layouts/messages'
       .container
         .content
           .row
             .span12
-              = render 'layouts/messages'
-              = yield
-          %footer
+      = yield
+      %footer
+        %div.container-fluid.container-fluid-3
+          %div.container
+            %div.row-fluid
+              %span.span12
+                %div.pull-left
+                  %p © MakerSquare
+                %ul.nav.nav-pills.pull-right
+                  %li
+                    %a{:href =>"#"} About
+                  %li
+                    %a{:href =>"#"} Privacy
+                  %li
+                    %a{:href =>"#"} Terms Of Service
       / ! end of .container
     / ! end of #main

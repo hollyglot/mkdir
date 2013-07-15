@@ -8,6 +8,7 @@ group :assets do
 end
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+gem "font-awesome-rails"
 gem 'devise'
 gem 'figaro'
 gem 'haml-rails'

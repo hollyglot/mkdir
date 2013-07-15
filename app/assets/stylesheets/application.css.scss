@@ -10,5 +10,258 @@
  *
  *= require_self
  *= require_tree .
+ *= require font-awesome
 */
 
+@import "font-awesome";
+/*
+  Common styles and overrides. Will be exported with the zip file download.
+*/
+
+/* Make fonts behave on Macs */
+* {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Make Icons look better */
+[class^="icon-"]::before, [class*=" icon-"]::before {
+  vertical-align: baseline;
+  line-height: 1em;
+  color: inherit;
+}
+i.icon{
+  text-align: center;
+  background-image: none;
+}
+body {
+        padding-top: 60px;
+      }
+/* Centering elements */
+body .pull-center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+ body {
+   padding-left: 0;
+   padding-right: 0;
+ }
+ .navbar {
+   height: 60px;
+ }
+ .navbar .navbar-inner {
+   border: none;
+   background: #34495e;
+   height: 60px;
+   padding-left: 20px;
+   padding-right: 20px;
+ }
+ .navbar .navbar-inner .responsive-container .brand {
+   margin: 0px;
+   background: rgba(0, 0, 0, 0) url('source.png') no-repeat 20px 20px;
+   background-size: auto;
+   padding: 30px 200px 30px 20px;
+ }
+ .navbar .navbar-inner .responsive-container .nav-collapse.collapse .nav li a {
+   padding: 20px;
+   text-shadow: none;
+   color: #ffffff;
+ }
+ .container-fluid.container-fluid-1 {
+   background: #000000 url('source-1.png') no-repeat 0px 0px;
+   background-size: cover;
+   height: 300px;
+ }
+ .container-fluid-1 .container {
+   margin-top: 30px;
+   margin-bottom: 170px;
+ }
+ .container-fluid-1 .container .row-fluid .span12 {
+   padding: 0px 0px 0px 15px;
+ }
+ .container-fluid-1 .container .row-fluid .span12 .heading {
+   font-size: 58px;
+   color: #ffffff;
+   line-height: 64px;
+   margin: 30px 0px 10px 0px;
+ }
+ .container-fluid-1 .container .row-fluid .span12 p {
+   padding: 0px 0px 10px 0px;
+   font-size: 17px;
+   color: #ffffff;
+ }
+ .container.container-1 {
+   margin-top: 60px;
+ }
+ .container-1 .row-fluid .span4 .heading {
+   font-weight: normal;
+   font-size: 29px;
+   text-align: center;
+   color: #454545;
+ }
+ .container-1 .row-fluid .span4 p {
+   font-weight: 300;
+   font-size: 16px;
+   text-align: center;
+   line-height: 25px;
+ }
+ .container-fluid.container-fluid-2 {
+   background: #f8f8f8;
+   border-top: 1px solid #ededed;
+   border-right: none;
+   border-left: none;
+   border-bottom: 1px solid #ededed;
+   margin-top: 60px;
+   padding: 60px 20px 60px 35px;
+ }
+ .container-fluid-2 .container .row-fluid .span7 .page-header {
+   padding: 0px;
+   border: none;
+ }
+ .container-fluid-2 .container .row-fluid .span7 .page-header h1 {
+   font-weight: normal;
+   font-size: 42px;
+   color: #555555;
+ }
+ .container-fluid-2 .container .row-fluid .span7 .page-header h1 small {
+   line-height: 42px;
+   font-size: 36px;
+ }
+ .container-fluid-2 .container .row-fluid .span7 p {
+   font-weight: 300;
+   font-size: 19px;
+   line-height: 30px;
+ }
+ .container-fluid-2 .container .row-fluid .span5 .image {
+   margin: 0px 25px 0px 0px;
+   height: 300px;
+   width: 300px;
+ }
+ .container-fluid.container-fluid-3 {
+   padding: 30px 20px 30px 20px;
+   background: #34495e;
+ }
+ .container-fluid-3 .container .row-fluid .span12 .pull-left p {
+   font-weight: 300;
+   color: #ffffff;
+   line-height: 36px;
+ }
+ .container-fluid-3 .container .row-fluid .span12 .nav {
+   margin: 0px;
+ }
+ .container-fluid-3 .container .row-fluid .span12 .nav li a {
+   text-align: center;
+   color: #ffffff;
+ }
+  body {
+   padding-left: 0;
+   padding-right: 0;
+ }
+ .navbar {
+   height: 60px;
+ }
+ .navbar .navbar-inner {
+   border: none;
+   background: #34495e;
+   height: 60px;
+   padding-left: 20px;
+   padding-right: 20px;
+ }
+ .navbar .navbar-inner .responsive-container .brand {
+   margin: 0px;
+   background: rgba(0, 0, 0, 0) url('source.png') no-repeat 20px 20px;
+   background-size: auto;
+   padding: 30px 200px 30px 20px;
+ }
+ .navbar .navbar-inner .responsive-container .nav-collapse.collapse .nav li a {
+   padding: 20px;
+   text-shadow: none;
+   color: #ffffff;
+ }
+ .container-fluid.container-fluid-1 {
+   background: #000000 url('source-1.png') no-repeat 0px 0px;
+   background-size: cover;
+   height: 300px;
+ }
+ .container-fluid-1 .container {
+   margin-top: 30px;
+   margin-bottom: 170px;
+ }
+ .container-fluid-1 .container .row-fluid .span12 {
+   padding: 0px 0px 0px 15px;
+ }
+ .container-fluid-1 .container .row-fluid .span12 .heading {
+   font-size: 58px;
+   color: #ffffff;
+   line-height: 64px;
+   margin: 30px 0px 10px 0px;
+ }
+ .container-fluid-1 .container .row-fluid .span12 p {
+   padding: 0px 0px 10px 0px;
+   font-size: 17px;
+   color: #ffffff;
+ }
+ .container.container-1 {
+   margin-top: 60px;
+ }
+ .container-1 .row-fluid .span4 .heading {
+   font-weight: normal;
+   font-size: 29px;
+   text-align: center;
+   color: #454545;
+ }
+ .container-1 .row-fluid .span4 p {
+   font-weight: 300;
+   font-size: 16px;
+   text-align: center;
+   line-height: 25px;
+ }
+ .container-fluid.container-fluid-2 {
+   background: #f8f8f8;
+   border-top: 1px solid #ededed;
+   border-right: none;
+   border-left: none;
+   border-bottom: 1px solid #ededed;
+   margin-top: 60px;
+   padding: 60px 20px 60px 35px;
+ }
+ .container-fluid-2 .container .row-fluid .span7 .page-header {
+   padding: 0px;
+   border: none;
+ }
+ .container-fluid-2 .container .row-fluid .span7 .page-header h1 {
+   font-weight: normal;
+   font-size: 42px;
+   color: #555555;
+ }
+ .container-fluid-2 .container .row-fluid .span7 .page-header h1 small {
+   line-height: 42px;
+   font-size: 36px;
+ }
+ .container-fluid-2 .container .row-fluid .span7 p {
+   font-weight: 300;
+   font-size: 19px;
+   line-height: 30px;
+ }
+ .container-fluid-2 .container .row-fluid .span5 .image {
+   margin: 0px 25px 0px 0px;
+   height: 300px;
+   width: 300px;
+ }
+ .container-fluid.container-fluid-3 {
+   padding: 30px 20px 30px 20px;
+   background: #34495e;
+ }
+ .container-fluid-3 .container .row-fluid .span12 .pull-left p {
+   font-weight: 300;
+   color: #ffffff;
+   line-height: 36px;
+ }
+ .container-fluid-3 .container .row-fluid .span12 .nav {
+   margin: 0px;
+ }
+ .container-fluid-3 .container .row-fluid .span12 .nav li a {
+   text-align: center;
+   color: #ffffff;
+ }
