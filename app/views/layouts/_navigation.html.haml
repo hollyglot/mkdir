@@ -6,12 +6,10 @@
   - else
     %li
       = link_to 'Login', new_user_session_path
-  - if user_signed_in?
+  - if user_signed_in? && (can? :update, @user)
     %li
       = link_to 'Edit Account', edit_user_registration_path
-  - if user_signed_in? && (current_user.status) == 'student'
+  - if user_signed_in? && current_user.student?
     %li
-      = link_to 'Edit Profile', edit_student_path
-  / - if user_signed_in? && (current_user.status) == 'admin'
-  /   %li
-  /     = link_to 'Add User', new_user_registration_path
+      = link_to 'Edit Profile', edit_student_path(@student)
+

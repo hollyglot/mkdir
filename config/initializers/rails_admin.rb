@@ -3,11 +3,11 @@
 
 RailsAdmin.config do |config|
 
-
+  config.authorize_with :cancan
   ################  Global configuration  ################
 
   # Set the admin name here (optional second array element will appear in red). For example:
-  config.main_app_name = ['Mksdir', 'Admin']
+  config.main_app_name = ['mkdir', 'Admin']
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
@@ -53,6 +53,38 @@ RailsAdmin.config do |config|
 
 
   ###  Student  ###
+
+  config.model Student do
+    edit do
+      field :first_name
+      field :last_name
+      field :cohort
+      field :address_1
+      field :address_2
+      field :city
+      field :state_province do
+        label "State/Province/Territory"
+      end
+      field :postal_code
+      field :country
+      field :phone_number
+      field :user
+      field :linkedin
+      field :github
+      field :twitter_handle
+      field :blog
+      field :personal_website
+      field :mentor do
+        partial "mentor_selector"
+      end
+      field :job_status do
+        partial "job_status_selector"
+      end
+      field :entrepreneur do
+        partial "entrepreneur_selector"
+      end
+    end
+  end
 
   # config.model 'Student' do
 
@@ -114,6 +146,18 @@ RailsAdmin.config do |config|
 
 
   ###  User  ###
+
+  config.model User do
+    edit do
+      field :name
+      field :email
+      field :password
+      field :password_confirmation
+      field :role do
+        partial "roles_selector"
+      end
+    end
+  end
 
   # config.model 'User' do
 
