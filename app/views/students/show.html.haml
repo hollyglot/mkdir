@@ -8,20 +8,22 @@
     %br
     = @student.cohort
 
-%div.linkedin
+%div.float-left
   - if (profile)
-    %img{:src => profile.picture}
+    %div.linkedin-img
+      %img.shadow{:src => profile.picture}
+  %div.float-right
+    %h3
+      = @student.first_name 
+      = @student.last_name
 
-  %h3
-    = @student.first_name 
-    = @student.last_name
-
-  - if (profile)  
-    - if (profile.current_companies)
-      %h5= profile.current_companies[0][:current_title]
-      %h6= profile.current_companies[0][:current_company]
-      %h6
-        %a{:href=> "#{profile.current_companies[0][:website]}"}= profile.current_companies[0][:website] 
+    - if (profile)  
+      - if (profile.current_companies)
+        %h4= profile.current_companies[0][:current_title]
+        %h5
+          = profile.current_companies[0][:current_company]
+          %br
+          %a{:href=> "#{profile.current_companies[0][:website]}"}= profile.current_companies[0][:website] 
 
 %table.table.table-striped
   %tr
@@ -129,10 +131,4 @@
           My business is hiring
         - else
           I still work for the man
- 
 
--if (current_user) == @student.user
-  = link_to 'Edit', edit_student_path(@student)
-  \|
-
-= link_to 'Directory', students_path
