@@ -10,3 +10,4 @@
 ADMIN_NAME: holly
 ADMIN_EMAIL: hollyrgibson@gmail.com
 ADMIN_PASSWORD: password
+ROLES: [admin, student, hiring]

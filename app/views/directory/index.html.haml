@@ -5,7 +5,7 @@
         %h2.heading mkdir
         %p Connecting Developers
         - if user_signed_in?
-          %button.btn.btn-large= link_to 'Logout', destroy_user_session_path, :method=>'delete'
+          = link_to '<button class="btn btn-large">Logout</button>'.html_safe, destroy_user_session_path, :method=>'delete'
         - else
           %a{:href => new_user_session_path}
             %button.btn.btn-large Login
