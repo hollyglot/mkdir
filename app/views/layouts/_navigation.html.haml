@@ -13,5 +13,8 @@
     - if user_signed_in? && current_user.student?
       %li
         = link_to 'Edit Profile', edit_student_path(@student)
+    - if user_signed_in?
+      %li
+        = link_to 'Directory', students_path
 
 
