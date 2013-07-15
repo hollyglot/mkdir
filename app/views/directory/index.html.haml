@@ -4,8 +4,12 @@
       %span.span12
         %h2.heading mkdir
         %p Connecting Developers
-        %a{:href => students_path}
-          %button.btn.btn-large Login
+        - if user_signed_in?
+          %a{:href => destroy_user_session_path}
+            %button.btn.btn-large Logout
+        - else
+          %a{:href => new_user_session_path}
+            %button.btn.btn-large Login
 
 %div.container.container-1
   %div.row-fluid
