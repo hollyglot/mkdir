@@ -1,7 +1,8 @@
 .container#maincontainer
   .content#maincontent
     .row#mainrow
-      .span12#mainspan%h1 MakerSquare Students
+      .span12#mainspan
+        %h1 MakerSquare Students
         - if (@students)
           - @students.each do |student|
             - profile = Linkedin::Profile.get_profile(student.linkedin)
