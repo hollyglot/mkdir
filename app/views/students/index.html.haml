@@ -13,7 +13,7 @@
                     %img.shadow{:src => profile.picture}
                   %div.float-right
                     %h3
-                    = link_to "#{student.first_name} #{student.last_name}", student
+                      = link_to "#{student.first_name} #{student.last_name}", student
         - else
           Where did all our students go? Check your database!
         %br
