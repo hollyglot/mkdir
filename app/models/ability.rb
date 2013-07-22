@@ -10,9 +10,7 @@ class Ability
         can :access, :rails_admin  
         can :dashboard 
       elsif user.student?
-        can :manage, :student
-      else 
-        can :read, :student
+        can :manage, Student
       end
 
     # The first argument to `can` is the action you are giving the user 

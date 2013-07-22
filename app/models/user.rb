@@ -10,9 +10,10 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :role, :password, :password_confirmation, :remember_me
   
   ROLES = %w[admin student hiring]
+  ADMIN_ROLES = %w[admin]
 
   def admin?
-    role == 'admin'
+    ADMIN_ROLES.include? role
   end
 
   def student?
