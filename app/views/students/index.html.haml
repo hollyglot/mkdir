@@ -3,17 +3,19 @@
     .row#mainrow
       .span12#mainspan
         %h1 MakerSquare Students
-        - if (@students)
+        - if @students
           - @students.each do |student|
+            
             - profile = Linkedin::Profile.get_profile(student.linkedin)
-            %div{:width => 300}
+            
+            %div.float-left
               %div.float-left
                 - if (profile)
                   %div.linkedin-img
                     %img.shadow{:src => profile.picture}
-                  %div.float-right
-                    %h3
-                      = link_to "#{student.first_name} #{student.last_name}", student
+              %div
+                %h3
+                  = link_to "#{student.first_name} #{student.last_name}", student
         - else
           Where did all our students go? Check your database!
         %br
