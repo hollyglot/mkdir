@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row-fluid">
+    <span class="span6">
+      <h1 class="heading">Accounts</h1>
+      <p><strong>mkdir</strong> offers you the most when you sign in to your MakerSquare&nbsp;Account.</p>
+      <p>Sign in on the right or&nbsp;sign up for a new account.</p>
+      <table class="table">
+        <thead>
+          <tr></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> <i class="icon icon-wrench"></i> 
+            </td>
+            <td><strong>DIRECTORY + RESOURCES + EVERYTHING&nbsp;ELSE</strong>
+              <br>
+              <br>Access all MakerSquare services with one&nbsp;account.</td>
+          </tr>
+          <tr>
+            <td> <i class="icon icon-group"></i> 
+            </td>
+            <td><strong>NETWORK CONNECTIONS</strong>
+              <br>
+              <br>Connect with former MakerSquare alumni, and sign up to mentor current students.</td>
+          </tr>
+          <tr>
+            <td> <i class="icon icon-book"></i> 
+            </td>
+            <td><strong>LEARNING RESOURCES</strong>
+              <br>
+              <br>Includes Prework assignments, the Learning App, and recommended resources for further learning.</td>
+          </tr>
+          
+        </tbody>
+      </table>
+      <p>Find out more&nbsp;about <strong>mkdir</strong>&nbsp;and the benefits of a MakerSquare Account.</p>
+    </span>
+    <span class="span6">
+      <div class="hero-unit">
+				<h4>Sign in</h4>
+				<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+		  		<div>
+		  			<%= f.label :email %>
+		 				<%= f.email_field :email, :autofocus => true %>
+		 			</div>
+
+		  		<div>
+		  			<%= f.label :password %>
+		  			<%= f.password_field :password %>
+		  		</div>
+
+		  		<% if devise_mapping.rememberable? -%>
+		    		<div>
+		    			<%= f.check_box :remember_me %> <%= f.label :remember_me %>
+		    		</div>
+		  		<% end -%>
+
+		  		<div>
+		  			<%= f.submit "Sign in" %>
+		  		</div>
+			<% end %>
+					<br />
+					<h5>
+						<%= render "devise/shared/links" %>
+					</h5>
+      </div>
+    </span>
+  </div>
+</div>
