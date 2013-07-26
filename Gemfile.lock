@@ -71,6 +71,7 @@ GEM
       rails (>= 3, < 5)
     font-awesome-rails (3.2.1.2)
       railties (>= 3.2, < 5.0)
+    gmaps4rails (1.5.6)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -234,6 +235,7 @@ DEPENDENCIES
   email_spec
   figaro
   font-awesome-rails
+  gmaps4rails
   haml-rails
   html2haml
   hub
