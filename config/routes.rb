@@ -6,7 +6,7 @@ Mksdir::Application.routes.draw do
 
 
   authenticated :user do
-    root :to => 'directory#index'
+    root :to => 'students#index'
   end
   root :to => "directory#index"
 

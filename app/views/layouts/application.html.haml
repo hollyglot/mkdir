@@ -6,6 +6,7 @@
       %title= content_for?(:title) ? yield(:title) : "mkdir"
       %meta{:content => content_for?(:description) ? yield(:description) : "mkdir", :name => "description"}
         = stylesheet_link_tag "application", :media => "all"
+        = google_maps_api
         = javascript_include_tag "application"
         = csrf_meta_tags
         = yield(:head)

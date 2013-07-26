@@ -1,8 +1,9 @@
+%div#map_canvas{ :style => "height:600px; width:600px;"}
 .container#maincontainer
   .content#maincontent
     .row#mainrow
       .span12#mainspan
-        %h1 MakerSquare Students
+        %h3 MakerSquare Students
         - if @students
           - @students.each do |student|
             
@@ -11,10 +12,10 @@
             %div.float-left
               %div.float-left
                 - if (profile)
-                  %div.linkedin-img
+                  %div.linkedin-img{:style => "margin-right: 15px"}
                     %img.shadow{:src => profile.picture}
               %div
-                %h3
+                %p
                   = link_to "#{student.first_name} #{student.last_name}", student
         - else
           Where did all our students go? Check your database!
