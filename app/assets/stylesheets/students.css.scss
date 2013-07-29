@@ -1,101 +1,225 @@
 // Place all the styles related to the Students controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
- body {
-   padding-left: 0;
-   padding-right: 0;
- }
- /* This makes absolutely positioned elements like p, h1,
-     and some bootstrap elements placed properly. */
- #absolute-wrapper p, #absolute-wrapper h1, #absolute-wrapper h2, #absolute-wrapper h3, #absolute-wrapper h4, #absolute-wrapper h5, #absolute-wrapper h6 {
-   margin-top: 0 !important;
- }
- #absolute-wrapper {
+body {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* This makes absolutely positioned elements like p, h1,
+  and some bootstrap elements placed properly. */
+/*#absolute-wrapper p, #absolute-wrapper h1, #absolute-wrapper h2, #absolute-wrapper h3, #absolute-wrapper h4, #absolute-wrapper h5, #absolute-wrapper h6 {
+  margin-top: 0 !important;
+}*/
+/*#absolute-wrapper {
+  position: relative;
+  margin: 0 auto;
+  height: 400px;
+
+}
+#absolute-wrapper .image {
+  width: 1130px;
+  height: 479px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}*/
+#map_canvas{
+  width: 720px;
+  height: 375px;
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+}
+.navbar .navbar-fixed-top{
+  margin-bottom: 0px;
+}
+.container.container-1 {
+  padding: 60px;
+  position: relative;
+  margin: 0px;
+  width: 100%;
+  background: url("atx.jpg");
+  background-size: cover;
+}
+.container-1 .row-fluid .span3 .well {
+  padding: 0px;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 0px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  border-top: 1px solid #f0f0f0;
+  border-right: none;
+  border-bottom: 1px solid #f0f0f0;
+  border-left: none;
+}
+.container-1 .row-fluid .span3 .well .nav {
+  padding: 0px;
+}
+.container-1 .row-fluid .span3 .well .nav li a {
+  padding: 8px 15px 8px 15px;
+  font-size: 15px;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid #ebebeb;
+  border-left: none;
+}
+.container-1 .row-fluid .span3 .well .nav li a.a-1 {
+  margin: 0px;
+}
+.container-1 .row-fluid .span3 .well .nav li .a-1 .icon.icon-chevron-right {
+  color: #8f8f8f;
+  font-size: 14px;
+  margin: 3px 0px 0px 0px;
+  height: 14px;
+  width: 14px;
+}
+.container-1 .row-fluid .span3 .well .nav .active a {
+  margin: 0px -1px 0px -1px;
+}
+.container-1 .row-fluid .span3 .well .nav .active a .icon.icon-chevron-right {
+  font-size: 14px;
+  margin: 3px 0px 0px 0px;
+  height: 14px;
+  width: 14px;
+}
+.container-1 .row-fluid .span9 {
+  padding: 0px 0px 0px 20px;
+}
+.container-1 .row-fluid .span9 .image {
+  border-radius: 2px;
+  margin: 0px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  height: 600px;
+  width: 680px;
+}
+.container-fluid {
+  background: #333333;
+  padding: 30px 20px 30px 20px;
+}
+.container-fluid .container .row-fluid .span12 .pull-left p {
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 36px;
+}
+.container-fluid .container .row-fluid .span12 .nav {
+  margin: 0px;
+}
+.container-fluid .container .row-fluid .span12 .nav li a {
+  text-align: center;
+  color: #cccccc;
+}
+.search{
+
+}
+.search .tabs {
+   margin: 23px 0 0 0;
+   border-bottom: none;
+   background: url('tab.png') repeat-x;
    position: relative;
-   width: 1190px;
-   margin: 0 auto;
-   height: 1px;
- }
- #absolute-wrapper .image {
-   width: 1130px;
-   height: 479px;
-   position: absolute;
-   top: 0px;
-   left: 0px;
- }
- .container.container-1 {
-   margin-top: 60px;
-   margin-bottom: 60px;
- }
- .container-1 .row-fluid .span3 .well {
-   padding: 0px;
-   background: rgba(0, 0, 0, 0);
-   border-radius: 0px;
-   -moz-box-shadow: none;
-   -webkit-box-shadow: none;
-   -o-box-shadow: none;
-   box-shadow: none;
-   border-top: 1px solid #f0f0f0;
-   border-right: none;
-   border-bottom: 1px solid #f0f0f0;
-   border-left: none;
- }
- .container-1 .row-fluid .span3 .well .nav {
-   padding: 0px;
- }
- .container-1 .row-fluid .span3 .well .nav li a {
-   padding: 8px 15px 8px 15px;
-   font-size: 15px;
-   border-top: none;
-   border-right: none;
-   border-bottom: 1px solid #ebebeb;
-   border-left: none;
- }
- .container-1 .row-fluid .span3 .well .nav li a.a-1 {
-   margin: 0px;
- }
- .container-1 .row-fluid .span3 .well .nav li .a-1 .icon.icon-chevron-right {
-   color: #8f8f8f;
-   font-size: 14px;
-   margin: 3px 0px 0px 0px;
-   height: 14px;
-   width: 14px;
- }
- .container-1 .row-fluid .span3 .well .nav .active a {
-   margin: 0px -1px 0px -1px;
- }
- .container-1 .row-fluid .span3 .well .nav .active a .icon.icon-chevron-right {
-   font-size: 14px;
-   margin: 3px 0px 0px 0px;
-   height: 14px;
-   width: 14px;
- }
- .container-1 .row-fluid .span9 {
-   padding: 0px 0px 0px 20px;
- }
- .container-1 .row-fluid .span9 .image {
-   border-radius: 2px;
-   margin: 0px;
-   -moz-box-shadow: none;
-   -webkit-box-shadow: none;
-   -o-box-shadow: none;
-   box-shadow: none;
-   height: 600px;
-   width: 680px;
- }
- .container-fluid {
-   background: #333333;
-   padding: 30px 20px 30px 20px;
- }
- .container-fluid .container .row-fluid .span12 .pull-left p {
-   font-weight: 300;
-   color: #ffffff;
-   line-height: 36px;
- }
- .container-fluid .container .row-fluid .span12 .nav {
-   margin: 0px;
- }
- .container-fluid .container .row-fluid .span12 .nav li a {
-   text-align: center;
-   color: #cccccc;
- }
+}
+.search .tabs li a {
+  color:#1C435C; 
+  padding:0 10px;
+  margin:0 4px;
+  border-bottom:1px solid #8BBDDE;
+  border-top: 1px solid #C7DFED;
+  background: url("bgd-search-bar-tab-inactive.gif") #1B6394;
+  font-size: 14px;
+  line-height: 21px;
+  text-shadow: none;
+}
+.search .tabs li.active a {
+  color:#FFF; 
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.35);
+  background: url("bgd-search-bar-tab-active.gif") #3B89B8;
+  border-bottom: 1px solid #3D8BB9;
+}
+  
+.search .tab-container {
+  background: #064A7D;
+  background: url("bgd-search-bar.jpg") #3B89B8;
+}
+.search .tab-content {
+  padding: 20px 30px;
+  border-top: none;
+  border-bottom: 1px solid #032E4E;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1B435B;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.28);
+}
+.search .tab-content strong {
+  color: #FFF;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.28);
+}
+.search .tab-content select {
+  padding: 4px; 
+  border: 1px solid #18374B; 
+  -moz-border-radius: 6px; 
+  border-radius: 6px; 
+  margin-top: 0px; 
+  font-size: 15px;
+}  
+.search .tab-content input[type="text"] {
+  border: 1px solid #18374B;
+}
+.results {
+  background: #E2D1BC;
+  border-top: 1px solid #B7997B;
+  padding:0px 30px;
+  color: #9D7955;
+  line-height: 24px;
+}
+.breadcrumb, .breadcrumb2 {
+  list-style: none;
+  padding:0;
+  margin:0;
+  overflow: hidden;
+  color: #856A4E;
+  font-size: 16px;
+  font-weight: 700;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.99);
+  line-height: 30px;
+  margin:0;
+  border-bottom:1px solid #D2C0AC;
+  background: url("bgd-breadcrumb.gif") no-repeat;
+  width: 720px;
+}
+.breadcrumb2 { 
+  background: url("bgd-breadcrumb2.gif") repeat-x; 
+}
+.breadcrumb li, .breadcrumb2 li {
+  float: left;
+  margin:0;
+  padding:0 0 0 10px;
+  list-style: none;
+}
+.breadcrumb li a, .breadcrumb2 li a {
+  color: #AA8D6C;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.99);
+  padding: 0px 20px 0px 0px;
+  background: url("bgd-breadcrumb-arrow.gif") right no-repeat; 
+  position: relative;
+  display: block;
+  float: left;
+}
+.breadcrumb li a:hover, .breadcrumb2 li a:hover {
+  color: #856A4E;
+  background: url("bgd-breadcrumb-arrow-hover.gif") right no-repeat; 
+}
+.breadcrumb li a .home, .breadcrumb2 li a .home {
+  display:block;
+  width:20px;
+  height:30px;
+  background:url("icon-breadcrumb-home.gif") center center no-repeat;
+  text-indent: -9999px;
+}
+.breadcrumb li a:hover .home, .breadcrumb2 li a:hover .home {
+  background:url("icon-breadcrumb-home-hover.gif") center center no-repeat;
+}

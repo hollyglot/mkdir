@@ -1,33 +1,47 @@
-%div#absolute-wrapper
-  %img.image{:src =>"atx.jpg"}
 %div.container.container-1
   %div.row-fluid
     %span.span3
       %div.well
-       %ul.nav.nav-list
-        %li.active
-          %a.a-1{:href =>"#"} Available for Hire
-         %li
-          %a.a-1{:href =>"#"} Available to Mentor
-         %li
-          %a.a-1{:href =>"#"} Seeking Developers
-         %li
-          %a.a-1{:href =>"#"} Seeking CoFounders     
+        %ul.nav.nav-list
+          %li.active
+            %a.a-1{:href =>"#"} Available for Hire
+          %li
+            %a.a-1{:href =>"#"} Available to Mentor
+          %li
+            %a.a-1{:href =>"#"} Seeking Developers
+          %li
+            %a.a-1{:href =>"#"} Seeking CoFounders     
     %span.span9
-      %img.image{:src => "http://placehold.it/850x300"}
-      %div.dom-body-text.paragraph#dom-elem-32      
+      %ul.breadcrumb
+        %li
+          %a{:href =>"/"}
+            %span.home Home
+      %div#map_canvas
+        %div.search
+          %ul.tabs
+            %li.active
+              %a{:href =>"#tab1"} Search by location
+            %li
+              %a{:href =>"#tab2"} Search by name
+          %div.tab-container
+            %div.tab-content#tab1
+              %form
+                %div{:style => "margin:0; padding:0; display:inline"}
+                  %input
+                %strong People
+          %div.tab-container
+        %div.results
 .container#maincontainer
   .content#maincontent
     .row#mainrow
       .span12#mainspan
-        %h3 MakerSquare Students
         - if @students
           - @students.each do |student|
             
             - profile = Linkedin::Profile.get_profile(student.linkedin)
             
-            %div.float-left
-              %div.float-left
+            %div.float-right
+              %div.float-right
                 - if (profile)
                   %div.linkedin-img{:style => "margin-right: 15px"}
                     %img.shadow{:src => profile.picture}

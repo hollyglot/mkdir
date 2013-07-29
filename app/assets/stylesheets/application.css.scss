@@ -51,6 +51,9 @@ body .pull-center{
  .navbar {
    height: 60px;
  }
+ #nav {
+  margin-bottom: 0px;
+}
  .navbar .navbar-inner {
    border: none;
    background: #34495e;
@@ -67,6 +70,7 @@ body .pull-center{
  .navbar .navbar-inner .responsive-container .nav-collapse.collapse .nav li a {
    padding: 20px;
    text-shadow: none;
+   background-size: auto;
    color: #ffffff;
  }
  .container-fluid.container-fluid-1 {

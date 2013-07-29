@@ -12,7 +12,7 @@
         = yield(:head)
         = yield(:stylesheets)
   %body{:class => "#{controller_name} #{action_name}"}
-    .navbar.navbar-fixed-top
+    #nav.navbar.navbar-fixed-top
       %nav.navbar-inner
         .responsive-container
           = render 'layouts/navigation'
