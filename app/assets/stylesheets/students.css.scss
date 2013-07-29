@@ -1,3 +1,101 @@
 // Place all the styles related to the Students controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ body {
+   padding-left: 0;
+   padding-right: 0;
+ }
+ /* This makes absolutely positioned elements like p, h1,
+     and some bootstrap elements placed properly. */
+ #absolute-wrapper p, #absolute-wrapper h1, #absolute-wrapper h2, #absolute-wrapper h3, #absolute-wrapper h4, #absolute-wrapper h5, #absolute-wrapper h6 {
+   margin-top: 0 !important;
+ }
+ #absolute-wrapper {
+   position: relative;
+   width: 1190px;
+   margin: 0 auto;
+   height: 1px;
+ }
+ #absolute-wrapper .image {
+   width: 1130px;
+   height: 479px;
+   position: absolute;
+   top: 0px;
+   left: 0px;
+ }
+ .container.container-1 {
+   margin-top: 60px;
+   margin-bottom: 60px;
+ }
+ .container-1 .row-fluid .span3 .well {
+   padding: 0px;
+   background: rgba(0, 0, 0, 0);
+   border-radius: 0px;
+   -moz-box-shadow: none;
+   -webkit-box-shadow: none;
+   -o-box-shadow: none;
+   box-shadow: none;
+   border-top: 1px solid #f0f0f0;
+   border-right: none;
+   border-bottom: 1px solid #f0f0f0;
+   border-left: none;
+ }
+ .container-1 .row-fluid .span3 .well .nav {
+   padding: 0px;
+ }
+ .container-1 .row-fluid .span3 .well .nav li a {
+   padding: 8px 15px 8px 15px;
+   font-size: 15px;
+   border-top: none;
+   border-right: none;
+   border-bottom: 1px solid #ebebeb;
+   border-left: none;
+ }
+ .container-1 .row-fluid .span3 .well .nav li a.a-1 {
+   margin: 0px;
+ }
+ .container-1 .row-fluid .span3 .well .nav li .a-1 .icon.icon-chevron-right {
+   color: #8f8f8f;
+   font-size: 14px;
+   margin: 3px 0px 0px 0px;
+   height: 14px;
+   width: 14px;
+ }
+ .container-1 .row-fluid .span3 .well .nav .active a {
+   margin: 0px -1px 0px -1px;
+ }
+ .container-1 .row-fluid .span3 .well .nav .active a .icon.icon-chevron-right {
+   font-size: 14px;
+   margin: 3px 0px 0px 0px;
+   height: 14px;
+   width: 14px;
+ }
+ .container-1 .row-fluid .span9 {
+   padding: 0px 0px 0px 20px;
+ }
+ .container-1 .row-fluid .span9 .image {
+   border-radius: 2px;
+   margin: 0px;
+   -moz-box-shadow: none;
+   -webkit-box-shadow: none;
+   -o-box-shadow: none;
+   box-shadow: none;
+   height: 600px;
+   width: 680px;
+ }
+ .container-fluid {
+   background: #333333;
+   padding: 30px 20px 30px 20px;
+ }
+ .container-fluid .container .row-fluid .span12 .pull-left p {
+   font-weight: 300;
+   color: #ffffff;
+   line-height: 36px;
+ }
+ .container-fluid .container .row-fluid .span12 .nav {
+   margin: 0px;
+ }
+ .container-fluid .container .row-fluid .span12 .nav li a {
+   text-align: center;
+   color: #cccccc;
+ }
