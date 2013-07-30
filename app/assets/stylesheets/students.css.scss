@@ -5,28 +5,10 @@ body {
   padding-left: 0;
   padding-right: 0;
 }
-/* This makes absolutely positioned elements like p, h1,
-  and some bootstrap elements placed properly. */
-/*#absolute-wrapper p, #absolute-wrapper h1, #absolute-wrapper h2, #absolute-wrapper h3, #absolute-wrapper h4, #absolute-wrapper h5, #absolute-wrapper h6 {
-  margin-top: 0 !important;
-}*/
-/*#absolute-wrapper {
-  position: relative;
-  margin: 0 auto;
-  height: 400px;
-
-}
-#absolute-wrapper .image {
-  width: 1130px;
-  height: 479px;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}*/
 #map_canvas{
   width: 720px;
   height: 375px;
-  position: relative;
+  position: fixed;
   background-color: black;
   overflow: hidden;
 }
@@ -113,61 +95,58 @@ body {
   text-align: center;
   color: #cccccc;
 }
-.search{
+
+
+.tabs {
+  position: relative;
+  clear: both;
+}
+.tab {
+  float: left;
+  background: url('tab.png') repeat-x;
+  margin-top: -22px;
 
 }
-.search .tabs {
-   margin: 23px 0 0 0;
-   border-bottom: none;
-   background: url('tab.png') repeat-x;
-   position: relative;
-}
-.search .tabs li a {
-  color:#1C435C; 
-  padding:0 10px;
-  margin:0 4px;
-  border-bottom:1px solid #8BBDDE;
-  border-top: 1px solid #C7DFED;
-  background: url("bgd-search-bar-tab-inactive.gif") #1B6394;
+.tab label {
+  background: url("bgd-search-bar-tab-inactive.gif");
+  padding: 0 10px; 
+  margin-left: -1px;
+  margin-right: 4px;
+  color:#1C435C;
   font-size: 14px;
-  line-height: 21px;
-  text-shadow: none;
+  line-height: 21px; 
+  position: relative;
+  left: 1px; 
 }
-.search .tabs li.active a {
-  color:#FFF; 
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.35);
-  background: url("bgd-search-bar-tab-active.gif") #3B89B8;
-  border-bottom: 1px solid #3D8BB9;
+.tab [type=radio] {
+  display: none;   
 }
-  
-.search .tab-container {
+.tabs .content {
+  margin-top: -5px;
+  position: absolute;
+  width: 660px;
+  left: 0;
   background: #064A7D;
   background: url("bgd-search-bar.jpg") #3B89B8;
-}
-.search .tab-content {
-  padding: 20px 30px;
-  border-top: none;
+  right: 0;
   border-bottom: 1px solid #032E4E;
+  padding: 20px 30px;
   font-size: 18px;
   font-weight: 700;
   color: #1B435B;
   text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.28);
+
 }
-.search .tab-content strong {
-  color: #FFF;
-  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.28);
+[type=radio]:checked ~ label {
+  color: white;
+  background: url("bgd-search-bar-tab-active.gif");
+  font-weight: bold;
+  z-index: 2;
 }
-.search .tab-content select {
-  padding: 4px; 
-  border: 1px solid #18374B; 
-  -moz-border-radius: 6px; 
-  border-radius: 6px; 
-  margin-top: 0px; 
-  font-size: 15px;
-}  
-.search .tab-content input[type="text"] {
-  border: 1px solid #18374B;
+[type=radio]:checked ~ label ~ .content {
+  z-index: 1;
 }
+
 .results {
   background: #E2D1BC;
   border-top: 1px solid #B7997B;

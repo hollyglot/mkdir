@@ -17,20 +17,26 @@
           %a{:href =>"/"}
             %span.home Home
       %div#map_canvas
-        %div.search
-          %ul.tabs
-            %li.active
-              %a{:href =>"#tab1"} Search by location
-            %li
-              %a{:href =>"#tab2"} Search by name
-          %div.tab-container
-            %div.tab-content#tab1
-              %form
-                %div{:style => "margin:0; padding:0; display:inline"}
-                  %input
-                %strong People
-          %div.tab-container
-        %div.results
+      %div.tabs
+        %div.tab
+          %input#tab-1{:checked => "", :name => "tab-group-1", :type => "radio"}/
+          %label{:for => "tab-1"} Search by location
+          .content
+            %form
+              %div{:style => "margin:0; padding:0; display:inline"}
+                %input
+              %strong Location
+
+        %div.tab
+          %input#tab-2{:name => "", :name => "tab-group-1", :type => "radio"}/
+          %label{:for => "tab-2"} Search by name
+          .content
+            %form
+              %div{:style => "margin:0; padding:0; display:inline"}
+                %input
+              %strong Alumni
+      %div.results
+%br
 .container#maincontainer
   .content#maincontent
     .row#mainrow
