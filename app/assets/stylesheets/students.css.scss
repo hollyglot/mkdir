@@ -6,6 +6,7 @@ body {
   padding-right: 0;
 }
 #map_canvas{
+  margin-top: -3px;
   width: 720px;
   height: 375px;
   position: fixed;
@@ -202,3 +203,129 @@ body {
 .breadcrumb li a:hover .home, .breadcrumb2 li a:hover .home {
   background:url("icon-breadcrumb-home-hover.gif") center center no-repeat;
 }
+
+
+ .container.container-1 {
+   margin-bottom: 60px;
+   margin-top: 30px;
+ }
+ .container-1 .row-fluid .span12 div.div-1 {
+   border-radius: 0px;
+   border: none;
+   width: 642.0265159606934px;
+ }
+ .container-1 .row-fluid .span12 div.div-2 {
+   margin: 0px 20px 60px 0px;
+ }
+ .container-1 .row-fluid .span12 .div-2 .page-header {
+   padding: 0px;
+   margin: 0px 0px 10px 0px;
+   background: #000000;
+ }
+ .container-1 .row-fluid .span12 .div-2 .page-header h1 {
+   font-weight: normal;
+   font-size: 42px;
+   color: #555555;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-3 {
+   background: rgba(0, 0, 0, 0.941176);
+   margin: 0px;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-3 .heading {
+   font-family:"raleway";
+   color: #ffffff;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 {
+   background: #34495e;
+   height: 505px;
+   border-bottom-right-radius: 10px; 
+   border-bottom-left-radius: 10px;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .image {
+   border-radius: 2px;
+   margin: 20px;
+   -moz-box-shadow: none;
+   -webkit-box-shadow: none;
+   -o-box-shadow: none;
+   box-shadow: none;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .badge-info {
+   padding: 5px 9px 5px 9px;
+   font-size: 14px;
+   text-align: center;
+   line-height: 15px;
+   border-radius: 20px;
+   margin: 20px 20px 0px 0px;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .hero-unit {
+   height: 30px;
+   width: 521px;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .hero-unit .heading.heading-1 {
+   font-size: 30px;
+   color: #34495e;
+   margin-top: -40px;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .hero-unit p {
+   font-size: 15px;
+   line-height: 21px;
+   font-weight: normal;
+   margin: -7px;
+ }
+  .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .hero-unit .btns a {
+   color: #ffffff;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 p.p-1 {
+   font-weight: 300;
+   font-size: 16px;
+   color: #ffffff;
+   line-height: 25px;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .table tbody tr td {
+   color: #ffffff;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .table tbody tr td a {
+   color: #ffffff;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .well .icon.icon-rss {
+   font-size: 30px;
+   color: #34495e;
+   height: 30px;
+   width: 30px;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .well .icon.icon-github {
+   font-size: 30px;
+   color: #34495e;
+   height: 30px;
+   width: 30px;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .well .icon.icon-linkedin-sign {
+   font-size: 30px;
+   color: #34495e;
+   height: 30px;
+   width: 30px;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .well .icon.icon-twitter-sign {
+   font-size: 30px;
+   color: #34495e;
+   height: 30px;
+   width: 30px;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .well .icon.icon-google-plus-sign {
+   font-size: 30px;
+   color: #34495e;
+   height: 30px;
+   width: 30px;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .well .icon.icon-facebook-sign {
+   font-size: 30px;
+   color: #34495e;
+   height: 30px;
+   width: 30px;
+ }
+ .container-1 .row-fluid .span12 .div-2 .well.div-1.div-4 .well .icon.icon-pinterest-sign {
+   font-size: 30px;
+   color: #34495e;
+   height: 30px;
+   width: 30px;
+ }
