@@ -5,6 +5,15 @@ body {
   padding-left: 0;
   padding-right: 0;
 }
+#dir {
+  padding: 60px;
+  position: relative;
+  margin: 0px;
+  width: 100%;
+  height: 479px;
+  background: url("atx.jpg");
+  background-size: cover;
+}
 #map_canvas{
   margin-top: -3px;
   width: 720px;
@@ -16,14 +25,7 @@ body {
 .navbar .navbar-fixed-top{
   margin-bottom: 0px;
 }
-#dir {
-  padding: 60px;
-  position: relative;
-  margin: 0px;
-  width: 100%;
-  background: url("atx.jpg");
-  background-size: cover;
-}
+
 .container-1 .row-fluid .span3 .well {
   padding: 0px;
   background: rgba(0, 0, 0, 0);
@@ -120,7 +122,8 @@ body {
   left: 1px; 
 }
 .tab [type=radio] {
-  display: none;   
+  display: none;
+  clear:both;   
 }
 .tabs .content {
   margin-top: -5px;
@@ -149,11 +152,13 @@ body {
 }
 
 .results {
+  margin-top: 85px;
   background: #E2D1BC;
   border-top: 1px solid #B7997B;
-  padding:0px 30px;
+  padding: 0px 0px 0px 30px;
   color: #9D7955;
   line-height: 24px;
+  width: 690px;
 }
 .breadcrumb, .breadcrumb2 {
   list-style: none;
@@ -329,3 +334,24 @@ body {
    height: 30px;
    width: 30px;
  }
+.display_table{
+  background-color: white;
+  width: 720px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: left;
+}
+.display_table tr{
+}
+.display_table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/*The display table is 720px wide with 5 columns. To add another column, adjust column width accordingly */
+.display_table td {
+  width: 144px;
+  height: 60px;
+}
+#display_table_image{
+  padding-left: 40px;
+}

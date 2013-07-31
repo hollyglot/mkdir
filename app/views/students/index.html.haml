@@ -22,40 +22,85 @@
           %input#tab-1{:checked => "", :name => "tab-group-1", :type => "radio"}/
           %label{:for => "tab-1"} Search by location
           .content
-            %form
+            %form{:style => "height:25px"}
               %div{:style => "margin:0; padding:0; display:inline"}
-                %input
-              %strong Location
-
+                %strong{:style => "color:white"} People 
+                %strong within
+                %select{:style => "width: 50px"}
+                  %option{:value=>"10"}10
+                  %option{:value=>"50"}50
+                  %option{:value=>"100"}100
+                  %option{:value=>"250"}250
+                  %option{:value=>"500"}500
+                  %option{:value=>"1000"}1000  
+                %strong miles of
+                %input{:placeholder => "Austin, Texas 78701"}
+                %button.btn.btn-primary Search
         %div.tab
           %input#tab-2{:name => "", :name => "tab-group-1", :type => "radio"}/
           %label{:for => "tab-2"} Search by name
           .content
-            %form
+            %form{:style => "height:25px"}
               %div{:style => "margin:0; padding:0; display:inline"}
-                %input
-              %strong Alumni
-      %div.results
-%br
+                %strong Search by name: 
+                %input{:placeholder => "Name"}        
+                %button.btn.btn-primary Search
+      .results
+        %strong 57 people
+        within
+        %strong 50 miles.
+        %nav.pagination.pull-right
+          %span.page.current
+          %span.page
+          %span.next
+      %div.display_table
+        %table
+          %thead
+            %tr{:style => "color: #9D7955;"}
+              %th 
+              %th Name
+              %th City
+              %th State
+              %th Cohort
+          %tbody   
+            - if @students
+              - @students.each do |student|
+                - profile = Linkedin::Profile.get_profile(student.linkedin)
+                %tr
+                  %td#display_table_image
+                    - if (profile)
+                      %div.linkedin-img
+                        %img.shadow{:src => profile.picture, :width => "40%"}
+                        / Image link to student
+                        / = link_to '<img class="shadow" src="profile.picture" width="40%" />'.html_safe, student
+                  %td
+                    = link_to "#{student.first_name} #{student.last_name}", student  
+                  %td
+                    = student.city
+                  %td
+                    = student.state_province
+                  %td
+                    = student.cohort
+                %br 
+            
 .container#maincontainer
   .content#maincontent
     .row#mainrow
       .span12#mainspan
-        - if @students
-          - @students.each do |student|
+/         - if @students
+/           - @students.each do |student|
             
-            - profile = Linkedin::Profile.get_profile(student.linkedin)
+/             - profile = Linkedin::Profile.get_profile(student.linkedin)
             
-            %div.float-right
-              %div.float-right
-                - if (profile)
-                  %div.linkedin-img{:style => "margin-right: 15px"}
-                    %img.shadow{:src => profile.picture}
-              %div
-                %p
-                  = link_to "#{student.first_name} #{student.last_name}", student
-        - else
-          Where did all our students go? Check your database!
-        %br
+/             %div.float-right
+/               %div.float-right
+/                 - if (profile)
+/                   %div.linkedin-img{:style => "margin-right: 15px"}
+/                     %img.shadow{:src => profile.picture}
+/               %div
+/                 %p
+/                   = link_to "#{student.first_name} #{student.last_name}", student
+/         - else
+/           Where did all our students go? Check your database!
 
 
