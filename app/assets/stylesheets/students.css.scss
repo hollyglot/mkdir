@@ -1,12 +1,13 @@
 // Place all the styles related to the Students controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 body {
   padding-left: 0;
   padding-right: 0;
 }
 #dir {
-  padding: 60px;
   position: relative;
   margin: 0px;
   width: 100%;
@@ -22,8 +23,19 @@ body {
   background-color: black;
   overflow: hidden;
 }
+
+.corner-padded {
+  padding-top: 60px;
+  padding-left: 60px;
+}
 .navbar .navbar-fixed-top{
   margin-bottom: 0px;
+}
+
+.no-hover a:hover{
+  text-decoration: none;
+  background-color: transparent;
+
 }
 
 .container-1 .row-fluid .span3 .well {
@@ -153,13 +165,16 @@ body {
 
 .results {
   margin-top: 85px;
-  background: #E2D1BC;
+  background: #34495e;
   border-top: 1px solid #B7997B;
   padding: 0px 0px 0px 30px;
-  color: #9D7955;
+  color: #ffffff;
   line-height: 24px;
   width: 690px;
 }
+
+
+
 .breadcrumb, .breadcrumb2 {
   list-style: none;
   padding:0;
@@ -214,17 +229,21 @@ body {
    margin-bottom: 60px;
    margin-top: 30px;
  }
+.container.container-1 .row-fluid{
+   padding-top: 60px;
+   padding-left: 60px;
+ }
  .container-1 .row-fluid .span12 div.div-1 {
    border-radius: 0px;
    border: none;
    width: 642.0265159606934px;
  }
  .container-1 .row-fluid .span12 div.div-2 {
-   margin: 0px 20px 60px 0px;
+   margin: 0px 0px 60px 0px;
  }
  .container-1 .row-fluid .span12 .div-2 .page-header {
    padding: 0px;
-   margin: 0px 0px 10px 0px;
+   margin-bottom: 10px;
    background: #000000;
  }
  .container-1 .row-fluid .span12 .div-2 .page-header h1 {
@@ -335,16 +354,33 @@ body {
    width: 30px;
  }
 .display_table{
-  background-color: white;
   width: 720px;
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: left;
+  background-image: linear-gradient(bottom, rgb(255,255,255) 34%, rgb(161,217,255) 100%, rgb(144,196,230) 84%);
+  background-image: -o-linear-gradient(bottom, rgb(255,255,255) 34%, rgb(161,217,255) 100%, rgb(144,196,230) 84%);
+  background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 34%, rgb(161,217,255) 100%, rgb(144,196,230) 84%);
+  background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 34%, rgb(161,217,255) 100%, rgb(144,196,230) 84%);
+  background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 34%, rgb(161,217,255) 100%, rgb(144,196,230) 84%);
+
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.34, rgb(255,255,255)),
+    color-stop(1, rgb(161,217,255)),
+    color-stop(0.84, rgb(144,196,230))
+  );
 }
+
+
+
+
 .display_table tr{
 }
-.display_table tr:hover {
-  background-color: #f1f1f1;
+.display_table tbody tr:hover {
+  background-color: #c9e9ff;
 }
 
 /*The display table is 720px wide with 5 columns. To add another column, adjust column width accordingly */
