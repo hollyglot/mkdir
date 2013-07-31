@@ -3,8 +3,19 @@ class StudentsController < ApplicationController
   load_and_authorize_resource
 
 
-  # GET /students
+  # GET /studentsn
   # GET /students.json
+  # When you do the search the fields will come through in a query .. check if params name is present then filter students...
+
+# if params[:name].present?
+#   @students = @students.where("name like '?%'", params[:name])
+# end
+
+# render only the results section if the request is coming from JS
+# if request.xhr?
+#   render 'search_results'
+# end
+
   def index
     @students = Student.all
 
