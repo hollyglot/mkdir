@@ -70,9 +70,7 @@
                   %td#display_table_image
                     - if (profile)
                       %div.linkedin-img
-                        %img.shadow{:src => profile.picture, :width => "40%"}
-                        / Image link to student
-                        / = link_to '<img class="shadow" src="profile.picture" width="40%" />'.html_safe, student
+                        = link_to image_tag(profile.picture, class: "shadow", width: "40%"), student
                   %td
                     = link_to "#{student.first_name} #{student.last_name}", student  
                   %td
