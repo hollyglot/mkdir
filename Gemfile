@@ -15,6 +15,7 @@ gem 'haml-rails'
 gem 'linkedin-scraper'
 gem 'rails_admin'
 gem 'cancan'
+gem 'geocoder'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]

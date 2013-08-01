@@ -9,6 +9,7 @@ Mksdir::Application.routes.draw do
     root :to => 'students#index'
   end
   root :to => "directory#index"
+  match 'search' => "students#search"
 
   devise_for :users, :controllers => { :registrations => "registrations" }
   devise_for :users, :controllers => { :sessions => "sessions" }

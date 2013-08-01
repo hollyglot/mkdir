@@ -1,0 +1,25 @@
+- @students.each do |student|
+
+  %div.display_table
+    %table
+      %thead
+        %tr{:style => "color: #34495e;"}
+          %th 
+          %th Name
+          %th City
+          %th State
+          %th Cohort
+      %tbody  
+        %tr
+          %td#display_table_image
+            - if (profile)
+              %div.linkedin-img
+                = link_to image_tag(profile.picture, class: "shadow"), student
+          %td
+            = link_to student.full_name, student  
+          %td
+            = student.city
+          %td
+            = student.state_province
+          %td
+            = student.cohort

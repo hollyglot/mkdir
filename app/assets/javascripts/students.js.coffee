@@ -10,3 +10,7 @@ gm_init = ->
 
 $ ->
   map = gm_init()
+
+
+
+ 

@@ -18,11 +18,16 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+  end
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @students }
-    end
+  def search
+    # params[:per_page] ||= 10
+    # params[:page]     ||= 1
+
+    @search = Student.search(params[:search])
+    @students = @search.results
+    
+    render 'index'
   end
 
   # GET /students/1

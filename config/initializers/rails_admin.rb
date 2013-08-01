@@ -58,6 +58,9 @@ RailsAdmin.config do |config|
     edit do
       field :first_name
       field :last_name
+      field :full_name do
+        read_only true
+      end
       field :cohort
       field :address_1
       field :address_2
