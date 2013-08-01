@@ -1,28 +1,28 @@
-%div.container.container-1#dir
+%div.container.container-1#banner
   %div.row-fluid
     %div.corner-padded
       %span.span3
         %div.well
           %ul.nav.nav-list
-            %li.active
-              %a.a-1{:href =>"#"} Available for Hire
             %li
-              %a.a-1{:href =>"#"} Available to Mentor
+              %a{:href =>"#"} Available for Hire
             %li
-              %a.a-1{:href =>"#"} Seeking Developers
+              %a{:href =>"#"} Available to Mentor
             %li
-              %a.a-1{:href =>"#"} Seeking CoFounders     
+              %a{:href =>"#"} Seeking Developers
+            %li
+              %a{:href =>"#"} Seeking CoFounders     
       %span.span9
         %ul.breadcrumb
           %li
-            %a
+            %a{:href =>"#"}
               .icon.icon-home
           %li
-            %a{:href =>"#"} Students
-          %li
-            %a{:href =>"#"} Mentors
-          %li
-            %a{:href =>"#"} Hiring Partners 
+            %a{:href =>"#"} Alumni
+          / %li
+          /   %a{:href =>"#"} Mentors
+          / %li
+          /   %a{:href =>"#"} Hiring Partners 
         %div#map_canvas
         %div.tabs
           %div.tab
@@ -31,7 +31,10 @@
             .content
               %form{:style => "height:25px"}
                 %div{:style => "margin:0; padding:0; display:inline"}
-                  %strong{:style => "color:white"} People 
+                  %select{:style => "width: 150px"}
+                    %option{:value=>"Alumni"}Alumni
+                    %option{:value=>"Mentors"}Mentors
+                    %option{:value=>"Hiring Partners"}Hiring Partners 
                   %strong within
                   %select{:style => "width: 50px"}
                     %option{:value=>"10"}10
@@ -41,28 +44,23 @@
                     %option{:value=>"500"}500
                     %option{:value=>"1000"}1000  
                   %strong miles of
-                  %input{:placeholder => "Austin, Texas 78701"}
-                  %button.btn.btn-primary Search
+                  %input{:style=>"margin-top: -6px", :placeholder => "Austin, Texas 78701"}
+                  %button.btn.btn-custom Search
           %div.tab
             %input#tab-2{:name => "", :name => "tab-group-1", :type => "radio"}/
             %label{:for => "tab-2"} Search by name
             .content
               %form{:style => "height:25px"}
                 %div{:style => "margin:0; padding:0; display:inline"}
-                  %strong{:style => "color:white"} Name 
-                  %input{:placeholder => "First Name, Last Name"}        
-                  %button.btn.btn-primary Search
+                  %input{:style=>"margin-top: 1px", :placeholder => "Name"}
+                  %button.btn.btn-custom{:style=>"margin-top: 1px"} Search
                   // put .results and display table into a partial template called search results
                   // render search results (does the same function)
                   // make only this bottom section fetchable via javascript
         .results
-          %strong 57 people
+          %strong 2 people
           within
-          %strong 50 miles.
-          %nav.pagination.pull-right
-            %span.page.current
-            %span.page
-            %span.next
+          %strong 2 miles.
         %div.display_table
           %table
             %thead
@@ -80,7 +78,7 @@
                     %td#display_table_image
                       - if (profile)
                         %div.linkedin-img
-                          = link_to image_tag(profile.picture, class: "shadow", width: "40%"), student
+                          = link_to image_tag(profile.picture, class: "shadow"), student
                     %td
                       = link_to "#{student.first_name} #{student.last_name}", student  
                     %td
@@ -89,26 +87,38 @@
                       = student.state_province
                     %td
                       = student.cohort
-                  %br 
-            
+                  %br
+        .results#bottom
+          %strong 2 people
+          within
+          %strong 2 miles.        
 .container#maincontainer
   .content#maincontent
     .row#mainrow
-      .span12#mainspan
-/         - if @students
-/           - @students.each do |student|
-            
-/             - profile = Linkedin::Profile.get_profile(student.linkedin)
-            
-/             %div.float-right
-/               %div.float-right
-/                 - if (profile)
-/                   %div.linkedin-img{:style => "margin-right: 15px"}
-/                     %img.shadow{:src => profile.picture}
-/               %div
-/                 %p
-/                   = link_to "#{student.first_name} #{student.last_name}", student
-/         - else
-/           Where did all our students go? Check your database!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

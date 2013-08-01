@@ -1,7 +1,7 @@
 - profile = Linkedin::Profile.get_profile(@student.linkedin)
 
 .container.container-1
-  .row-fluid
+  .div.row-fluid
     .span12
       .div-2
         .well.div-1.div-3
@@ -18,7 +18,7 @@
               = profile.current_companies[0][:current_title]
             %p &nbsp;
             %div.btns
-              %a.btn.btn-primary.pull-left{:href =>"#"}Add me to your network
+              %a.btn.btn-custom.pull-left{:href =>"#"}Add me to your network
             %h1.heading
           %p.p-1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis quam at justo condimentum condimentum. Fusce arcu felis, fringilla nec varius a, rhoncus a libero. Donec ut ligula vitae leo pellentesque varius.
           %table.table
@@ -61,8 +61,6 @@
             -if (@student.twitter_handle)
               %a{:href=> "http://www.twitter.com/#{@student.twitter_handle}"}
                 .icon.icon-twitter-sign
-
-
 / .container#maincontainer
 /   .content#maincontent
 /     .row#mainrow
