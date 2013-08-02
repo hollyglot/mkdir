@@ -38,8 +38,9 @@ class StudentsController < ApplicationController
     # params[:per_page] ||= 10
     # params[:page]     ||= 1
 
-    @search = Student.search_location(params[:search_location])
-    @students = @search.results
+    s = Student.search_attributes(params[:user_attribute])
+    @students = s.near(params[:search_location], params[:radius], :order => :distance)
+    @profiles = grab_all_linkedin_info(@students)
     
     render 'index'
   end

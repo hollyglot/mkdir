@@ -1,11 +1,12 @@
 class Student < ActiveRecord::Base
   validates :first_name, :last_name, :cohort, :city, :state_province, :user_id, presence: true
   belongs_to :user
-  attr_accessible :first_name, :last_name, :full_name, :cohort, :phone_number, :address, :address_1, :address_2, :city, :state_province, :postal_code, :country, :latitude, :longitude, :blog, :personal_website, :twitter_handle, :linkedin, :github, :job_status, :entrepreneur, :mentor, :user_id
+  attr_accessible :first_name, :last_name, :full_name, :cohort, :phone_number, :address, :address_1, :address_2, :city, :state_province, :postal_code, :country, :latitude, :longitude, :blog, :personal_website, :twitter_handle, :linkedin, :github, :job_status, :entrepreneur, :mentor, :user_attributes, :user_id
 
   geocoded_by :address
   after_validation :populate_full_name
   after_validation :merge_address
+  after_validation :populate_attributes
   after_validation :geocode, :if => :address_changed?
 
   private
@@ -18,15 +19,19 @@ class Student < ActiveRecord::Base
     self.full_name = "#{self.first_name} #{self.last_name}"
   end
 
-  def self.search_location(query)
-    # put in method to find profiles by distance
-    query.nearbys()
-    # call method to drop pins on map
+  def populate_attributes
+    self.user_attributes = "#{self.mentor} #{self.user.profile}"
   end
 
   def self.search_name(query)
     # method that finds profiles by name
     where('full_name LIKE ?', "%#{query.gsub(/ /, '%')}%")
+    # call method to drop pins on map
+  end
+
+  def self.search_attributes(query)
+    # method that finds profiles by name
+    where('user_attributes LIKE ?', "%#{query.gsub(/ /, '%')}%")
     # call method to drop pins on map
   end
 
