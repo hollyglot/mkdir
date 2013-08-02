@@ -27,7 +27,7 @@ RailsAdmin.config do |config|
   # config.default_items_per_page = 20
 
   # Exclude specific models (keep the others):
-  # config.excluded_models = ['Student', 'User']
+  config.excluded_models = ['Admin']
 
   # Include specific models (exclude the others):
   # config.included_models = ['Student', 'User']
@@ -56,11 +56,12 @@ RailsAdmin.config do |config|
 
   config.model Student do
     edit do
+      field :user
       field :first_name
       field :last_name
-      field :full_name do
-        read_only true
-      end
+      # field :full_name do
+      #   read_only true
+      # end
       field :cohort
       field :address_1
       field :address_2
@@ -70,8 +71,16 @@ RailsAdmin.config do |config|
       end
       field :postal_code
       field :country
+      # field :address do
+      #   read_only true
+      # end
+      # field :latitude do
+      #   read_only true
+      # end
+      # field :longitude do
+      #   read_only true
+      # end
       field :phone_number
-      field :user
       field :linkedin
       field :github
       field :twitter_handle
@@ -152,6 +161,9 @@ RailsAdmin.config do |config|
 
   config.model User do
     edit do
+      field :profile do
+        partial "profile_selector"
+      end
       field :name
       field :email
       field :password

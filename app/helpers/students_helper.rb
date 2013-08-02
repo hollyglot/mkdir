@@ -29,5 +29,4 @@ module StudentsHelper
     return profiles
   end
 
-
 end

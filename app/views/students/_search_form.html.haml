@@ -5,12 +5,12 @@
     .content
       = form_tag '/search_location', style: 'height: 25px', :method => :get do
         %div{:style => "margin:0; padding:0; display:inline"}
-          %select{:style => "width: 150px; margin-top: 6px"}
-            %option{:value=>"Alumni"}Alumni
-            %option{:value=>"Mentors"}Mentors
-            %option{:value=>"Hiring Partners"}Hiring Partners 
+          %select{:name => 'user_attribute', :style => "width: 150px; margin-top: 6px"}
+            %option{:value=>"student"}Alumni
+            %option{:value=>"mentor"}Mentors
+            %option{:value=>"hiring"}Hiring Partners 
           %strong within
-          %select{:style => "width: 50px; margin-top: 6px"}
+          %select{:name => 'radius', :style => "width: 50px; margin-top: 6px"}
             %option{:value=>"10"}10
             %option{:value=>"50"}50
             %option{:value=>"100"}100
@@ -18,7 +18,7 @@
             %option{:value=>"500"}500
             %option{:value=>"1000"}1000  
           %strong miles of
-          = text_field_tag :search_location, params[:search_location], style: 'margin-top: 6px', placeholder: 'Austin, Texas 78701'
+          = text_field_tag :search_location, "", style: 'margin-top: 6px', placeholder: 'Austin, Texas 78701'
           = submit_tag "Search"
   %div.tab
     %input#tab-2{:name => "", :name => "tab-group-1", :type => "radio"}/
@@ -26,5 +26,5 @@
     .content
       = form_tag '/search_name', style: 'height: 25px', :method => :get do
         %div{:style => "margin:0; padding:0; display:inline"}
-          = text_field_tag :search_name, params[:search_name], style: 'margin-top: 6px', placeholder: 'Enter name'
+          = text_field_tag :search_name, "", style: 'margin-top: 6px', placeholder: 'Enter name'
           = submit_tag "Search"
