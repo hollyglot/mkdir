@@ -18,7 +18,7 @@
             %option{:value=>"500"}500
             %option{:value=>"1000"}1000  
           %strong miles of
-          = text_field_tag :search_location, params[:search_location], style: 'margin-top: 6px', placeholder: 'Austin, Texas 78701'
+          = text_field_tag :search_location, style: 'margin-top: 6px', placeholder: 'Austin, Texas 78701'
           = submit_tag "Search"
   %div.tab
     %input#tab-2{:name => "", :name => "tab-group-1", :type => "radio"}/
@@ -26,5 +26,5 @@
     .content
       = form_tag '/search_name', style: 'height: 25px', :method => :get do
         %div{:style => "margin:0; padding:0; display:inline"}
-          = text_field_tag :search_name, params[:search_name], style: 'margin-top: 6px', placeholder: 'Enter name'
+          = text_field_tag :search_name, style: 'margin-top: 6px', placeholder: 'Enter name'
           = submit_tag "Search"

@@ -9,8 +9,8 @@ class Ability
         can :manage, :all
         can :access, :rails_admin  
         can :dashboard 
-      elsif user.student?
-        can :manage, Student
+      else
+        can :manage, :all
       end
 
     # The first argument to `can` is the action you are giving the user 

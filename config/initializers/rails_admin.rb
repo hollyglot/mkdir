@@ -56,11 +56,12 @@ RailsAdmin.config do |config|
 
   config.model Student do
     edit do
+      field :user
       field :first_name
       field :last_name
-      field :full_name do
-        read_only true
-      end
+      # field :full_name do
+      #   read_only true
+      # end
       field :cohort
       field :address_1
       field :address_2
@@ -70,8 +71,16 @@ RailsAdmin.config do |config|
       end
       field :postal_code
       field :country
+      # field :address do
+      #   read_only true
+      # end
+      # field :latitude do
+      #   read_only true
+      # end
+      # field :longitude do
+      #   read_only true
+      # end
       field :phone_number
-      field :user
       field :linkedin
       field :github
       field :twitter_handle

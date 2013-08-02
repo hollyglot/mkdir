@@ -9,19 +9,15 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :role, :password, :password_confirmation, :remember_me
   
-  ROLES = %w[admin student hiring]
+  ROLES = %w[member]
   ADMIN_ROLES = %w[admin]
 
   def admin?
     ADMIN_ROLES.include? role
   end
 
-  def student?
-    role == 'student'
-  end
-
-  def hiring?
-    role == 'hiring'
+  def member?
+    ROLES.include? role
   end
 
 end
