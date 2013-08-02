@@ -11,15 +11,16 @@
         = csrf_meta_tags
         = yield(:head)
         = yield(:stylesheets)
-  %body{:class => "#{controller_name} #{action_name}"}
+  %body
     #nav.navbar.navbar-fixed-top
       %nav.navbar-inner
         .responsive-container
           = render 'layouts/navigation'
-    #main{:role => "main"}
-      = render 'layouts/messages'
-      = yield
-      %footer
+    #wrap
+      #main{:role => "main"}
+        = render 'layouts/messages'
+        = yield
+      #footer
         %div.container-fluid.container-fluid-3
           %div.container
             %div.row-fluid
@@ -33,5 +34,3 @@
                     %a{:href =>"#"} Privacy
                   %li
                     %a{:href =>"#"} Terms Of Service
-      / ! end of .container
-    / ! end of #main

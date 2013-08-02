@@ -1,0 +1,30 @@
+%div.tabs
+  %div.tab
+    %input#tab-1{:checked => "", :name => "tab-group-1", :type => "radio"}/
+    %label{:for => "tab-1"} Search by location
+    .content
+      = form_tag '/search_location', style: 'height: 25px', :method => :get do
+        %div{:style => "margin:0; padding:0; display:inline"}
+          %select{:style => "width: 150px; margin-top: 6px"}
+            %option{:value=>"Alumni"}Alumni
+            %option{:value=>"Mentors"}Mentors
+            %option{:value=>"Hiring Partners"}Hiring Partners 
+          %strong within
+          %select{:style => "width: 50px; margin-top: 6px"}
+            %option{:value=>"10"}10
+            %option{:value=>"50"}50
+            %option{:value=>"100"}100
+            %option{:value=>"250"}250
+            %option{:value=>"500"}500
+            %option{:value=>"1000"}1000  
+          %strong miles of
+          = text_field_tag :search_location, params[:search_location], style: 'margin-top: 6px', placeholder: 'Austin, Texas 78701'
+          = submit_tag "Search"
+  %div.tab
+    %input#tab-2{:name => "", :name => "tab-group-1", :type => "radio"}/
+    %label{:for => "tab-2"} Search by name
+    .content
+      = form_tag '/search_name', style: 'height: 25px', :method => :get do
+        %div{:style => "margin:0; padding:0; display:inline"}
+          = text_field_tag :search_name, params[:search_name], style: 'margin-top: 6px', placeholder: 'Enter name'
+          = submit_tag "Search"

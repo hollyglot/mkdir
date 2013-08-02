@@ -1,5 +1,3 @@
-- profile = Linkedin::Profile.get_profile(@student.linkedin)
-
 .container.container-1
   .div.row-fluid
     .span12
@@ -7,15 +5,15 @@
         .well.div-1.div-3
           %h1.heading Alumni Profile
         .well.div-1.div-4
-          - if (profile)
-            %img.pull-left.image{:src => profile.picture}
+          - if @profile
+            %img.pull-left.image{:src => @profile.picture}
           .badge.badge-info.pull-right 1st
           .hero-unit
             %h2.heading.heading-1
-              = @student.first_name 
-              = @student.last_name
-            %p
-              = profile.current_companies[0][:current_title]
+              = @student.full_name
+            - if @profile  
+              %p
+                = @profile.current_companies[0][:current_title]
             %p &nbsp;
             %div.btns
               %a.btn.btn-custom.pull-left{:href =>"#"}Add me to your network
@@ -37,28 +35,28 @@
                 %td
                   %strong Mobile
                 %td
-                  - if (@student.phone_number) 
+                  - unless @student.phone_number.nil? 
                     = number_to_phone(@student.phone_number, area_code: true) 
               %tr
                 %td
                   %strong City
                 %td 
-                  - if (@student.city)  
+                  - unless @student.city.empty? 
                     = @student.city + ","
           
-                  - if (@student.state_province)
+                  - unless @student.state_province.empty? 
                     = @student.state_province       
           .well.no-hover
-            -if (@student.blog)
+            - unless @student.blog.empty? 
               %a{:href => @student.blog}
                 .icon.icon-rss
-            -if (@student.github)
+            - unless @student.github.empty? 
               %a{:href => @student.github}
                 .icon.icon-github
-            -if (@student.linkedin)
+            - unless @student.linkedin.empty?
               %a{:href => @student.linkedin}
                 .icon.icon-linkedin-sign
-            -if (@student.twitter_handle)
+            - unless @student.twitter_handle.empty?
               %a{:href=> "http://www.twitter.com/#{@student.twitter_handle}"}
                 .icon.icon-twitter-sign
 / .container#maincontainer

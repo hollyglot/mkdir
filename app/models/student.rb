@@ -7,8 +7,6 @@ class Student < ActiveRecord::Base
 
   before_save :populate_full_name
 
-  before_index :grab_linkedin_info
-
   private
   
   def addressMerge
@@ -19,26 +17,19 @@ class Student < ActiveRecord::Base
     self.full_name = "#{self.first_name} #{self.last_name}"
   end
 
+  def geolocator
+    # create a method that populates pins on map
+  end
+
   def self.search_location(query)
     # put in method to find profiles by distance
-    geolocator
+    # geolocator
   end
 
   def self.search_name(query)
     # method that finds profiles by name
     where('full_name LIKE ?', "%#{query.gsub(/ /, '%')}%")
-    geolocator
-  end
-
-  def geolocator
-    # create a method that populates pins on map
-  end
-
-  def grab_linkedin_info 
-
-    self.each do |student|
-      profile = Linkedin::Profile.get_profile(student.linkedin)
-    end
+    # geolocator
   end
 
 

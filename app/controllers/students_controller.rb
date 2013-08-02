@@ -1,4 +1,7 @@
 class StudentsController < ApplicationController
+
+  include StudentsHelper
+
   before_filter :authenticate_user!
   load_and_authorize_resource
 
@@ -18,13 +21,24 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
+    @profiles = grab_all_linkedin_info(@students)
   end
 
-  def search
+  def search_name
     # params[:per_page] ||= 10
     # params[:page]     ||= 1
 
-    @search = Student.search(params[:search])
+    @students = Student.search_name(params[:search_name])
+    @profiles = grab_all_linkedin_info(@students)
+
+    render 'index'
+  end
+
+  def search_location
+    # params[:per_page] ||= 10
+    # params[:page]     ||= 1
+
+    @search = Student.search_location(params[:search_location])
     @students = @search.results
     
     render 'index'
@@ -34,6 +48,7 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
     @student = Student.find(params[:id])
+    @profile = grab_linkedin_info(@student)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @student }
