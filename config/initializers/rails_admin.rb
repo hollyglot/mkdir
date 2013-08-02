@@ -27,7 +27,7 @@ RailsAdmin.config do |config|
   # config.default_items_per_page = 20
 
   # Exclude specific models (keep the others):
-  # config.excluded_models = ['Student', 'User']
+  config.excluded_models = ['Admin']
 
   # Include specific models (exclude the others):
   # config.included_models = ['Student', 'User']
@@ -161,6 +161,9 @@ RailsAdmin.config do |config|
 
   config.model User do
     edit do
+      field :profile do
+        partial "profile_selector"
+      end
       field :name
       field :email
       field :password
