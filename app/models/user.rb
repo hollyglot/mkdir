@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :profile, :role, :password, :password_confirmation, :remember_me
+
+  has_one :student
   
   ROLES = %w[member]
   ADMIN_ROLES = %w[admin]
