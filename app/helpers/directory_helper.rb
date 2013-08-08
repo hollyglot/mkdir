@@ -1,4 +1,4 @@
-module StudentsHelper
+module DirectoryHelper
   def google_maps_api_key
     "AIzaSyByTyVeMDxZZLkowFTXjVOO7cf8JRtHJdQ"
   end
