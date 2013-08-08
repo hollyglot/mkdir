@@ -3,12 +3,13 @@ Mksdir::Application.routes.draw do
   mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
 
   resources :students
+  resources :pages
 
 
   authenticated :user do
-    root :to => 'students#index'
+    root :to => 'directory#index'
   end
-  root :to => "directory#index"
+  root :to => "pages#index"
   match 'search_location' => "students#search_location"
   match 'search_name' => "students#search_name"
 
