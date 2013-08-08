@@ -1,5 +1,9 @@
 class DirectoryController < ApplicationController
-  skip_authorization_check
+
+  before_filter :authenticate_user!
+  load_and_authorize_resource
+  
+  include DirectoryHelper
 
   def index
     @students = Student.all
