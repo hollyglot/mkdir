@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// IDs
+/* -----------------------------------  IDs ----------------------------------- */
+
 #banner{
   position: relative;
   margin: 0px;
@@ -40,7 +41,7 @@
   height: auto !important;
 }
 
-// Classes
+/* Classes */
 
 .breadcrumb { 
   list-style: none;
@@ -145,12 +146,6 @@
   margin-right: 0px;
 }
 
-
-
-
-
-
-
 .corner-padded {
   padding-top: 60px;
   padding-left: 60px;
@@ -183,7 +178,7 @@
 .display_table tr{
 }
 
-.display_table tbody tr:hover {
+.display_table tr:hover {
   background-color: #dbe3eb;
 }
 
@@ -193,7 +188,7 @@
   height: 60px;
 }
 
-.navbar .navbar-fixed-top{
+.navbar-fixed-top{
   margin-bottom: 0px;
 }
 
@@ -231,7 +226,7 @@
   border-bottom: 1px solid #f0f0f0;
   border-left: none;
 }
-.span3 .well .nav li a {
+.span3 .well a {
   color: #ffffff;
   text-shadow: 0 0px 0; 
   padding: 8px 15px 8px 15px;
@@ -240,7 +235,7 @@
   border-bottom: 1px solid #ebebeb;
   background: hsla(210, 29%, 49%, 1);
 }
-.span3 .well .nav a:hover {
+.span3 .well a:hover {
   background: hsla(210, 29%, 29%, 1);
 }
 
@@ -310,62 +305,10 @@ form.students {
 
 
 
-// Profile View (show.html.haml)
-.row-fluid .span12 .pull-left p {
-  font-weight: 300;
-  color: #ffffff;
-  line-height: 36px;
-}
-.row-fluid .span12 .nav {
-  margin: 0px;
-  text-align: center;
-  color: #cccccc;
-}
+ /* ----------------------------------- PROFILE VIEW ----------------------------------- */
 
-.row-fluid .span12 div.div-1 {
-   border-radius: 0px;
-   border: none;
-   width: 642.0265159606934px;
-}
-
-.row-fluid .span12 div.div-2 {
-   margin: 20px;
-}
-.row-fluid .span12 .div-2 .page-header {
-   padding: 0px;
-   margin-bottom: 10px;
-   background: #000000;
- }
-.row-fluid .span12 .div-2 .page-header h1 {
-   font-weight: normal;
-   font-size: 42px;
-   color: #555555;
-}
-.row-fluid .span12 .div-2 .well.div-1.div-3 {
-   background: rgba(0, 0, 0, 0.941176);
-   border-top-right-radius: 10px;
-   border-top-left-radius: 10px;
-   margin: 0px;
-}
-.row-fluid .span12 .div-2 .well.div-1.div-3 .heading {
-   font-family:"raleway";
-   color: #ffffff;
-}
-.row-fluid .span12 .div-2 .well.div-1.div-4 {
-   background: #34495e;
-   height: 505px;
-   border-bottom-right-radius: 10px; 
-   border-bottom-left-radius: 10px;
-}
-.row-fluid .span12 .div-2 .well.div-1.div-4 .image {
-   border-radius: 2px;
-   margin: 20px;
-   -moz-box-shadow: none;
-   -webkit-box-shadow: none;
-   -o-box-shadow: none;
-   box-shadow: none;
-}
-.row-fluid .span12 .div-2 .well.div-1.div-4 .badge-info {
+.badge-info {
+   margin: 20px 20px 0px 0px;
    padding: 5px 9px 5px 9px;
    font-size: 14px;
    text-align: center;
@@ -373,43 +316,107 @@ form.students {
    border-radius: 20px;
    margin: 20px 20px 0px 0px;
 }
-.row-fluid .span12 .div-2 .well.div-1.div-4 .hero-unit {
-   height: 30px;
-   width: 521px;
+.badge-info.skills {
+   margin: 5px 5px 5px 0px;
+   font-size: 12px;
+   line-height: 10px;
+   border-radius: 10px;
 }
-.row-fluid .span12 .div-2 .well.div-1.div-4 .hero-unit .heading.heading-1 {
+.heading {
+   font-family:"raleway";
+   color: #ffffff;
+}
+.heading-1 {
    font-size: 30px;
    color: #34495e;
    margin-top: -40px;
 }
-.row-fluid .span12 .div-2 .well.div-1.div-4 .hero-unit p {
+.page-header {
+   padding: 0px;
+   margin-bottom: 10px;
+   background: #000000;
+ }
+.page-header h1 {
+   font-weight: normal;
+   font-size: 42px;
+   color: #555555;
+}
+
+.span12 .pull-left p {
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 36px;
+}
+.span12 .nav {
+  margin: 0px;
+  text-align: center;
+  color: #cccccc;
+}
+
+.span12 .div-1 {
+   border-radius: 0px;
+   border: none;
+   width: 642.0265159606934px;
+}
+
+.span12 .div-2 {
+   margin: 20px;
+}
+
+.span12 .div-3 {
+   background: rgba(0, 0, 0, 0.941176);
+   border-top-right-radius: 10px;
+   border-top-left-radius: 10px;
+   margin: 0px;
+}
+
+.span12 .div-4 {
+   background: #34495e;
+   border-bottom-right-radius: 10px; 
+   border-bottom-left-radius: 10px;
+}
+.span12 .div-4 .image {
+   border-radius: 2px;
+   margin: 20px;
+   -moz-box-shadow: none;
+   -webkit-box-shadow: none;
+   -o-box-shadow: none;
+   box-shadow: none;
+}
+
+.span12 .hero-unit {
+   height: 30px;
+   width: 521px;
+}
+.span12 .hero-unit p {
    font-size: 15px;
    line-height: 21px;
    font-weight: normal;
    margin: -7px;
 }
-.row-fluid .span12 .div-2 .well.div-1.div-4 .hero-unit .btns a {
+.span12 .hero-unit .btns a {
    color: #ffffff;
 }
-.row-fluid .span12 .div-2 .well.div-1.div-4 p.p-1 {
-   font-weight: 300;
-   font-size: 16px;
-   color: #ffffff;
-   line-height: 25px;
-}
-.row-fluid .span12 .div-2 .well.div-1.div-4 .table tbody tr td {
-   color: #ffffff;
-}
-.row-fluid .span12 .div-2 .well.div-1.div-4 .table tbody tr td a {
-   color: #ffffff;
-}
-.row-fluid .span12 .div-2 .well.div-1.div-4 .well .icon {
+.span12 .icon {
    font-size: 30px;
    color: #34495e;
    height: 30px;
    width: 30px;
 }
+.span12 .p-1 {
+   font-weight: 300;
+   font-size: 16px;
+   color: #ffffff;
+   line-height: 25px;
+}
+.span12 .table {
+   color: #ffffff;
+}
+.span12 .table a {
+   color: #ffffff;
+}
 
-// End Profile View
+
+/* ----------------------------------- END PROFILE VIEW ----------------------------------- */
 
 

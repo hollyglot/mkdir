@@ -2,141 +2,143 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ----------------------- IDs -----------------------*/
+#absolute-wrapper {
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
+  height: 1px;
+}
+
+#absolute-wrapper p, #absolute-wrapper h1, #absolute-wrapper h2, #absolute-wrapper h3, #absolute-wrapper h4, #absolute-wrapper h5, #absolute-wrapper h6 {
+  margin-top: 0 !important;
+}
 
 
-
-
- body {
-
-   padding-left: 0;
-   padding-right: 0;
- }
- #page-wrapper {
-   position: relative;
-   width: 1280px;
-   /* centers the document */
-   margin: 0 auto;
-   /*
-  hides anything drawn off canvas.
-  remove overflow and height to see things drawn off canvas.
-  */
-   overflow: hidden;
-   height: 540px;
- }
- /* This makes absolutely positioned elements like p, h1,
-     and some bootstrap elements placed properly. */
- #absolute-wrapper p, #absolute-wrapper h1, #absolute-wrapper h2, #absolute-wrapper h3, #absolute-wrapper h4, #absolute-wrapper h5, #absolute-wrapper h6 {
-   margin-top: 0 !important;
- }
- /* Set floating dom-heading margins to 0 */
+#page-wrapper {
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 540px;
+}
+/* ----------------------- CLASSES -----------------------*/
  [class*="dom-heading"] {
    margin: 0;
  }
- #absolute-wrapper {
-   position: relative;
-   width: 1280px;
-   margin: 0 auto;
-   height: 1px;
- }
- #absolute-wrapper .rectangle.rectangle-1 {
-   background: #eceded;
- }
- #absolute-wrapper .rectangle {
-   -moz-box-shadow: none;
-   -webkit-box-shadow: none;
-   -o-box-shadow: none;
-   box-shadow: none;
-   position: absolute;
- }
- #absolute-wrapper .rectangle.rectangle-2 {
-   border-radius: 0px;
- }
- #absolute-wrapper .rectangle.rectangle-3 {
-   border: none;
- }
- #absolute-wrapper .rectangle.rectangle-4 {
-   width: 1280px;
-   height: 20px;
-   left: 0px;
- }
- #absolute-wrapper .rectangle.rectangle-5 {
-   background: #ffffff;
- }
- #absolute-wrapper .rectangle.rectangle-6 {
-   width: 305px;
-   height: 50px;
- }
- #absolute-wrapper .rectangle.rectangle-7 {
-   top: 10px;
- }
- #absolute-wrapper .rectangle.rectangle-8 {
-   left: 797px;
- }
- #absolute-wrapper .rectangle.rectangle-9 {
-   width: 295px;
-   height: 260px;
- }
- #absolute-wrapper .rectangle.rectangle-10 {
-   top: 40px;
- }
- #absolute-wrapper .rectangle.rectangle-11 {
-   background: #7492af;
-   width: 65px;
-   height: 65px;
- }
- #absolute-wrapper .rectangle.rectangle-12 {
-   border-radius: 50px;
- }
- #absolute-wrapper .rectangle.rectangle-13 {
-   background: #8499af;
- }
- #absolute-wrapper .rectangle.rectangle-14 {
-   left: 650px;
- }
- #absolute-wrapper .rectangle.rectangle-15 {
-   border: 7px solid #7492af;
-   width: 52.878787994384766px;
-   top: 170px;
- }
- #absolute-wrapper .rectangle.rectangle-16 {
-   width: 610px;
- }
- #absolute-wrapper .rectangle.rectangle-17 {
-   left: 20px;
- }
- #absolute-wrapper .rectangle.rectangle-18 {
-   border-top: none;
-   border-right: none;
-   border-bottom: none;
-   border-left: 20px solid #ffffff;
- }
- #absolute-wrapper .rectangle.rectangle-19 {
-   width: 100.30303192138672px;
- }
- #absolute-wrapper .rectangle.rectangle-20 {
-   height: 100px;
- }
- #absolute-wrapper .rectangle.rectangle-21 {
-   width: 440px;
-   left: 140px;
- }
- #absolute-wrapper .rectangle.rectangle-22 {
-   width: 80px;
-   height: 80px;
-   left: 10px;
- }
- #absolute-wrapper .rectangle.rectangle-23 {
-   top: 160px;
- }
- #absolute-wrapper .rectangle.rectangle-24 {
-   top: 280px;
- }
- #absolute-wrapper .rectangle.rectangle-25 {
-   background: #11273d;
- }
- #absolute-wrapper .rectangle.rectangle-26 {
-   top: 0px;
- }
+
+.rectangle {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+  position: absolute;
+}
+
+.rectangle-1 {
+  background: #eceded;
+}
+
+.rectangle-2 { 
+  border-radius: 0px;
+}
+
+.rectangle-3 {
+  border: none;
+}
+
+.rectangle-4 {
+  width: 1280px;
+  height: 20px;
+  left: 0px;
+}
+
+.rectangle-5 {
+  background: #ffffff;
+}
+
+.rectangle-6 {
+  width: 305px;
+  height: 50px;
+}
+
+#absolute-wrapper .rectangle.rectangle-7 {
+  top: 10px;
+}
+
+#absolute-wrapper .rectangle.rectangle-8 {
+  left: 797px;
+}
+#absolute-wrapper .rectangle.rectangle-9 {
+  width: 295px;
+  height: 260px;
+}
+#absolute-wrapper .rectangle.rectangle-10 {
+  top: 40px;
+}
+#absolute-wrapper .rectangle.rectangle-11 {
+  background: #7492af;
+  width: 65px;
+  height: 65px;
+}
+#absolute-wrapper .rectangle.rectangle-12 {
+  border-radius: 50px;
+}
+#absolute-wrapper .rectangle.rectangle-13 {
+  background: #8499af;
+}
+#absolute-wrapper .rectangle.rectangle-14 {
+  left: 650px;
+}
+#absolute-wrapper .rectangle.rectangle-15 {
+  border: 7px solid #7492af;
+  width: 52.878787994384766px;
+  top: 170px;
+}
+#absolute-wrapper .rectangle.rectangle-16 {
+  width: 610px;
+}
+#absolute-wrapper .rectangle.rectangle-17 {
+  left: 20px;
+}
+#absolute-wrapper .rectangle.rectangle-18 {
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: 20px solid #ffffff;
+}
+#absolute-wrapper .rectangle.rectangle-19 {
+ width: 100.30303192138672px;
+}
+#absolute-wrapper .rectangle.rectangle-20 {
+ height: 100px;
+}
+#absolute-wrapper .rectangle.rectangle-21 {
+ width: 440px;
+ left: 140px;
+}
+#absolute-wrapper .rectangle.rectangle-22 {
+ width: 80px;
+ height: 80px;
+ left: 10px;
+}
+#absolute-wrapper .rectangle.rectangle-23 {
+ top: 160px;
+}
+#absolute-wrapper .rectangle.rectangle-24 {
+ top: 280px;
+}
+#absolute-wrapper .rectangle.rectangle-25 {
+ background: #11273d;
+}
+#absolute-wrapper .rectangle.rectangle-26 {
+ top: 0px;
+}
  #absolute-wrapper .rectangle.rectangle-2.rectangle-3.rectangle-5.rectangle-6.rectangle-7.rectangle-8 .paragraph {
    width: 305px;
    height: 50px;

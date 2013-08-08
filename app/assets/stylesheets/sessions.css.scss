@@ -3,33 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .container {
- margin-top: 20px;
- margin-bottom: 20px;
-}
-.container .row-fluid .span6 .heading {
- font-size: 20px;
-}
-.container .row-fluid .span6 .table {
- margin: 20px 0px 20px 0px;
-}
-.container .row-fluid .span6 .table tbody tr td .icon.icon-wrench {
- margin: 0px;
- font-size: 60px;
- height: 60px;
- width: 60px;
-}
-.container .row-fluid .span6 .table tbody tr td .icon.icon-book {
- margin: 0px;
- font-size: 60px;
- width: 60px;
- height: 60px;
-}
-.container .row-fluid .span6 .table tbody tr td .icon.icon-group {
- font-size: 60px;
- margin: 0px;
- width: 60px;
- height: 60px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 .hero-unit{
 	width: 220px;
+}
+.icon {
+	margin: 0px;
+	font-size: 60px;
+	height: 60px;
+	width: 60px;
+}
+.span6 .heading {
+	font-size: 20px;
+}
+.span6 .table {
+	margin: 20px 0px 20px 0px;
 }
