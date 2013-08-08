@@ -1,17 +1,17 @@
 Mksdir::Application.routes.draw do
-  devise_for :admins
   mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
 
   resources :students
   resources :pages
+  resources :directory
 
 
   authenticated :user do
     root :to => 'directory#index'
   end
   root :to => "pages#index"
-  match 'search_location' => "students#search_location"
-  match 'search_name' => "students#search_name"
+  match 'search_location' => "directory#search_location"
+  match 'search_name' => "directory#search_name"
 
   devise_for :users, :controllers => { :registrations => "registrations" }
   devise_for :users, :controllers => { :sessions => "sessions" }
