@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
 
-  include StudentsHelper
+  include DirectoryHelper
 
   before_filter :authenticate_user!
   load_and_authorize_resource

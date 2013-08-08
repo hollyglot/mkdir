@@ -3,6 +3,7 @@ Mksdir::Application.routes.draw do
 
   resources :students
   resources :pages
+  resources :directory
 
 
   authenticated :user do
