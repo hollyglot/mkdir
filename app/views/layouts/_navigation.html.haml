@@ -6,15 +6,30 @@
         = link_to 'Admin', rails_admin_path
     - if user_signed_in?
       %li
-        = link_to 'Logout', destroy_user_session_path, :method=>'delete'
-    - if user_signed_in? && (can? :update, @user)
-      %li
-        = link_to 'Edit Account', edit_user_registration_path
-    - if user_signed_in?
-      %li
-        = link_to 'Edit Student Profile', edit_student_path(current_user.student.id)
-    - if user_signed_in?
-      %li
         = link_to 'Directory', root_path
+  %div.pull-right
+    %ul.nav.pull-right
+      - if user_signed_in?
+        %li.dropdown
+          %a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
+            Welcome, User
+            %b.caret
+          %ul.dropdown-menu
+            - if user_signed_in? && (can? :update, @user)
+              %li
+                %i.icon-cog
+                = link_to 'Edit Account', edit_user_registration_path
+            %li.divider
+            %li.dropdown-header User Profiles
+            - if user_signed_in?
+              %li
+                %i.icon-user
+                = link_to 'Edit Student Profile', edit_student_path(current_user.student.id)
+            %li.divider
+            - if user_signed_in?
+              %li
+                %i.icon-power-off
+                = link_to 'Logout', destroy_user_session_path, :method=>'delete'
+    
 
 
