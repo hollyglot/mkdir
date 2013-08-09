@@ -10,8 +10,8 @@
   - if user_signed_in?
     %div.btn-group.pull-right
       = link_to root_path, class: 'btn dropdown-toggle', :'data-toggle' => 'dropdown' do
-        / = image_tag(@profiles[current_user.student.id].picture, class: "user_pic") 
-        / = current_user.student.full_name
+        = image_tag(@profiles[current_user.student.id].picture, class: "user_pic")
+        = current_user.student.full_name
         %span.caret
       %ul.dropdown-menu
         %li
