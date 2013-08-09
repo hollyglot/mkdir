@@ -7,29 +7,24 @@
     - if user_signed_in?
       %li
         = link_to 'Directory', root_path
-  %div.pull-right
-    %ul.nav.pull-right
+  %div.btn-group.pull-right
+    = link_to '#' do 
+      %button.btn.dropdown-toggle
+        = image_tag(@profiles[current_user.student.id].picture, class: "user_pic") 
+        = current_user.student.full_name
+        %span.caret{:'data-toggle'=>'dropdown'} 
+    %ul.dropdown-menu
+      - if user_signed_in? && (can? :update, @user)
+        %li
+          = link_to '<i class="icon-wrench"></i> Account Settings'.html_safe, edit_user_registration_path
+      %li.divider
       - if user_signed_in?
-        %li.dropdown
-          %a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown"}
-            Welcome, User
-            %b.caret
-          %ul.dropdown-menu
-            - if user_signed_in? && (can? :update, @user)
-              %li
-                %i.icon-cog
-                = link_to 'Edit Account', edit_user_registration_path
-            %li.divider
-            %li.dropdown-header User Profiles
-            - if user_signed_in?
-              %li
-                %i.icon-user
-                = link_to 'Edit Student Profile', edit_student_path(current_user.student.id)
-            %li.divider
-            - if user_signed_in?
-              %li
-                %i.icon-power-off
-                = link_to 'Logout', destroy_user_session_path, :method=>'delete'
-    
+        %li
+          = link_to '<i class="icon-user"></i> Edit Profile'.html_safe, edit_student_path(current_user.student.id)
+      %li.divider
+      - if user_signed_in?
+        %li
+          = link_to '<i class="icon-power-off"></i> Logout'.html_safe, destroy_user_session_path, :method=>'delete'
+
 
 

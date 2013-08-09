@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   ADMIN_ROLES = %w[admin]
 
   def admin?
-    ADMIN_ROLES.include? role
+    # ADMIN_ROLES.include? role
   end
 
   def member?
