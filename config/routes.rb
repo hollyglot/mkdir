@@ -1,9 +1,11 @@
 Mksdir::Application.routes.draw do
+
   mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
 
   resources :students
   resources :pages
   resources :directory
+  resources :roles
 
 
   authenticated :user do

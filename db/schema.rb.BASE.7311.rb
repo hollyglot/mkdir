@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130809184106) do
+ActiveRecord::Schema.define(:version => 20130802224722) do
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -25,17 +25,6 @@ ActiveRecord::Schema.define(:version => 20130809184106) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
-
-  create_table "roles", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "name"
-  end
-
-  create_table "roles_users", :id => false, :force => true do |t|
-    t.integer "role_id"
-    t.integer "user_id"
-  end
 
   create_table "students", :force => true do |t|
     t.string   "first_name"
@@ -64,7 +53,6 @@ ActiveRecord::Schema.define(:version => 20130809184106) do
     t.float    "longitude"
     t.float    "latitude"
     t.string   "user_attributes"
-    t.boolean  "gmaps"
   end
 
   add_index "students", ["user_id"], :name => "index_students_on_user_id"
@@ -83,6 +71,8 @@ ActiveRecord::Schema.define(:version => 20130809184106) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
+    t.string   "role"
+    t.string   "profile"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -28,7 +28,7 @@ class Student < ActiveRecord::Base
   end
 
   def populate_attributes
-    self.user_attributes = "#{self.mentor} #{self.user.profile}"
+    self.user_attributes = "#{self.mentor} #{self.entrepreneur}"
   end
 
   def self.search_name(query)
@@ -41,14 +41,6 @@ class Student < ActiveRecord::Base
     # method that finds profiles by name
     where('user_attributes LIKE ?', "%#{query.gsub(/ /, '%')}%")
     # call method to drop pins on map
-  end
-
-  def mentor?
-    self.mentor == 'mentor'
-  end
-
-  def alumnus?
-    self.user.role == 'alumnus'
   end
 
 end
