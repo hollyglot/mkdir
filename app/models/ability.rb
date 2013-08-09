@@ -13,6 +13,18 @@ class Ability
         can :manage, :all
       end
 
+      if user.role? :admin
+        can :manage, :all
+        can :access, :rails_admin  
+        can :dashboard 
+      elsif user.role? :student
+        can :manage, Student
+      elsif user.role? :hiring
+        can :manage, Hiring
+      else 
+        can :read, :all
+      end
+
     # The first argument to `can` is the action you are giving the user 
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
