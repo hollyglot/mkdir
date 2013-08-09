@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130802224722) do
+ActiveRecord::Schema.define(:version => 20130809193915) do
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20130802224722) do
     t.float    "longitude"
     t.float    "latitude"
     t.string   "user_attributes"
+    t.boolean  "gmaps"
   end
 
   add_index "students", ["user_id"], :name => "index_students_on_user_id"

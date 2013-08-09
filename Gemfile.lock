@@ -72,6 +72,7 @@ GEM
     font-awesome-rails (3.2.1.2)
       railties (>= 3.2, < 5.0)
     geocoder (1.1.8)
+    gmaps4rails (1.5.6)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -236,6 +237,7 @@ DEPENDENCIES
   figaro
   font-awesome-rails
   geocoder
+  gmaps4rails
   haml-rails
   html2haml
   hub

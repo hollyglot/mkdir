@@ -6,7 +6,7 @@
       %title= content_for?(:title) ? yield(:title) : "mkdir"
       %meta{:content => content_for?(:description) ? yield(:description) : "mkdir", :name => "description"}
         = stylesheet_link_tag "application", :media => "all"
-        = google_maps_api
+        = stylesheet_link_tag "gmaps4rails"
         = javascript_include_tag "application"
         = csrf_meta_tags
         = yield(:head)
@@ -21,6 +21,7 @@
         = render 'layouts/messages'
         = yield
       #footer
+        = yield(:scripts)
         %div.container-fluid.container-fluid-3
           %div.container
             %div.row-fluid
