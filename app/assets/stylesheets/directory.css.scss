@@ -41,7 +41,7 @@
   height: auto !important;
 }
 
-/* Classes */
+/* ----------------------------------- CLASSES -----------------------------------*/
 
 .breadcrumb { 
   list-style: none;
@@ -175,10 +175,7 @@
 
 }
 
-.display_table tr{
-}
-
-.display_table tr:hover {
+.display_table tbody tr:hover {
   background-color: #dbe3eb;
 }
 
@@ -239,13 +236,16 @@
   background: hsla(210, 29%, 29%, 1);
 }
 
-
 .span9 {
   padding: 0px 0px 0px 20px;
   margin-right: 0px;
 }
-.span9 
-form.students {
+
+.span9 .icon{
+  font-size: 14px;
+}
+
+.span9 form.students {
   height: 25px;
 }
 
