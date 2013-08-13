@@ -17,6 +17,8 @@ gem 'rails_admin'
 gem 'cancan'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'gravatar-ultimate'
+
 
 group :development do
   gem 'better_errors'
