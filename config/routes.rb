@@ -1,4 +1,4 @@
-Mksdir::Application.routes.draw do
+Mkdir::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
 

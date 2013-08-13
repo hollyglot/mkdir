@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Mksdir::Application.load_tasks
+Mkdir::Application.load_tasks
