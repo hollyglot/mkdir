@@ -58,7 +58,9 @@ RailsAdmin.config do |config|
       field :email
       field :password
       field :password_confirmation
-      field :roles
+      field :role do
+        partial "roles_selector"
+      end
     end
   end
 

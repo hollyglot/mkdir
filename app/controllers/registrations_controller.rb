@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
 
- def new
+  def new
     raise CanCan::AccessDenied
   end
 
