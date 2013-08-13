@@ -10,7 +10,7 @@
           .badge.badge-info.pull-right 1st
           .hero-unit
             %h2.heading.heading-1
-              = @student.full_name
+              = @student.user.name
             - if @profile  
               %p
                 = @profile.current_companies[0][:current_title]
