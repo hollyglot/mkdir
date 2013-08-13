@@ -11,3 +11,8 @@ ADMIN_FIRST_NAME: Holly
 ADMIN_LAST_NAME: Gibson
 ADMIN_EMAIL: hollyrgibson@gmail.com
 ADMIN_PASSWORD: password
+
+ADMIN2_FIRST_NAME: Nick 
+ADMIN2_LAST_NAME: Gibson
+ADMIN2_EMAIL: aki.nicholas.gibson@gmail.com
+ADMIN2_PASSWORD: password

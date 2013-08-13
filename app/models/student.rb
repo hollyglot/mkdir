@@ -5,7 +5,7 @@ class Student < ActiveRecord::Base
 
   after_validation :merge_address
   after_validation :populate_attributes
-  after_validation :geocode, :if => :address_changed?
+  before_save :geocode, :if => :address_changed?
   geocoded_by :address
 
   acts_as_gmappable
@@ -17,7 +17,8 @@ class Student < ActiveRecord::Base
   end
 
   def gmaps4rails_address
-    "#{self.address}"
+    # Ideally this should #{self.address}, but the callbacks are causing Student.create not to save because the merge_address method is being called after the acts_as_gmappable.
+    "#{self.address_1} #{self.city} #{self.state_province} #{self.postal_code} #{country}"
   end
 
   def populate_attributes
