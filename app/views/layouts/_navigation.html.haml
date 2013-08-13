@@ -10,15 +10,15 @@
   - if user_signed_in?
     %div.btn-group.pull-right
       = link_to root_path, class: 'btn dropdown-toggle', :'data-toggle' => 'dropdown' do
-        / - unless current_user.student.id
-        / = image_tag(@profiles[current_user.student.id].picture, class: "user_pic")
-        = current_user.name
+        - unless current_user.student.nil?
+          = image_tag(@profiles[current_user.student.id].picture, class: "user_pic")
+        = current_user.full_name
         %span.caret
       %ul.dropdown-menu
         %li
           = link_to '<i class="icon-wrench"></i> Account Settings'.html_safe, edit_user_registration_path
         %li.divider
-        - if !current_user.student.nil?
+        - unless current_user.student.nil?
           %li
             = link_to '<i class="icon-user"></i> Edit Profile'.html_safe, edit_student_path(current_user.student.id)
         %li.divider

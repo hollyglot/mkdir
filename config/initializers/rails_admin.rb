@@ -54,13 +54,12 @@ RailsAdmin.config do |config|
 
   config.model User do
     edit do
-      field :name
+      field :first_name
+      field :last_name
       field :email
       field :password
       field :password_confirmation
-      field :role do
-        partial "roles_selector"
-      end
+      field :roles
     end
   end
 
@@ -70,7 +69,7 @@ RailsAdmin.config do |config|
 
   #   # Found associations:
 
-
+  #     configure :student, :has_one_association
 
   #   # Found columns:
 
@@ -121,11 +120,6 @@ RailsAdmin.config do |config|
   config.model Student do
     edit do
       field :user
-      field :first_name
-      field :last_name
-      # field :full_name do
-      #   read_only true
-      # end
       field :cohort
       field :address_1
       field :address_2
