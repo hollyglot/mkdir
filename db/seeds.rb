@@ -42,4 +42,4 @@ student = Student.find_or_create_by_user_id :user_id => User.find_by_first_name(
 
 student2 = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Nick').id, :cohort => 'Summer 2013', :city => 'Austin', :state_province => 'Texas', :linkedin => 'http://www.linkedin.com/in/nickgibson'
 
-puts 'student: ' << student.user.first_name + ' ' + student2.user.last_name
+puts 'student: ' << student.user.first_name + ', ' + student2.user.first_name
