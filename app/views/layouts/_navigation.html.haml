@@ -11,7 +11,7 @@
     %div.btn-group.pull-right
       = link_to root_path, class: 'btn dropdown-toggle', :'data-toggle' => 'dropdown' do
         - unless current_user.student.nil?
-          = image_tag(@profiles[current_user.student.id].picture, class: "user_pic")
+          = profile_image_for_user(current_user) class: "user_pic")
         = current_user.full_name
         %span.caret
       %ul.dropdown-menu
