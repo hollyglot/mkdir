@@ -11,6 +11,7 @@
 roles = [
   'hiring',
   'student',
+  'mentor',
   'admin',
   'guest'
 ]

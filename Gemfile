@@ -27,6 +27,7 @@ group :development do
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'sqlite3'
+  gem 'awesome_print'
 end
 group :development, :test do
   gem 'rspec-rails'

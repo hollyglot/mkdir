@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
 
   def populate_name
     self.name = "#{self.first_name} #{self.last_name}"
+    if self.student
+      self.student.name = self.name
+    end
   end
 
 end
