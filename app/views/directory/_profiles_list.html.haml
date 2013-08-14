@@ -6,7 +6,9 @@
     - else
       = " person"
   within
-  %strong 2 miles.
+  %strong 
+    = @students.length 
+  %strong miles.
   / params[:radius]
 
 - if @students.length > 0

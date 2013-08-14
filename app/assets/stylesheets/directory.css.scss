@@ -185,6 +185,14 @@
   height: 60px;
 }
 
+.nav-list-header{
+  width: 279px;
+  height: 40px;
+  background-color: #476380;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  margin: 0;
+}
 .navbar-fixed-top{
   margin-bottom: 0px;
 }
@@ -218,9 +226,9 @@
   -webkit-box-shadow: none;
   -o-box-shadow: none;
   box-shadow: none;
-  border-top: 1px solid #f0f0f0;
+  border-top: 0px solid #f0f0f0;
   border-right: none;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 0px solid #f0f0f0;
   border-left: none;
 }
 .span3 .well a {
