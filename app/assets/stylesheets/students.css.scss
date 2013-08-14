@@ -3,7 +3,32 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* ----------------------------------- PROFILE VIEW ----------------------------------- */
+#profile_heading {
+   font-family:"raleway";
+   color: #ffffff;
+}
+#skills{
+   float:right;
+   margin: 20px 20px 0px 0px;
+}
+#well_header{
+   background: rgba(0, 0, 0, 0.941176);
+   border-top-right-radius: 10px;
+   border-top-left-radius: 10px;
+   border-bottom-right-radius: 0px; 
+   border-bottom-left-radius: 0px;
+   margin-bottom: 0px;
+   border:0px;
+}
+#well_backdrop{
+   background: #34495e;
+   border-top-right-radius: 0px;
+   border-top-left-radius: 0px;
+   border-bottom-right-radius: 10px; 
+   border-bottom-left-radius: 10px;
+   border:0px;
 
+}
 .badge-info {
    margin: 20px 20px 0px 0px;
    padding: 5px 9px 5px 9px;
@@ -13,16 +38,19 @@
    border-radius: 20px;
    margin: 20px 20px 0px 0px;
 }
+.badge-info.interests {
+   margin: 0px 5px 0px 0px;
+   font-size: 12px;
+   line-height: 15px;
+   border-radius: 10px;
+}
 .badge-info.skills {
    margin: 5px 5px 5px 0px;
    font-size: 12px;
    line-height: 10px;
    border-radius: 10px;
 }
-.h1 .heading {
-   font-family:"raleway";
-   color: #ffffff;
-}
+
 .heading-1 {
    font-size: 30px;
    color: #34495e;
@@ -38,7 +66,9 @@
    font-size: 42px;
    color: #555555;
 }
-
+.row-fluid .span12{
+   width: 50%;
+}
 .span12 .pull-left p {
   font-weight: 300;
   color: #ffffff;
@@ -84,12 +114,13 @@
 .span12 .hero-unit {
    height: 30px;
    width: 521px;
+   margin-bottom: 20px;
 }
 .span12 .hero-unit p {
-   font-size: 15px;
-   line-height: 21px;
+   font-size: 13px;
+   line-height: 22px;
    font-weight: normal;
-   margin: -7px;
+   margin: -9px 0px 0px 0px;
 }
 .span12 .hero-unit .btns a {
    color: #ffffff;

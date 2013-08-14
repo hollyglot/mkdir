@@ -144,6 +144,9 @@ RailsAdmin.config do |config|
       field :twitter_handle
       field :blog
       field :personal_website
+      field :developer_type do
+        partial "developer_type_selector"
+      end
       field :mentor do
         partial "mentor_selector"
       end

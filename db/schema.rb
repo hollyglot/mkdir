@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20130814003215) do
     t.float    "latitude"
     t.boolean  "gmaps"
     t.string   "name"
+    t.string   "developer_type"
   end
 
   add_index "students", ["user_id"], :name => "index_students_on_user_id"
