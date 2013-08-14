@@ -26,8 +26,7 @@
 #map_canvas{
   width: 720px;
   height: 375px;
-  position: fixed;
-  background-color: black;
+  position: relative;
   overflow: hidden;
 }
 
