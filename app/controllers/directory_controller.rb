@@ -8,9 +8,7 @@ class DirectoryController < ApplicationController
 
   def index
 
-    @students = Student.includes(:user).all
-
-    @hiring = Hiring.all
+    @students = Student.all
     @json = @students.to_gmaps4rails
     @profiles = grab_all_linkedin_info(@students)
     
