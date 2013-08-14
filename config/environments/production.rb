@@ -46,7 +46,7 @@ Mkdir::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( *.js *.scss *.coffee *.css )
+  # config.assets.precompile += %w( *.js *.scss *.coffee *.css )
   config.assets.precompile += ['rails_admin/rails_admin.css', 'rails_admin/rails_admin.js']
 
   # Disable delivery errors, bad email addresses will be ignored

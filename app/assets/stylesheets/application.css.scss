@@ -9,8 +9,15 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  *= require font-awesome
+ *= require bootstrap_and_overrides
+ *= require directory
+ *= require gmaps4rails
+ *= require pages
+ *= require roles
+ *= require scaffolds
+ *= require sessions
+ *= require students
 */
 
 @import "font-awesome";
