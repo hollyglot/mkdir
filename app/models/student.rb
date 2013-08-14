@@ -20,6 +20,7 @@ class Student < ActiveRecord::Base
     self.address = "#{self.address_1} #{self.city} #{self.state_province} #{self.postal_code} #{country}"
   end
 
+
   def gmaps4rails_address
     # Ideally this should #{self.address}, but the callbacks are causing Student.create not to save because the merge_address method is being called after the acts_as_gmappable.
     "#{self.address_1} #{self.city} #{self.state_province} #{self.postal_code} #{country}"

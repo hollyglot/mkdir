@@ -9,9 +9,21 @@ class DirectoryController < ApplicationController
   def index
 
     @students = Student.all
-    @json = @students.to_gmaps4rails
     @profiles = grab_all_linkedin_info(@students)
+    @json = @students.to_gmaps4rails do |student, marker|
+      marker.infowindow "
+      <a href=\"/students/#{student.id}\">
+        <img src=\"#{@profiles[student.id].picture}\" height=\"60\" width=\"60\" align=\"left\" style=\"margin-right:15px\">
+        <h4>
+          #{student.name}
+        </h4>
+      </a>
+      <p style=\"margin-top:-5px\"> #{student.developer_type}
+      </p>"
+    end
     
+
+
   end
 
   def search_name

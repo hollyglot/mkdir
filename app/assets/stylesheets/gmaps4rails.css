@@ -9,6 +9,10 @@
   width: 720px;
 }
 
+.map_containter img { 
+  max-width: none; 
+}
+
 .gmaps4rails_map {
   width: 720px;
   height: 375px;
