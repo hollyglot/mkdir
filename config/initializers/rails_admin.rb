@@ -139,10 +139,8 @@ RailsAdmin.config do |config|
     edit do
       field :user
       field :cohort
-      field :address_1
-      field :address_2
       field :city
-      field :state_province do
+      field :state do
         label "State/Province/Territory"
       end
       field :postal_code
@@ -156,12 +154,12 @@ RailsAdmin.config do |config|
       # field :longitude do
       #   read_only true
       # end
-      field :phone_number
+      field :phone
       field :linkedin
       field :github
-      field :twitter_handle
+      field :twitter
       field :blog
-      field :personal_website
+      field :website
       field :developer_type do
         partial "developer_type_selector"
       end
@@ -179,21 +177,19 @@ RailsAdmin.config do |config|
     show do
       field :user
       field :cohort
-      field :address_1
-      field :address_2
       field :city
-      field :state_province
+      field :state
       field :postal_code
       field :country
       # field :address
       # field :latitude
       # field :longitude
-      field :phone_number
+      field :phone
       field :linkedin
       field :github
-      field :twitter_handle
+      field :twitter
       field :blog
-      field :personal_website
+      field :website
       field :developer_type
       field :mentor
       field :job_status
@@ -203,21 +199,19 @@ RailsAdmin.config do |config|
     list do
       field :user
       field :cohort
-      field :address_1
-      field :address_2
       field :city
-      field :state_province
+      field :state
       field :postal_code
       field :country
       # field :address
       # field :latitude
       # field :longitude
-      field :phone_number
+      field :phone
       field :linkedin
       field :github
-      field :twitter_handle
+      field :twitter
       field :blog
-      field :personal_website
+      field :website
       field :developer_type
       field :mentor
       field :job_status
@@ -283,5 +277,72 @@ RailsAdmin.config do |config|
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
   # end
 
+  ###  Student  ###
+
+  config.model Mentor do
+    edit do
+      field :user
+      field :city
+      field :state do
+        label "State/Province/Territory"
+      end
+      field :postal_code
+      field :country
+      # field :address do
+      #   read_only true
+      # end
+      # field :latitude do
+      #   read_only true
+      # end
+      # field :longitude do
+      #   read_only true
+      # end
+      field :phone
+      field :linkedin
+      field :github
+      field :twitter
+      field :blog
+      field :website
+      field :developer_type do
+        partial "developer_type_selector"
+      end
+    end
+
+    show do
+      field :user
+      field :city
+      field :state
+      field :postal_code
+      field :country
+      # field :address
+      # field :latitude
+      # field :longitude
+      field :phone
+      field :linkedin
+      field :github
+      field :twitter
+      field :blog
+      field :website
+      field :developer_type
+    end
+
+    list do
+      field :user
+      field :city
+      field :state
+      field :postal_code
+      field :country
+      # field :address
+      # field :latitude
+      # field :longitude
+      field :phone
+      field :linkedin
+      field :github
+      field :twitter
+      field :blog
+      field :website
+      field :developer_type
+    end
+  end
 
 end

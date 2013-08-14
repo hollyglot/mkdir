@@ -1,5 +1,8 @@
 Mkdir::Application.routes.draw do
 
+  resources :mentors
+
+
   mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
 
   resources :students

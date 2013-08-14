@@ -1,0 +1,54 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @mentor.user_id
+%p
+  %b Name:
+  = @mentor.name
+%p
+  %b Phone:
+  = @mentor.phone
+%p
+  %b City:
+  = @mentor.city
+%p
+  %b State:
+  = @mentor.state
+%p
+  %b Postal code:
+  = @mentor.postal_code
+%p
+  %b Country:
+  = @mentor.country
+%p
+  %b Longitude:
+  = @mentor.longitude
+%p
+  %b Latitude:
+  = @mentor.latitude
+%p
+  %b Gmaps:
+  = @mentor.gmaps
+%p
+  %b Linkedin:
+  = @mentor.linkedin
+%p
+  %b Github:
+  = @mentor.github
+%p
+  %b Twitter:
+  = @mentor.twitter
+%p
+  %b Blog:
+  = @mentor.blog
+%p
+  %b Website:
+  = @mentor.website
+%p
+  %b Developer type:
+  = @mentor.developer_type
+
+= link_to 'Edit', edit_mentor_path(@mentor)
+\|
+= link_to 'Back', mentors_path

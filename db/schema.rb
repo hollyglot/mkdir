@@ -11,7 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814003215) do
+ActiveRecord::Schema.define(:version => 20130814200551) do
+
+  create_table "mentors", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.integer  "phone"
+    t.string   "city"
+    t.string   "state"
+    t.string   "postal_code"
+    t.string   "country"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.boolean  "gmaps"
+    t.string   "linkedin"
+    t.string   "github"
+    t.string   "twitter"
+    t.string   "blog"
+    t.string   "website"
+    t.string   "developer_type"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "address"
+  end
+
+  add_index "mentors", ["user_id"], :name => "index_mentors_on_user_id"
 
   create_table "rails_admin_histories", :force => true do |t|
     t.text     "message"
@@ -39,24 +63,22 @@ ActiveRecord::Schema.define(:version => 20130814003215) do
 
   create_table "students", :force => true do |t|
     t.string   "cohort"
-    t.string   "address_1"
-    t.string   "address_2"
     t.string   "city"
-    t.string   "state_province"
+    t.string   "state"
     t.string   "postal_code"
     t.string   "country"
-    t.integer  "phone_number"
+    t.integer  "phone"
     t.integer  "user_id"
     t.string   "linkedin"
     t.string   "github"
-    t.string   "twitter_handle"
+    t.string   "twitter"
     t.string   "blog"
-    t.string   "personal_website"
+    t.string   "website"
     t.string   "mentor"
     t.string   "job_status"
     t.string   "entrepreneur"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.string   "address"
     t.float    "longitude"
     t.float    "latitude"

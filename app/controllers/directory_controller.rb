@@ -9,8 +9,10 @@ class DirectoryController < ApplicationController
   def index
 
     @students = Student.all
-    @json = @students.to_gmaps4rails
-    @profiles = grab_all_linkedin_info(@students)
+    @mentors = Mentor.all
+    @people = @students + @mentors
+    grab_all_linkedin_info(@people)
+    @json = @people.to_gmaps4rails
     
   end
 

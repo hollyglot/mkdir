@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   after_validation :populate_name
   has_and_belongs_to_many :roles
   has_one :student
+  has_one :mentor
 
   def role?(role)
     return !!self.roles.find_by_name(role.to_s)
@@ -20,6 +21,9 @@ class User < ActiveRecord::Base
     self.name = "#{self.first_name} #{self.last_name}"
     if self.student
       self.student.name = self.name
+    end
+    if self.mentor
+      self.mentor.name = self.name
     end
   end
 

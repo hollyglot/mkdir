@@ -13,6 +13,9 @@ class Ability
       elsif user.role? :student
         can :manage, Student
         can :read, :all
+      elsif user.role? :mentor
+        can :manage, Mentor
+        can :read, :all
       elsif user.role? :hiring
         can :manage, Hiring
         can :read, :all

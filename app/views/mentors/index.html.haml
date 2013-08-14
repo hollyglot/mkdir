@@ -1,0 +1,49 @@
+%h1 Listing mentors
+
+%table
+  %tr
+    %th User
+    %th Name
+    %th Phone
+    %th City
+    %th State
+    %th Postal code
+    %th Country
+    %th Longitude
+    %th Latitude
+    %th Gmaps
+    %th Linkedin
+    %th Github
+    %th Twitter
+    %th Blog
+    %th Website
+    %th Developer type
+    %th
+    %th
+    %th
+
+  - @mentors.each do |mentor|
+    %tr
+      %td= mentor.user_id
+      %td= mentor.name
+      %td= mentor.phone
+      %td= mentor.city
+      %td= mentor.state
+      %td= mentor.postal_code
+      %td= mentor.country
+      %td= mentor.longitude
+      %td= mentor.latitude
+      %td= mentor.gmaps
+      %td= mentor.linkedin
+      %td= mentor.github
+      %td= mentor.twitter
+      %td= mentor.blog
+      %td= mentor.website
+      %td= mentor.developer_type
+      %td= link_to 'Show', mentor
+      %td= link_to 'Edit', edit_mentor_path(mentor)
+      %td= link_to 'Destroy', mentor, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Mentor', new_mentor_path

@@ -1,7 +1,7 @@
 .results
   %strong 
-    = @students.length
-    - if @students.length > 1 || @students.length == 0
+    = @people.length
+    - if @people.length > 1 || @people.length == 0
       = " people"
     - else
       = " person"
@@ -9,7 +9,7 @@
   %strong 2 miles.
   / params[:radius]
 
-- if @students.length > 0
+- if @people.length > 0
   %div.display_table
     %table
       %thead
@@ -18,22 +18,19 @@
           %th Name
           %th City
           %th State
-          %th Cohort
-      - @students.each do |student|
+      - @people.each do |person|
         %tbody  
           %tr
             %td#display_table_image
-              - unless student.linkedin.empty?
+              - unless person.linkedin.empty?
                 %div.linkedin-img
-                  = link_to image_tag(@profiles[student.id].picture, class: "shadow"), student
+                  = link_to image_tag(person.linkedin_info.picture, class: "shadow"), person
             %td
-              = link_to student.user.name, student  
+              = link_to person.user.name, person  
             %td
-              = student.city
+              = person.city
             %td
-              = student.state_province
-            %td
-              = student.cohort
+              = person.state
 - else
   %div.display_table
     %table
@@ -42,13 +39,64 @@
           %th{:width => "50px"}
           %th Oh no! We couldn't find anyone who matched your search. Better luck next time.
 
-- if @students.length > 0
+- if @people.length > 0
   .results#bottom
     %strong 
-      = @students.length
-      - if @students.length > 1 || @students.length == 0
+      = @people.length
+      - if @people.length > 1 || @people.length == 0
         = " people"
       - else
         = " person"
     within
     %strong 2 miles.    
+/ .results
+/   %strong 
+/     = @students.length
+/     - if @students.length > 1 || @students.length == 0
+/       = " people"
+/     - else
+/       = " person"
+/   within
+/   %strong 2 miles.
+/   / params[:radius]
+
+/ - if @students.length > 0
+/   %div.display_table
+/     %table
+/       %thead
+/         %tr{:style => "color: #34495e;"}
+/           %th 
+/           %th Name
+/           %th City
+/           %th State
+/       - @students.each do |student|
+/         %tbody  
+/           %tr
+/             %td#display_table_image
+/               - unless student.linkedin.empty?
+/                 %div.linkedin-img
+/                   = link_to image_tag(@profiles[student.id].picture, class: "shadow"), student
+/             %td
+/               = link_to student.user.name, student  
+/             %td
+/               = student.city
+/             %td
+/               = student.state_province
+/ - else
+/   %div.display_table
+/     %table
+/       %thead
+/         %tr{:style => "color: #34495e;"}
+/           %th{:width => "50px"}
+/           %th Oh no! We couldn't find anyone who matched your search. Better luck next time.
+
+/ - if @students.length > 0
+/   .results#bottom
+/     %strong 
+/       = @students.length
+/       - if @students.length > 1 || @students.length == 0
+/         = " people"
+/       - else
+/         = " person"
+/     within
+/     %strong 2 miles.    
