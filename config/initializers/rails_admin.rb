@@ -53,6 +53,7 @@ RailsAdmin.config do |config|
   ###  User  ###
 
   config.model User do
+    configure :student, :has_one_association
     edit do
       field :first_name
       field :last_name
@@ -60,6 +61,23 @@ RailsAdmin.config do |config|
       field :password
       field :password_confirmation
       field :roles
+      field :student
+    end
+    show do
+      field :name
+      field :email
+      field :roles
+      field :student
+      field :current_sign_in_at
+      field :last_sign_in_at
+      field :current_sign_in_ip
+      field :last_sign_in_ip
+    end
+    list do
+      field :name
+      field :email
+      field :roles
+      field :student
     end
   end
 
@@ -156,6 +174,54 @@ RailsAdmin.config do |config|
       field :entrepreneur do
         partial "entrepreneur_selector"
       end
+    end
+
+    show do
+      field :user
+      field :cohort
+      field :address_1
+      field :address_2
+      field :city
+      field :state_province
+      field :postal_code
+      field :country
+      # field :address
+      # field :latitude
+      # field :longitude
+      field :phone_number
+      field :linkedin
+      field :github
+      field :twitter_handle
+      field :blog
+      field :personal_website
+      field :developer_type
+      field :mentor
+      field :job_status
+      field :entrepreneur
+    end
+
+    list do
+      field :user
+      field :cohort
+      field :address_1
+      field :address_2
+      field :city
+      field :state_province
+      field :postal_code
+      field :country
+      # field :address
+      # field :latitude
+      # field :longitude
+      field :phone_number
+      field :linkedin
+      field :github
+      field :twitter_handle
+      field :blog
+      field :personal_website
+      field :developer_type
+      field :mentor
+      field :job_status
+      field :entrepreneur
     end
   end
 
