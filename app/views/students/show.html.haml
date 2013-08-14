@@ -13,13 +13,24 @@
               = @student.user.name
             - if @profile  
               %p
-                = @profile.current_companies[0][:current_title]
+                = @profile.title
             %p &nbsp;
             %div.btns
-              %a.btn.btn-custom.pull-left{:href =>"#"}Add me to your network
+              %a.btn.btn-custom.pull-left{:href => @profile.linkedin_url}View Full Profile
             %h1.heading
-          %p.p-1
-       
+          %span.badge.badge-info.interests
+            = @student.developer_type
+          -unless @student.job_status == 'not seeking'
+            %span.badge.badge-info.interests
+              = @student.job_status
+          -unless @student.mentor == 'not interested'
+            %span.badge.badge-info.interests
+              = @student.mentor
+          -unless @student.entrepreneur == 'not looking'
+            %span.badge.badge-info.interests
+              = @student.entrepreneur
+          %br
+          %br
           %table.table
             %tbody
               %tr
@@ -60,6 +71,44 @@
             - unless @student.twitter_handle.blank?
               %a{:href=> "http://www.twitter.com/#{@student.twitter_handle}"}
                 .icon.icon-twitter-sign
+    .span4#skills
+      .div-2
+        .well#well_header
+          %h1#profile_heading Skills & Expertise
+        .well#well_backdrop
+          %p.p-1
           - @profile.skills.sort().each do |skill|
             %span.badge.badge-info.skills
               = skill
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

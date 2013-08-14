@@ -46,13 +46,16 @@
     = f.label :personal_website
     = f.text_field :personal_website
   .field
-    = f.label :mentor
-    = f.select(:mentor, options_for_select([['I\'m a mentor', 'mentor'], ['I\'m looking for a mentor', 'looking'], ['I have a mentor', 'mentee']], 'looking'))
+    = f.label :developer_type
+    = f.select(:developer_type, options_for_select([['I prefer to work in full stack development', 'Full Stack Developer'], ['I prefer to work in back end development', 'Back End Developer'], ['I prefer to work in front end development', 'Front End Developer']]))
   .field
     = f.label :job_status
-    = f.select(:job_status, options_for_select([['I\'m looking for a job', 'looking'], ['I\'m open to offers', 'offers'], ['I\'m insanely happy with my job', 'insane']], 'looking'))
+    = f.select(:job_status, options_for_select([['I\'m available for hire', 'Available for Hire'], ['Not seeking a job', 'not seeking']]))
+  .field
+    = f.label :mentor
+    = f.select(:mentor, options_for_select([['I\'m available to mentor', 'Available to Mentor'], ['I\'m looking for a mentor', 'Seeking Mentors'], ['Not interested in mentoring', 'not interested']]))
   .field
     = f.label :entrepreneur
-    = f.select(:entrepreneur, options_for_select([['I\'m starting a business', 'startup'], ['I\'m looking for cofounders', 'cofounders'], ['My business is hiring', 'hiring'], ['I still work for the man', 'slave']], 'startup'))
+    = f.select(:entrepreneur, options_for_select([['I\'m seeking cofounders for a startup', 'Seeking CoFounders'], ['My business is currently hiring developers', 'Seeking Developers'], ['Not looking for startup help', 'not looking']]))
   .actions
     = f.submit 'Save'

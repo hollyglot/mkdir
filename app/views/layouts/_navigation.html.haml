@@ -20,7 +20,9 @@
         - unless current_user.student.nil?
           %li.divider
             %li
-              = link_to '<i class="icon-user"></i> Edit Profile'.html_safe, edit_student_path(current_user.student.id)
+              = link_to '<i class="icon-user"></i> View Profile'.html_safe, student_path(current_user.student.id)
+            %li
+              = link_to '<i class="icon-double-angle-right"></i> Edit Profile'.html_safe, edit_student_path(current_user.student.id)
         %li.divider
           %li
             = link_to '<i class="icon-power-off"></i> Logout'.html_safe, destroy_user_session_path, :method=>'delete'
