@@ -61,13 +61,11 @@ RailsAdmin.config do |config|
       field :password
       field :password_confirmation
       field :roles
-      field :student
     end
     show do
       field :name
       field :email
       field :roles
-      field :student
       field :current_sign_in_at
       field :last_sign_in_at
       field :current_sign_in_ip
@@ -77,7 +75,6 @@ RailsAdmin.config do |config|
       field :name
       field :email
       field :roles
-      field :student
     end
   end
 
