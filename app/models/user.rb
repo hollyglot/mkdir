@@ -26,5 +26,5 @@ class User < ActiveRecord::Base
       self.mentor.name = self.name
     end
   end
-
+  
 end

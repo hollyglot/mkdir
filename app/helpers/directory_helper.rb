@@ -14,5 +14,5 @@ module DirectoryHelper
         </p>"
       end
   end
-
+  
 end
