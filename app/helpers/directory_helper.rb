@@ -8,9 +8,11 @@ module DirectoryHelper
 
   def grab_all_linkedin_info(users)
     users.each do |user|
-      if user.linkedin? # && user.linkedin_info.blank?
+      if user.linkedin? 
         user.linkedin_info = grab_linkedin_info(user)
-        # user.save
+        user.pic = user.linkedin_info.picture
+      else
+        user.pic = ""
       end
     end
   end
