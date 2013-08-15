@@ -5,57 +5,56 @@
       %ul
         - @student.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :cohort
-    = f.text_field :cohort
-  .field
-    = f.label :address_1
-    = f.text_field :address_1
-  .field
-    = f.label :address_2
-    = f.text_field :address_2
-  .field
-    = f.label :city
-    = f.text_field :city
-  .field
-    = f.label :state_province
-    = f.text_field :state_province
-  .field
-    = f.label :postal_code
-    = f.text_field :postal_code
-  .field
-    = f.label :country
-    = f.text_field :country
-  .field
-    = f.label :phone_number
-    = f.number_field :phone_number
-  .field
-    = f.label :linkedin
-    = f.text_field :linkedin
-  .field
-    = f.label :github
-    = f.text_field :github
-  .field
-    = f.label :twitter_handle
-    = f.text_field :twitter_handle
-  .field
-    = f.label :blog
-    = f.text_field :blog
-  .field
-    = f.label :personal_website
-    = f.text_field :personal_website
-  .field
-    = f.label :developer_type
-    = f.select(:developer_type, options_for_select([['I prefer to work in full stack development', 'Full Stack Developer'], ['I prefer to work in back end development', 'Back End Developer'], ['I prefer to work in front end development', 'Front End Developer']]))
-  .field
-    = f.label :job_status
-    = f.select(:job_status, options_for_select([['I\'m available for hire', 'Available for Hire'], ['Not seeking a job', 'not seeking']]))
-  .field
-    = f.label :mentor
-    = f.select(:mentor, options_for_select([['I\'m available to mentor', 'Available to Mentor'], ['I\'m looking for a mentor', 'Seeking Mentors'], ['Not interested in mentoring', 'not interested']]))
-  .field
-    = f.label :entrepreneur
-    = f.select(:entrepreneur, options_for_select([['I\'m seeking cofounders for a startup', 'Seeking CoFounders'], ['My business is currently hiring developers', 'Seeking Developers'], ['Not looking for startup help', 'not looking']]))
+  %div.row-fluid
+    %span.span3
+      .field
+        = f.label :cohort
+        = f.text_field :cohort
+      .field
+        = f.label :city
+        = f.text_field :city
+      .field
+        = f.label :state_province
+        = f.text_field :state_province
+      .field
+        = f.label :postal_code
+        = f.text_field :postal_code
+      .field
+        = f.label :country
+        = f.text_field :country
+      .field
+        = f.label :phone_number
+        = f.telephone_field :phone_number
+        = :phone_number 
+    %span.span3
+      .field
+        = f.label :linkedin
+        = f.text_field :linkedin
+      .field
+        = f.label :github
+        = f.text_field :github
+      .field
+        = f.label :twitter_handle
+        = f.text_field :twitter_handle
+      .field
+        = f.label :blog
+        = f.text_field :blog
+      .field
+        = f.label :personal_website
+        = f.text_field :personal_website
+    %span.span3
+      .field
+        = f.label :developer_type
+        = f.select(:developer_type, options_for_select([['I prefer to work in full stack development', 'Full Stack Developer'], ['I prefer to work in back end development', 'Back End Developer'], ['I prefer to work in front end development', 'Front End Developer']]))
+      .field
+        = f.label :job_status
+        = f.select(:job_status, options_for_select([['I\'m available for hire', 'Available for Hire'], ['Not seeking a job', 'not seeking']]))
+      .field
+        = f.label :mentor
+        = f.select(:mentor, options_for_select([['I\'m available to mentor', 'Available to Mentor'], ['I\'m looking for a mentor', 'Seeking Mentors'], ['Not interested in mentoring', 'not interested']]))
+      .field
+        = f.label :entrepreneur
+        = f.select(:entrepreneur, options_for_select([['I\'m seeking cofounders for a startup', 'Seeking CoFounders'], ['My business is currently hiring developers', 'Seeking Developers'], ['Not looking for startup help', 'not looking']]))
+  %br
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save Profile'
