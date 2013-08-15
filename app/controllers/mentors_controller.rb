@@ -5,22 +5,11 @@ class MentorsController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
 
-  # GET /mentors
-  # GET /mentors.json
-  def index
-    @mentors = Mentor.all
-    @profile = grab_linkedin_info(@mentor)
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @mentors }
-    end
-  end
-
   # GET /mentors/1
   # GET /mentors/1.json
   def show
     @mentor = Mentor.find(params[:id])
-
+    @profile = grab_linkedin_info(@mentor)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @mentor }
@@ -84,6 +73,14 @@ class MentorsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to mentors_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def grab_linkedin_info(user) 
+    if user.linkedin?
+      Linkedin::Profile.get_profile(user.linkedin)
     end
   end
 end

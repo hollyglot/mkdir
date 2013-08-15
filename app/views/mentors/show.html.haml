@@ -10,73 +10,61 @@
           .badge.badge-info.pull-right 1st
           .hero-unit
             %h2.heading.heading-1
-              = @student.user.name
+              = @mentor.user.name
             - if @profile  
               %p
                 = @profile.title
             %p &nbsp;
-            %div.btns
-              %a.btn.btn-custom.pull-left{:href => @profile.linkedin_url}View Full Profile
+            - if @profile
+              %div.btns
+                %a.btn.btn-custom.pull-left{:href => @profile.linkedin_url}View Full Profile
             %h1.heading
           %span.badge.badge-info.interests
-            = @student.developer_type
-          -unless @student.job_status == 'not seeking'
-            %span.badge.badge-info.interests
-              = @student.job_status
-          -unless @student.mentor == 'not interested'
-            %span.badge.badge-info.interests
-              = @student.mentor
-          -unless @student.entrepreneur == 'not looking'
-            %span.badge.badge-info.interests
-              = @student.entrepreneur
+            = @mentor.developer_type
           %br
           %br
           %table.table
             %tbody
               %tr
                 %td
-                  %strong Cohort
-                %td 
-                  = @student.cohort
-              %tr
-                %td
                   %strong Email
                 %td
-                  %a{:href=> "mailto:#{@student.user.email}"}= @student.user.email
+                  %a{:href=> "mailto:#{@mentor.user.email}"}= @mentor.user.email
               %tr
                 %td
                   %strong Mobile
                 %td
-                  - unless @student.phone_number.nil? 
-                    = number_to_phone(@student.phone_number, area_code: true) 
+                  - unless @mentor.phone.nil? 
+                    = number_to_phone(@mentor.phone, area_code: true) 
               %tr
                 %td
                   %strong City
                 %td 
-                  - unless @student.city.empty? 
-                    = @student.city + ","
+                  - unless @mentor.city.empty? 
+                    = @mentor.city + ","
           
-                  - unless @student.state_province.empty? 
-                    = @student.state_province       
+                  - unless @mentor.state.empty? 
+                    = @mentor.state       
           .well.no-hover
-            - unless @student.blog.blank? 
-              %a{:href => @student.blog}
+            - unless @mentor.blog.blank? 
+              %a{:href => @mentor.blog}
                 .icon.icon-rss
-            - unless @student.github.blank? 
-              %a{:href => @student.github}
+            - unless @mentor.github.blank? 
+              %a{:href => @mentor.github}
                 .icon.icon-github
-            - unless @student.linkedin.blank?
-              %a{:href => @student.linkedin}
+            - unless @mentor.linkedin.blank?
+              %a{:href => @mentor.linkedin}
                 .icon.icon-linkedin-sign
-            - unless @student.twitter_handle.blank?
-              %a{:href=> "http://www.twitter.com/#{@student.twitter_handle}"}
+            - unless @mentor.twitter.blank?
+              %a{:href=> "http://www.twitter.com/#{@mentor.twitter}"}
                 .icon.icon-twitter-sign
-    .span4#skills
-      .div-2
-        .well#well_header
-          %h1#profile_heading Skills & Expertise
-        .well#well_backdrop
-          %p.p-1
-          - @profile.skills.sort().each do |skill|
-            %span.badge.badge-info.skills
-              = skill
+    - if @profile
+      .span4#skills
+        .div-2
+          .well#well_header
+            %h1#profile_heading Skills & Expertise
+          .well#well_backdrop
+            %p.p-1
+            - @profile.skills.sort().each do |skill|
+              %span.badge.badge-info.skills
+                = skill
