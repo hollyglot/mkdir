@@ -37,10 +37,12 @@ if user2.roles.where(name: 'admin').empty?
   user2.roles << Role.find_by_name('student')
 end
 
-puts 'users: ' << user.first_name + ' ' + user.last_name + ', ' + user2.first_name + ' ' + user2.last_name
+puts 'users: ' 
+puts user.first_name + ' ' + user.last_name + ', ' + user2.first_name + ' ' + user2.last_name
 
 student = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Holly').id, :cohort => 'Summer 2013', :city => 'Austin', :state_province => 'Texas', :linkedin => 'http://www.linkedin.com/in/hollyrgibson'
 
 student2 = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Nick').id, :cohort => 'Summer 2013', :city => 'Austin', :state_province => 'Texas', :linkedin => 'http://www.linkedin.com/in/nickgibson'
 
-puts 'student: ' << student.user.first_name + ', ' + student2.user.first_name
+puts 'students: ' 
+puts student.user.first_name + ', ' + student2.user.first_name
