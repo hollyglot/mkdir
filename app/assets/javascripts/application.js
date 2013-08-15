@@ -13,8 +13,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require home
-//= require pages
-//= require roles
-//= require students
-//= require_tree ./gmaps4rails/
+//= require_tree .
