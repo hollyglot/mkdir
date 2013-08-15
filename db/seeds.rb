@@ -38,11 +38,13 @@ if user2.roles.where(name: 'admin').empty?
 end
 
 puts 'users: ' 
-puts user.first_name + ' ' + user.last_name + ', ' + user2.first_name + ' ' + user2.last_name
+puts user.first_name 
+puts user2.first_name
 
-student = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Holly').id, :cohort => 'Summer 2013', :city => 'Austin', :state_province => 'Texas', :linkedin => 'http://www.linkedin.com/in/hollyrgibson'
+student = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Holly').id, :cohort => 'Summer 2013', :city => 'Austin', :zip => '78741', :state => 'Texas', :linkedin => 'http://www.linkedin.com/in/hollyrgibson'
 
-student2 = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Nick').id, :cohort => 'Summer 2013', :city => 'Austin', :state_province => 'Texas', :linkedin => 'http://www.linkedin.com/in/nickgibson'
+student2 = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Nick').id, :cohort => 'Summer 2013', :city => 'Austin', :state => '78701', :linkedin => 'http://www.linkedin.com/in/nickgibson'
 
 puts 'students: ' 
-puts student.user.first_name + ', ' + student2.user.first_name
+puts student.user.first_name 
+puts student2.user.first_name
