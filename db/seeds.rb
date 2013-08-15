@@ -41,9 +41,9 @@ puts 'users: '
 puts user.first_name 
 puts user2.first_name
 
-student = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Holly').id, :cohort => 'Summer 2013', :city => 'Austin', :zip => '78741', :state => 'Texas', :linkedin => 'http://www.linkedin.com/in/hollyrgibson'
+student = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Holly').id, :cohort => 'Summer 2013', :city => 'Austin', :state => 'Texas', :postal_code => '78741', :linkedin => 'http://www.linkedin.com/in/hollyrgibson'
 
-student2 = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Nick').id, :cohort => 'Summer 2013', :city => 'Austin', :state => '78701', :linkedin => 'http://www.linkedin.com/in/nickgibson'
+student2 = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Nick').id, :cohort => 'Summer 2013', :city => 'Austin', :state => 'Texas', :postal_code => '78701', :linkedin => 'http://www.linkedin.com/in/nickgibson'
 
 puts 'students: ' 
 puts student.user.first_name 
