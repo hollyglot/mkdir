@@ -200,6 +200,16 @@ RailsAdmin.config do |config|
       field :state
       field :postal_code
       field :country
+      field :phone
+      field :linkedin
+      field :github
+      field :twitter
+      field :blog
+      field :website
+      field :developer_type
+      field :mentor
+      field :job_status
+      field :entrepreneur
     end
   end
 
@@ -261,7 +271,27 @@ RailsAdmin.config do |config|
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
   # end
 
-  ###  Student  ###
+  ###  Role  ###
+
+  config.model Role do
+    edit do
+      field :name
+    end
+
+    show do
+      field :name
+      field :users
+      field :updated_at
+    end
+
+    list do
+      field :name
+      field :updated_at
+    end
+  end
+
+
+  ###  Mentor  ###
 
   config.model Mentor do
     edit do
