@@ -48,9 +48,9 @@ class DirectoryController < ApplicationController
     users.each do |user|
       if user.linkedin? 
         user.linkedin_info = grab_linkedin_info(user)
-        user.linkedin_info.pic = user.linkedin_info.picture
+        user.pic = user.linkedin_info.picture
       else
-        user.linkedin_info.pic = ""
+        user.pic = ""
       end
     end
   end
