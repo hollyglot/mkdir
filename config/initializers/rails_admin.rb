@@ -53,7 +53,7 @@ RailsAdmin.config do |config|
   ###  User  ###
 
   config.model User do
-    configure :student, :has_one_association
+
     edit do
       field :first_name
       field :last_name
@@ -200,19 +200,6 @@ RailsAdmin.config do |config|
       field :state
       field :postal_code
       field :country
-      # field :address
-      # field :latitude
-      # field :longitude
-      field :phone
-      field :linkedin
-      field :github
-      field :twitter
-      field :blog
-      field :website
-      field :developer_type
-      field :mentor
-      field :job_status
-      field :entrepreneur
     end
   end
 
@@ -329,16 +316,6 @@ RailsAdmin.config do |config|
       field :state
       field :postal_code
       field :country
-      # field :address
-      # field :latitude
-      # field :longitude
-      field :phone
-      field :linkedin
-      field :github
-      field :twitter
-      field :blog
-      field :website
-      field :developer_type
     end
   end
 
