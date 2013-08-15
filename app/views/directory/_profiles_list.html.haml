@@ -24,9 +24,8 @@
         %tbody  
           %tr
             %td#display_table_image
-              - unless person.linkedin.empty?
-                %div.linkedin-img
-                  = link_to image_tag(person.linkedin_info.picture, class: "shadow"), person
+              %div.linkedin-img
+                = link_to image_tag(person.linkedin_info.pic, class: "shadow"), person
             %td
               = link_to person.user.name, person  
             %td

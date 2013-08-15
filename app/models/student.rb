@@ -2,7 +2,8 @@ class Student < ActiveRecord::Base
   validates :cohort, :city, :state, :postal_code, :user_id, presence: true
   belongs_to :user
   attr_accessible :name, :cohort, :phone, :address, :city, :state, :postal_code, :country, :latitude, :longitude, :blog, :website, :twitter, :linkedin, :github, :job_status, :entrepreneur, :mentor, :developer_type, :user_id
-  attr_accessor :linkedin_info  
+  attr_accessor :linkedin_info 
+  attr_accessor :pic  
 
   after_validation :merge_address
   after_validation :populate_name

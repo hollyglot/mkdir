@@ -10,13 +10,7 @@
  *
  *= require_self
  *= require bootstrap_and_overrides
- *= require directory
- *= require gmaps4rails
- *= require pages
- *= require roles
- *= require scaffolds
- *= require sessions
- *= require students
+ *= require_tree .
  *
 */
 

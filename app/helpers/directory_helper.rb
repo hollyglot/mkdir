@@ -1,18 +1,18 @@
 module DirectoryHelper
 
-  def grab_linkedin_info(user) 
-    if user.linkedin?
-      Linkedin::Profile.get_profile(user.linkedin)
-    end
-  end
 
-  def grab_all_linkedin_info(users)
-    users.each do |user|
-      if user.linkedin? # && user.linkedin_info.blank?
-        user.linkedin_info = grab_linkedin_info(user)
-        # user.save
+  def style_map_markers(people)
+    people.to_gmaps4rails do |person, marker|
+        marker.infowindow "
+        <a href=\"/students/#{person.id}\">
+          <img src=\"#{person.linkedin_info.pic}\" height=\"60\" width=\"60\" align=\"left\" style=\"margin-right:15px\">
+          <h4>
+            #{person.name}
+          </h4>
+        </a>
+        <p style=\"margin-top:-5px\"> #{person.developer_type}
+        </p>"
       end
-    end
   end
 
 end
