@@ -1,54 +1,82 @@
-%p#notice= notice
-
-%p
-  %b User:
-  = @mentor.user_id
-%p
-  %b Name:
-  = @mentor.name
-%p
-  %b Phone:
-  = @mentor.phone
-%p
-  %b City:
-  = @mentor.city
-%p
-  %b State:
-  = @mentor.state
-%p
-  %b Postal code:
-  = @mentor.postal_code
-%p
-  %b Country:
-  = @mentor.country
-%p
-  %b Longitude:
-  = @mentor.longitude
-%p
-  %b Latitude:
-  = @mentor.latitude
-%p
-  %b Gmaps:
-  = @mentor.gmaps
-%p
-  %b Linkedin:
-  = @mentor.linkedin
-%p
-  %b Github:
-  = @mentor.github
-%p
-  %b Twitter:
-  = @mentor.twitter
-%p
-  %b Blog:
-  = @mentor.blog
-%p
-  %b Website:
-  = @mentor.website
-%p
-  %b Developer type:
-  = @mentor.developer_type
-
-= link_to 'Edit', edit_mentor_path(@mentor)
-\|
-= link_to 'Back', mentors_path
+.container.container-1
+  .div.row-fluid
+    .span12
+      .div-2
+        .well.div-1.div-3
+          %h1#profile_heading Alumni Profile
+        .well.div-1.div-4
+          - if @profile
+            %img.pull-left.image{:src => @profile.picture}
+          .badge.badge-info.pull-right 1st
+          .hero-unit
+            %h2.heading.heading-1
+              = @student.user.name
+            - if @profile  
+              %p
+                = @profile.title
+            %p &nbsp;
+            %div.btns
+              %a.btn.btn-custom.pull-left{:href => @profile.linkedin_url}View Full Profile
+            %h1.heading
+          %span.badge.badge-info.interests
+            = @student.developer_type
+          -unless @student.job_status == 'not seeking'
+            %span.badge.badge-info.interests
+              = @student.job_status
+          -unless @student.mentor == 'not interested'
+            %span.badge.badge-info.interests
+              = @student.mentor
+          -unless @student.entrepreneur == 'not looking'
+            %span.badge.badge-info.interests
+              = @student.entrepreneur
+          %br
+          %br
+          %table.table
+            %tbody
+              %tr
+                %td
+                  %strong Cohort
+                %td 
+                  = @student.cohort
+              %tr
+                %td
+                  %strong Email
+                %td
+                  %a{:href=> "mailto:#{@student.user.email}"}= @student.user.email
+              %tr
+                %td
+                  %strong Mobile
+                %td
+                  - unless @student.phone_number.nil? 
+                    = number_to_phone(@student.phone_number, area_code: true) 
+              %tr
+                %td
+                  %strong City
+                %td 
+                  - unless @student.city.empty? 
+                    = @student.city + ","
+          
+                  - unless @student.state_province.empty? 
+                    = @student.state_province       
+          .well.no-hover
+            - unless @student.blog.blank? 
+              %a{:href => @student.blog}
+                .icon.icon-rss
+            - unless @student.github.blank? 
+              %a{:href => @student.github}
+                .icon.icon-github
+            - unless @student.linkedin.blank?
+              %a{:href => @student.linkedin}
+                .icon.icon-linkedin-sign
+            - unless @student.twitter_handle.blank?
+              %a{:href=> "http://www.twitter.com/#{@student.twitter_handle}"}
+                .icon.icon-twitter-sign
+    .span4#skills
+      .div-2
+        .well#well_header
+          %h1#profile_heading Skills & Expertise
+        .well#well_backdrop
+          %p.p-1
+          - @profile.skills.sort().each do |skill|
+            %span.badge.badge-info.skills
+              = skill

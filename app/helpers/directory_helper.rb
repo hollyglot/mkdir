@@ -1,5 +1,7 @@
 module DirectoryHelper
-
+  def map(people)
+    gmaps4rails(style_map_markers(people))
+  end
 
   def style_map_markers(people)
     people.to_gmaps4rails do |person, marker|

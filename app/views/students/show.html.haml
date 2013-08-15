@@ -47,8 +47,8 @@
                 %td
                   %strong Mobile
                 %td
-                  - unless @student.phone_number.nil? 
-                    = number_to_phone(@student.phone_number, area_code: true) 
+                  - unless @student.phone.nil? 
+                    = number_to_phone(@student.phone, area_code: true) 
               %tr
                 %td
                   %strong City
@@ -56,8 +56,8 @@
                   - unless @student.city.empty? 
                     = @student.city + ","
           
-                  - unless @student.state_province.empty? 
-                    = @student.state_province       
+                  - unless @student.state.empty? 
+                    = @student.state      
           .well.no-hover
             - unless @student.blog.blank? 
               %a{:href => @student.blog}
@@ -68,8 +68,8 @@
             - unless @student.linkedin.blank?
               %a{:href => @student.linkedin}
                 .icon.icon-linkedin-sign
-            - unless @student.twitter_handle.blank?
-              %a{:href=> "http://www.twitter.com/#{@student.twitter_handle}"}
+            - unless @student.twitter.blank?
+              %a{:href=> "http://www.twitter.com/#{@student.twitter}"}
                 .icon.icon-twitter-sign
     .span4#skills
       .div-2

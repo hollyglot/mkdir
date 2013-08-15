@@ -33,15 +33,4 @@ class Student < ActiveRecord::Base
     where("name LIKE ? ", "%#{query.gsub(/ /, '%')}%")
   end
 
-  # def self.search_attributes(query)
-  #   where('user_attributes LIKE ?', "%#{query.gsub(/ /, '%')}%")
-
-  #   users = User.where("name LIKE ? ", "%#{query.gsub(/ /, '%')}%")
-  #   selected_users = users.map do |user|
-  #     if user.role? :student or user.role? :hiring or user.role? :mentor
-  #       user
-  #     end
-  #   end
-  # end
-
 end

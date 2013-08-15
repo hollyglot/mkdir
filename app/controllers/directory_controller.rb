@@ -3,8 +3,6 @@ class DirectoryController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
   
-  include DirectoryHelper
-
 
   def index
 
@@ -19,7 +17,9 @@ class DirectoryController < ApplicationController
     # params[:page]     ||= 1
 
     @students = Student.search_name(params[:search_name])
-    @profiles = grab_all_linkedin_info(@students)
+    @mentors = Mentor.search_name(params[:search_name])
+    @people = @students + @mentors
+    grab_all_linkedin_info(@people)
 
     render 'index'
   end
@@ -28,9 +28,14 @@ class DirectoryController < ApplicationController
     # params[:per_page] ||= 10
     # params[:page]     ||= 1
 
-    s = Student.search_attributes(params[:user_attribute])
-    @students = s.near(params[:search_location], params[:radius], :order => :distance)
-    @profiles = grab_all_linkedin_info(@students)
+    if params[:category] == 'mentor'
+      m = Mentor.where('')
+      @people = m.near(params[:search_location], params[:radius], :order => :distance)
+    elsif params[:category] == 'student'
+      s = Student.where('')
+      @people = s.near(params[:search_location], params[:radius], :order => :distance)
+    end
+    grab_all_linkedin_info(@people)
     
     render 'index'
 

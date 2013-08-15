@@ -1,7 +1,4 @@
 class StudentsController < ApplicationController
-
-  include DirectoryHelper
-
   before_filter :authenticate_user!
   load_and_authorize_resource
 
@@ -73,6 +70,14 @@ class StudentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to students_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def grab_linkedin_info(user) 
+    if user.linkedin?
+      Linkedin::Profile.get_profile(user.linkedin)
     end
   end
 end

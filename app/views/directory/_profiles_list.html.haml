@@ -1,14 +1,16 @@
 .results
+  Search Results:
   %strong 
     = @people.length
     - if @people.length > 1 || @people.length == 0
       = " people"
     - else
       = " person"
-  within
-  %strong 
-    = @mentors.length 
-  %strong miles.
+  / within
+  / %strong
+  / 8000 
+  / = @distance
+  / %strong miles.
   / params[:radius]
 
 - if @people.length > 0
@@ -20,18 +22,22 @@
           %th Name
           %th City
           %th State
+          %th Category
       - @people.each do |person|
         %tbody  
           %tr
             %td#display_table_image
-              %div.linkedin-img
-                = link_to image_tag(person.pic, class: "shadow"), person
+              - unless person.linkedin.empty?
+                %div.linkedin-img
+                  = link_to image_tag(person.pic, class: "shadow"), person
             %td
               = link_to person.name, person  
             %td
               = person.city
             %td
               = person.state
+            %td
+              = person.class
 - else
   %div.display_table
     %table
@@ -42,12 +48,15 @@
 
 - if @people.length > 0
   .results#bottom
+    Search Results:
     %strong 
       = @people.length
       - if @people.length > 1 || @people.length == 0
         = " people"
       - else
         = " person"
-    within
-    %strong 
-      = @mentors.length     
+    / within
+    / %strong
+    /   8000
+    / = @distance
+    / %strong miles.
