@@ -12,6 +12,22 @@
    height: 110px;
    width: 110px;
    border-radius: 5px;
+   float: left;
+}
+#profile-container{
+   padding-left: 85px;
+}
+#profile-name{
+   margin-top: -65px;
+   margin-bottom: 0px;
+   color: #34495e;
+   font-size: 30px;
+}
+#profile-title{
+   margin-top: 5px;
+}
+#profile-btn{
+   margin-top: 10px;
 }
 #skills{
    float:right;
