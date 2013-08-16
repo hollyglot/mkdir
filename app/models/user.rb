@@ -6,9 +6,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :registerable, :rememberable, :trackable, :validatable
   
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :first_name, :last_name, :name, :email, :password, :password_confirmation, :remember_me, :role_ids
+  attr_accessible :first_name, :gravatar, :last_name, :name, :email, :password, :password_confirmation, :remember_me, :role_ids
 
   after_validation :populate_name
+  after_validation :get_gravatar, :if => :email_changed?
   has_and_belongs_to_many :roles
   has_one :student
   has_one :mentor
@@ -17,6 +18,10 @@ class User < ActiveRecord::Base
 
   def role?(role)
     return !!self.roles.find_by_name(role.to_s)
+  end
+
+  def get_gravatar
+    self.gravatar = Gravatar.new(self.email).image_url
   end
 
   def populate_name

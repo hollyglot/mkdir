@@ -11,19 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130816013509) do
+ActiveRecord::Schema.define(:version => 20130816054625) do
 
   create_table "hiring_partners", :force => true do |t|
     t.integer  "user_id"
     t.string   "linkedin"
-    t.text     "linkedin_info"
     t.string   "address"
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.string   "company"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "company_name"
+    t.string   "website"
   end
 
   add_index "hiring_partners", ["user_id"], :name => "index_hiring_partners_on_user_id"
@@ -48,7 +48,8 @@ ActiveRecord::Schema.define(:version => 20130816013509) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.string   "address"
-    t.text     "linkedin_info"
+    t.string   "job_title"
+    t.text     "skills"
   end
 
   add_index "mentors", ["user_id"], :name => "index_mentors_on_user_id"
@@ -87,7 +88,6 @@ ActiveRecord::Schema.define(:version => 20130816013509) do
     t.string   "country"
     t.string   "phone"
     t.string   "linkedin"
-    t.text     "linkedin_info"
     t.string   "github"
     t.string   "twitter"
     t.string   "blog"
@@ -98,6 +98,8 @@ ActiveRecord::Schema.define(:version => 20130816013509) do
     t.float    "latitude"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.string   "job_title"
+    t.text     "skills"
   end
 
   add_index "staff_members", ["user_id"], :name => "index_staff_members_on_user_id"
@@ -126,7 +128,8 @@ ActiveRecord::Schema.define(:version => 20130816013509) do
     t.boolean  "gmaps"
     t.string   "developer_type"
     t.string   "name"
-    t.text     "linkedin_info"
+    t.string   "job_title"
+    t.text     "skills"
   end
 
   add_index "students", ["user_id"], :name => "index_students_on_user_id"
@@ -147,6 +150,7 @@ ActiveRecord::Schema.define(:version => 20130816013509) do
     t.string   "name"
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "gravatar"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

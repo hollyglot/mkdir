@@ -5,18 +5,19 @@
         .well.div-1.div-3
           %h1#profile_heading Student Profile
         .well.div-1.div-4
+          = image_tag (@student.user.gravatar, class: "pull-left")
           .badge.badge-info.pull-right 1st
           .hero-unit
             = image_tag Gravatar.new(@student.user.email).image_url, id: "profile-picture"
             %h2.heading.heading-1
-            /   = @student.user.name
-            / - unless @student.linkedin_info.empty? 
-            /   %p
-            /     = @student.linkedin_info.title
+              = @student.user.name
+            - unless @student.linkedin.empty? 
+              %p
+                = @student.linkedin.job_title
             %p &nbsp;
-            - if @profile
+            - unless @student.linkedin.empty?
               %div.btns
-                %a.btn.btn-custom.pull-left{:href => @student.linkedin_info.linkedin_url}View Full Profile
+                %a.btn.btn-custom.pull-left{:href => @student.linkedin}View Full Profile
             %h1.heading
           %span.badge.badge-info.interests
             = @student.developer_type

@@ -29,7 +29,7 @@
             %td#display_table_image
               - unless person.linkedin.empty?
                 %div.linkedin-img
-                  = link_to image_tag Gravatar.new(person.user.email).image_url, class: "shadow"), person
+                  = link_to image_tag (person.user.gravatar, class: "shadow"), person
             %td
               = link_to person.name, person  
             %td
@@ -37,7 +37,12 @@
             %td
               = person.state
             %td
-              = person.class
+              - if person.class == 'HiringPartner'
+                Hiring Partner
+              - elsif person.class == 'StaffMember'
+                Staff
+              - else
+                = person.class
 - else
   %div.display_table
     %table
