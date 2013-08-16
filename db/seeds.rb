@@ -64,7 +64,7 @@ puts user5.first_name
 
 student = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Holly').id, :cohort => 'Summer 2013', :city => 'Austin', :state => 'Texas', :postal_code => '78741', :linkedin => 'http://www.linkedin.com/in/hollyrgibson', :developer_type => 'Full Stack Developer', :job_status => 'Available for Hire', :entrepreneur => 'not looking', :mentor => 'Available to Mentor'
 
-student2 = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Nick').id, :cohort => 'Summer 2013', :city => 'Austin', :state => 'Texas', :postal_code => '78701', :linkedin => 'http://www.linkedin.com/in/nickgibson', :developer_type => 'Full Stack Developer', :job_status => 'Available for Hire', :entrepreneur => 'not looking', :mentor => 'Available to Mentor'
+student2 = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Nick').id, :cohort => 'Summer 2013', :city => 'Austin', :state => 'Texas', :postal_code => '78710', :linkedin => 'http://www.linkedin.com/in/nickgibson', :developer_type => 'Full Stack Developer', :job_status => 'Available for Hire', :entrepreneur => 'not looking', :mentor => 'Available to Mentor'
 
 puts 'students: ' 
 puts student.user.first_name 
