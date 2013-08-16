@@ -14,11 +14,11 @@
                 Mentors
             %li
               =link_to root_path do
-                = image_tag("Hiring.png")
+                = image_tag("HiringPartner.png")
                 Hiring Partners
             %li
               =link_to root_path do
-                = image_tag("Staff.png")
+                = image_tag("StaffMember.png")
                 MakerSquare Staff
       %span.span9
         %ul.breadcrumb
@@ -27,11 +27,6 @@
               .icon.icon-home
           %li
             %a{:href =>"#"} Profiles
-          / %li
-          /   %a{:href =>"#"} Mentors
-          / %li
-          /   %a{:href =>"#"} Hiring Partners 
-        
         = render 'map'
         = render 'search_form'
         = render 'profiles_list'

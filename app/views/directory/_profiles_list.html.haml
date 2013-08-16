@@ -31,11 +31,11 @@
                 = link_to person do
                   =image_tag person.user.gravatar, class: "shadow"
             %td{:style => "width:190px"}
-              = link_to person.name, person  
+              = link_to person.name, person 
             %td{:style => "width:120px"}
-              / = person.city
+              = person.city
             %td{:style => "width:100px"}
-              / = person.state
+              = person.state
             %td{:style => "width:100px"}
               - if person.class == 'HiringPartner'
                 Hiring Partner
