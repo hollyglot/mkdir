@@ -27,6 +27,13 @@ class User < ActiveRecord::Base
     if self.mentor
       self.mentor.name = self.name
     end
+    if self.staff_member
+      self.staff_member.name = self.name
+    end
+    if self.hiring_partner
+      self.hiring_partner.name = self.name
+    end
+
   end
   
 end

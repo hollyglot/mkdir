@@ -5,19 +5,18 @@
         .well.div-1.div-3
           %h1#profile_heading Student Profile
         .well.div-1.div-4
-          - if @profile
-            %img.pull-left.image{:src => @profile.picture}
+          = image_tag Gravatar.new(@student.user.email).image_url, class: "pull-left")
           .badge.badge-info.pull-right 1st
           .hero-unit
             %h2.heading.heading-1
               = @student.user.name
-            - if @profile  
+            - unless @student.linkedin_info.empty? 
               %p
-                = @profile.title
+                = @student.linkedin_info.title
             %p &nbsp;
             - if @profile
               %div.btns
-                %a.btn.btn-custom.pull-left{:href => @profile.linkedin_url}View Full Profile
+                %a.btn.btn-custom.pull-left{:href => @student.linkedin_info.linkedin_url}View Full Profile
             %h1.heading
           %span.badge.badge-info.interests
             = @student.developer_type
@@ -72,13 +71,13 @@
             - unless @student.twitter.blank?
               %a{:href=> "http://www.twitter.com/#{@student.twitter}"}
                 .icon.icon-twitter-sign
-    - if @profile
-      .span4#skills
-        .div-2
-          .well#well_header
-            %h1#profile_heading Skills & Expertise
-          .well#well_backdrop
-            %p.p-1
-            - @profile.skills.sort().each do |skill|
-              %span.badge.badge-info.skills
-                = skill
+/ - if @profile
+/   .span4#skills
+/     .div-2
+/       .well#well_header
+/         %h1#profile_heading Skills & Expertise
+/       .well#well_backdrop
+/         %p.p-1
+/         - @profile.skills.sort().each do |skill|
+/           %span.badge.badge-info.skills
+/             = skill

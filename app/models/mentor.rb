@@ -1,12 +1,11 @@
 class Mentor < ActiveRecord::Base
   validates :city, :state, :postal_code, :user_id, presence: true
-  attr_accessible :address, :blog, :city, :country, :developer_type, :github, :latitude, :linkedin, :longitude, :name, :phone, :postal_code, :state, :twitter, :user_id, :website
-  attr_accessor :linkedin_info
-  attr_accessor :pic  
+  attr_accessible :address, :blog, :city, :country, :developer_type, :github, :latitude, :linkedin, :longitude, :name, :phone, :postal_code, :state, :twitter, :user_id, :website 
 
   belongs_to :user
   after_validation :merge_address
   after_validation :populate_name
+  before_save :populate_linkedin_info
   before_save :geocode, :if => :address_changed?
   geocoded_by :address
 
@@ -21,6 +20,12 @@ class Mentor < ActiveRecord::Base
 
   def merge_address
     self.address = "#{self.city} #{self.state} #{self.postal_code} #{country}"
+  end
+
+  def populate_linkedin_info
+    if self.linkedin?
+      self.linkedin = Linkedin::Profile.get_profile(self.linkedin)
+    end
   end
 
   def gmaps4rails_address

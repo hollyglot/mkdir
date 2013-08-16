@@ -5,11 +5,11 @@ class DirectoryController < ApplicationController
   
 
   def index
-
     @students = Student.all
     @mentors = Mentor.all
-    @people = @students + @mentors
-    grab_all_linkedin_info(@people)
+    @staff_members = StaffMember.all
+    @hiring_partners = HiringPartner.all
+    @people = @students + @mentors + @staff_members + @hiring_partners
   end
     
   def search_name
@@ -18,8 +18,9 @@ class DirectoryController < ApplicationController
 
     @students = Student.search_name(params[:search_name])
     @mentors = Mentor.search_name(params[:search_name])
-    @people = @students + @mentors
-    grab_all_linkedin_info(@people)
+    @staff_members = StaffMember.search_name(params[:search_name])
+    @hiring_partners = HiringPartner.search_name(params[:search_name])
+    @people = @students + @mentors + @staff_members + @hiring_partners
 
     render 'index'
   end
@@ -34,29 +35,16 @@ class DirectoryController < ApplicationController
     elsif params[:category] == 'student'
       s = Student.where('')
       @people = s.near(params[:search_location], params[:radius], :order => :distance)
+    elsif params[:category] == 'staff'
+      sm = StaffMember.where('')
+      @people = sm.near(params[:search_location], params[:radius], :order => :distance)
+    elsif params[:category] == 'hiring'
+      h = HiringPartner.where('')
+      @people = h.near(params[:search_location], params[:radius], :order => :distance)    
     end
-    grab_all_linkedin_info(@people)
     
     render 'index'
 
   end
 
-  private
-
-  def grab_linkedin_info(user) 
-    if user.linkedin?
-      Linkedin::Profile.get_profile(user.linkedin)
-    end
-  end
-
-  def grab_all_linkedin_info(users)
-    users.each do |user|
-      if user.linkedin? 
-        user.linkedin_info = grab_linkedin_info(user)
-        user.pic = user.linkedin_info.picture
-      else
-        user.pic = ""
-      end
-    end
-  end
 end

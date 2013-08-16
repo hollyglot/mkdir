@@ -1,5 +1,6 @@
 class HiringPartnersController < ApplicationController
-
+  before_filter :authenticate_user!
+  load_and_authorize_resource
 
   # GET /hiring_partners/1
   # GET /hiring_partners/1.json

@@ -1,12 +1,11 @@
 class Student < ActiveRecord::Base
   validates :cohort, :city, :state, :postal_code, :user_id, presence: true
   belongs_to :user
-  attr_accessible :name, :cohort, :phone, :address, :city, :state, :postal_code, :country, :latitude, :longitude, :blog, :website, :twitter, :linkedin, :github, :job_status, :entrepreneur, :mentor, :developer_type, :user_id
-  attr_accessor :linkedin_info
-  attr_accessor :pic  
+  attr_accessible :name, :cohort, :phone, :address, :city, :state, :postal_code, :country, :latitude, :longitude, :blog, :website, :twitter, :linkedin, :github, :job_status, :entrepreneur, :mentor, :developer_type, :user_id 
 
   after_validation :merge_address
   after_validation :populate_name
+  before_save :populate_linkedin_info
   before_save :geocode, :if => :address_changed?
   geocoded_by :address
 
@@ -22,6 +21,11 @@ class Student < ActiveRecord::Base
     self.address = "#{self.city} #{self.state} #{self.postal_code} #{country}"
   end
 
+  def populate_linkedin_info
+    if self.linkedin?
+      self.linkedin = Linkedin::Profile.get_profile(self.linkedin)
+    end
+  end
 
   def gmaps4rails_address
     # Ideally this should #{self.address}, but the callbacks are causing Student.create not to save because the merge_address method is being called after the acts_as_gmappable.

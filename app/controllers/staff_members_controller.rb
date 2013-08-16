@@ -1,5 +1,6 @@
 class StaffMembersController < ApplicationController
-
+  before_filter :authenticate_user!
+  load_and_authorize_resource
 
   # GET /staff_members/1
   # GET /staff_members/1.json

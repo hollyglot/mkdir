@@ -1,27 +1,37 @@
-%p#notice= notice
-
-%p
-  %b User:
-  = @hiring_partner.user
-%p
-  %b Linkedin:
-  = @hiring_partner.linkedin
-%p
-  %b Linkedin info:
-  = @hiring_partner.linkedin_info
-%p
-  %b Address:
-  = @hiring_partner.address
-%p
-  %b Latitude:
-  = @hiring_partner.latitude
-%p
-  %b Longitude:
-  = @hiring_partner.longitude
-%p
-  %b Gmaps:
-  = @hiring_partner.gmaps
-
-= link_to 'Edit', edit_hiring_partner_path(@hiring_partner)
-\|
-= link_to 'Back', hiring_partners_path
+.container.container-1
+  .div.row-fluid
+    .span12
+      .div-2
+        .well.div-1.div-3
+          %h1#profile_heading Hiring Partner Profile
+        .well.div-1.div-4
+          = image_tag Gravatar.new(@hiring_partner.user.email).image_url, class: "pull-left")
+          .badge.badge-info.pull-right 1st
+          .hero-unit
+            %h2.heading.heading-1
+              = @hiring_partner.linkedin_info.current_company
+            %p &nbsp; 
+            %div.btns
+              %a.btn.btn-custom.pull-left{:href => @hiring_partner.linkedin_info.linkedin_company_url}View Full Profile
+            %h1.heading
+          %span.badge.badge-info.interests
+            
+          %br
+          %br
+          %table.table
+            %tbody
+              %tr
+                %td
+                  %strong Website
+                %td 
+                  = @hiring_partner.linkedin_info.current_company_url
+              %tr
+                %td
+                  %strong Email
+                %td
+                  %a{:href=> "mailto:#{@hiring_partner.user.email}"}= @hiring_partner.user.email 
+              %tr
+                %td
+                  %strong Address
+                %td 
+                  = @hiring_partner.linkedin_info.address
