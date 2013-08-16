@@ -17,6 +17,10 @@ class Mentor < ActiveRecord::Base
     return "Mentor"
   end
 
+  def link_path
+    return "mentors"
+  end
+
   private
 
   # Populates mentor name

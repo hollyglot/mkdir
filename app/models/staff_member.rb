@@ -16,6 +16,10 @@ class StaffMember < ActiveRecord::Base
     return "Staff"
   end
 
+  def link_path
+    return "staff_members"
+  end
+
   private
 
   def populate_name
