@@ -2,7 +2,7 @@ class Student < ActiveRecord::Base
   validates :cohort, :city, :state, :postal_code, :user_id, presence: true
   serialize :skills
   belongs_to :user
-  attr_accessible :name, :cohort, :phone, :address, :city, :state, :postal_code, :country, :latitude, :longitude, :blog, :website, :twitter, :linkedin, :github, :job_title, :job_status, :entrepreneur, :mentor, :developer_type, :skills, :user_id 
+  attr_accessible :name, :cohort, :phone, :address, :city, :state, :postal_code, :country, :latitude, :longitude, :gmaps, :blog, :website, :twitter, :linkedin, :github, :job_title, :job_status, :entrepreneur, :mentor, :developer_type, :skills, :user_id 
 
   after_validation :merge_address
   after_validation :populate_name

@@ -1,7 +1,7 @@
 class Mentor < ActiveRecord::Base
   validates :city, :state, :postal_code, :user_id, presence: true
   serialize :skills
-  attr_accessible :address, :blog, :city, :country, :developer_type, :github, :latitude, :linkedin, :longitude, :name, :phone, :postal_code, :state, :twitter, :user_id, :website 
+  attr_accessible :address, :blog, :city, :country, :developer_type, :github, :gmaps, :latitude, :linkedin, :longitude, :name, :phone, :postal_code, :state, :twitter, :user_id, :website 
 
   belongs_to :user
   after_validation :merge_address
