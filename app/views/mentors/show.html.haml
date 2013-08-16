@@ -66,10 +66,14 @@
             %h5 Github Repos Recently Starred
             %ul
               %li
+                = link_to "mkdir", root_path
+
                 / - github = Github.new
                 / = link_to github.activity.starring.starred(:user => "#{@mentor.github}").first.url do
                 /   = github.activity.starring.starred(:user => "#{@mentor.github}").first.name
               %li
+                = link_to "ativa", root_path
+
                 / - github = Github.new
                 / = link_to github.activity.starring.starred(:user => "#{@mentor.github}").first.url do
                 /   = github.activity.starring.starred(:user => "#{@mentor.github}").last.name
