@@ -5,14 +5,14 @@
         .well.div-1.div-3
           %h1#profile_heading Hiring Partner Profile
         .well.div-1.div-4
-          = image_tag Gravatar.new(@hiring_partner.user.email).image_url, class: "pull-left")
+          = image_tag (@hiring_partner.user.gravatar).image_url, class: "pull-left")
           .badge.badge-info.pull-right 1st
           .hero-unit
             %h2.heading.heading-1
-              = @hiring_partner.linkedin_info.current_company
+              = @hiring_partner.company_name
             %p &nbsp; 
             %div.btns
-              %a.btn.btn-custom.pull-left{:href => @hiring_partner.linkedin_info.linkedin_company_url}View Full Profile
+              %a.btn.btn-custom.pull-left{:href => @hiring_partner.linkedin}View Full Profile
             %h1.heading
           %span.badge.badge-info.interests
             
@@ -24,7 +24,7 @@
                 %td
                   %strong Website
                 %td 
-                  = @hiring_partner.linkedin_info.current_company_url
+                  = @hiring_partner.website
               %tr
                 %td
                   %strong Email
@@ -34,4 +34,4 @@
                 %td
                   %strong Address
                 %td 
-                  = @hiring_partner.linkedin_info.address
+                  = @hiring_partner.address

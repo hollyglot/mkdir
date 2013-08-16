@@ -1,11 +1,12 @@
 class Mentor < ActiveRecord::Base
   validates :city, :state, :postal_code, :user_id, presence: true
+  serialize :skills
   attr_accessible :address, :blog, :city, :country, :developer_type, :github, :latitude, :linkedin, :longitude, :name, :phone, :postal_code, :state, :twitter, :user_id, :website 
 
   belongs_to :user
   after_validation :merge_address
   after_validation :populate_name
-  before_save :populate_linkedin_info
+  after_validation :populate_from_linkedin, :if => :linkedin_changed?
   before_save :geocode, :if => :address_changed?
   geocoded_by :address
 
@@ -22,9 +23,11 @@ class Mentor < ActiveRecord::Base
     self.address = "#{self.city} #{self.state} #{self.postal_code} #{country}"
   end
 
-  def populate_linkedin_info
+  def populate_from_linkedin
     if self.linkedin?
-      self.linkedin = Linkedin::Profile.get_profile(self.linkedin)
+      profile = Linkedin::Profile.get_profile(self.linkedin)
+      self.skills = profile.skills
+      self.job_title = profile.title
     end
   end
 
