@@ -4,6 +4,7 @@ class HiringPartner < ActiveRecord::Base
   attr_accessible :address, :city, :state, :name, :gmaps, :latitude, :linkedin, :longitude, :website, :user_id
 
   after_validation :populate_from_linkedin, :if => :linkedin_changed?
+  after_validation :set_gmaps
   before_save :geocode, :if => :address_changed?
   geocoded_by :address
 
@@ -37,12 +38,16 @@ class HiringPartner < ActiveRecord::Base
     end
   end
 
+  def set_gmaps
+    self.gmaps = 'true'
+  end
+
   def gmaps4rails_address
     "#{self.address}"
   end
 
   def self.search_name(query)
     # method that finds profiles by name
-    where("company_name LIKE ? ", "%#{query.gsub(/ /, '%')}%")
+    where("name LIKE ? ", "%#{query.gsub(/ /, '%')}%")
   end
 end

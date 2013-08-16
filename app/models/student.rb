@@ -5,6 +5,7 @@ class Student < ActiveRecord::Base
   attr_accessible :name, :cohort, :phone, :address, :city, :state, :postal_code, :country, :latitude, :longitude, :gmaps, :blog, :website, :twitter, :linkedin, :github, :job_title, :job_status, :entrepreneur, :mentor, :developer_type, :skills, :user_id 
 
   after_validation :merge_address
+  after_validation :set_gmaps
   after_validation :populate_name
   after_validation :populate_from_linkedin, :if => :linkedin_changed?
   before_save :geocode, :if => :address_changed?
@@ -27,6 +28,10 @@ class Student < ActiveRecord::Base
 
   def merge_address
     self.address = "#{self.city} #{self.state} #{self.postal_code} #{country}"
+  end
+
+  def set_gmaps
+    self.gmaps = 'true'
   end
 
   def populate_from_linkedin

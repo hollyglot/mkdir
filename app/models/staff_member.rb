@@ -7,6 +7,7 @@ class StaffMember < ActiveRecord::Base
   after_validation :merge_address
   after_validation :populate_name
   after_validation :populate_from_linkedin, :if => :linkedin_changed?
+  after_validation :set_gmaps
   before_save :geocode, :if => :address_changed?
   geocoded_by :address
 
@@ -28,6 +29,10 @@ class StaffMember < ActiveRecord::Base
 
   def merge_address
     self.address = "#{self.city} #{self.state} #{self.postal_code} #{country}"
+  end
+
+  def set_gmaps
+    self.gmaps = 'true'
   end
 
   def populate_from_linkedin

@@ -6,6 +6,7 @@ class Mentor < ActiveRecord::Base
   belongs_to :user
   after_validation :merge_address
   after_validation :populate_name
+  after_validation :set_gmaps
   after_validation :populate_from_linkedin, :if => :linkedin_changed?
   before_save :geocode, :if => :address_changed?
   geocoded_by :address
@@ -26,6 +27,10 @@ class Mentor < ActiveRecord::Base
   # Populates mentor name
   def populate_name
     self.name = self.user.name
+  end
+
+  def set_gmaps
+    self.gmaps = 'true'
   end
 
   def merge_address
