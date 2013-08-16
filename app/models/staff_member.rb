@@ -21,6 +21,10 @@ class StaffMember < ActiveRecord::Base
     return "staff_members"
   end
 
+  def marker_category
+    return "StaffMember"
+  end
+
   private
 
   def populate_name

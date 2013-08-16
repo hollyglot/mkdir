@@ -20,6 +20,10 @@ class Student < ActiveRecord::Base
     return "students"
   end
 
+  def marker_category
+    return "Student"
+  end
+
   private
 
   def populate_name

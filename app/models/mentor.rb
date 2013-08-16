@@ -22,6 +22,10 @@ class Mentor < ActiveRecord::Base
     return "mentors"
   end
 
+  def marker_category
+    return "Mentor"
+  end
+
   private
 
   # Populates mentor name

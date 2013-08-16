@@ -14,7 +14,7 @@ module DirectoryHelper
           </h4>
         </a>"
       marker.picture({
-        :picture => image_path("#{person.class}.png"),
+        :picture => image_path("#{person.marker_category}.png"),
         :width   => 30,
         :height  => 30,
         :marker_anchor => [5, 10],

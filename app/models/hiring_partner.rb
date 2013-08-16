@@ -18,6 +18,10 @@ class HiringPartner < ActiveRecord::Base
     return "hiring_partners"
   end
 
+  def marker_category
+    return "HiringPartner"
+  end
+
 
   private 
 
