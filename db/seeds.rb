@@ -13,7 +13,8 @@ roles = [
   'student',
   'mentor',
   'admin',
-  'guest'
+  'guest',
+  'staff'
 ]
 
 roles.each do |role|

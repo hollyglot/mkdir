@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130814200551) do
+ActiveRecord::Schema.define(:version => 20130816013509) do
+
+  create_table "hiring_partners", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "linkedin"
+    t.text     "linkedin_info"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.boolean  "gmaps"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "company"
+  end
+
+  add_index "hiring_partners", ["user_id"], :name => "index_hiring_partners_on_user_id"
 
   create_table "mentors", :force => true do |t|
     t.integer  "user_id"
@@ -33,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20130814200551) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.string   "address"
+    t.text     "linkedin_info"
   end
 
   add_index "mentors", ["user_id"], :name => "index_mentors_on_user_id"
@@ -61,6 +77,31 @@ ActiveRecord::Schema.define(:version => 20130814200551) do
     t.integer "user_id"
   end
 
+  create_table "staff_members", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "postal_code"
+    t.string   "country"
+    t.string   "phone"
+    t.string   "linkedin"
+    t.text     "linkedin_info"
+    t.string   "github"
+    t.string   "twitter"
+    t.string   "blog"
+    t.string   "website"
+    t.string   "developer_type"
+    t.boolean  "gmaps"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "staff_members", ["user_id"], :name => "index_staff_members_on_user_id"
+
   create_table "students", :force => true do |t|
     t.string   "cohort"
     t.string   "city"
@@ -85,6 +126,7 @@ ActiveRecord::Schema.define(:version => 20130814200551) do
     t.boolean  "gmaps"
     t.string   "developer_type"
     t.string   "name"
+    t.text     "linkedin_info"
   end
 
   add_index "students", ["user_id"], :name => "index_students_on_user_id"

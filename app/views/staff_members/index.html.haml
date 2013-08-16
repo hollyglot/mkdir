@@ -1,0 +1,55 @@
+%h1 Listing staff_members
+
+%table
+  %tr
+    %th User
+    %th Name
+    %th Address
+    %th City
+    %th State
+    %th Postal code
+    %th Country
+    %th Phone
+    %th Linkedin
+    %th Linkedin info
+    %th Github
+    %th Twitter
+    %th Blog
+    %th Website
+    %th Developer type
+    %th Gmaps
+    %th Longitude
+    %th Latitude
+    %th Gmaps
+    %th
+    %th
+    %th
+
+  - @staff_members.each do |staff_member|
+    %tr
+      %td= staff_member.user
+      %td= staff_member.name
+      %td= staff_member.address
+      %td= staff_member.city
+      %td= staff_member.state
+      %td= staff_member.postal_code
+      %td= staff_member.country
+      %td= staff_member.phone
+      %td= staff_member.linkedin
+      %td= staff_member.linkedin_info
+      %td= staff_member.github
+      %td= staff_member.twitter
+      %td= staff_member.blog
+      %td= staff_member.website
+      %td= staff_member.developer_type
+      %td= staff_member.gmaps
+      %td= staff_member.longitude
+      %td= staff_member.latitude
+      %td= staff_member.gmaps
+      %td= link_to 'Show', staff_member
+      %td= link_to 'Edit', edit_staff_member_path(staff_member)
+      %td= link_to 'Destroy', staff_member, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Staff member', new_staff_member_path

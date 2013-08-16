@@ -1,0 +1,63 @@
+%p#notice= notice
+
+%p
+  %b User:
+  = @staff_member.user
+%p
+  %b Name:
+  = @staff_member.name
+%p
+  %b Address:
+  = @staff_member.address
+%p
+  %b City:
+  = @staff_member.city
+%p
+  %b State:
+  = @staff_member.state
+%p
+  %b Postal code:
+  = @staff_member.postal_code
+%p
+  %b Country:
+  = @staff_member.country
+%p
+  %b Phone:
+  = @staff_member.phone
+%p
+  %b Linkedin:
+  = @staff_member.linkedin
+%p
+  %b Linkedin info:
+  = @staff_member.linkedin_info
+%p
+  %b Github:
+  = @staff_member.github
+%p
+  %b Twitter:
+  = @staff_member.twitter
+%p
+  %b Blog:
+  = @staff_member.blog
+%p
+  %b Website:
+  = @staff_member.website
+%p
+  %b Developer type:
+  = @staff_member.developer_type
+%p
+  %b Gmaps:
+  = @staff_member.gmaps
+%p
+  %b Longitude:
+  = @staff_member.longitude
+%p
+  %b Latitude:
+  = @staff_member.latitude
+%p
+  %b Gmaps:
+  = @staff_member.gmaps
+
+= link_to 'Edit', edit_staff_member_path(@staff_member)
+\|
+= link_to 'Back', staff_members_path

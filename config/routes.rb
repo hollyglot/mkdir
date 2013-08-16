@@ -1,5 +1,11 @@
 Mkdir::Application.routes.draw do
 
+  resources :staff_members
+
+
+  resources :hiring_partners
+
+
   #This line mounts the routes for rails_admin
   mount RailsAdmin::Engine => '/rails_admin', :as => 'rails_admin'
 
