@@ -27,9 +27,9 @@
         %tbody  
           %tr
             %td#display_table_image
-              - unless person.linkedin.empty?
-                %div.linkedin-img
-                  = link_to image_tag (person.user.gravatar, class: "shadow"), person
+              %div.linkedin-img
+                = link_to person do
+                  =image_tag person.user.gravatar, class: "shadow"
             %td
               = link_to person.name, person  
             %td

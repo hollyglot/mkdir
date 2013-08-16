@@ -1,7 +1,7 @@
 class HiringPartner < ActiveRecord::Base
   validates :linkedin, :user_id, presence: true
   belongs_to :user
-  attr_accessible :address, :company_name, :gmaps, :latitude, :linkedin, :longitude, :website, :user_id
+  attr_accessible :address, :name, :gmaps, :latitude, :linkedin, :longitude, :website, :user_id
 
   after_validation :populate_from_linkedin, :if => :linkedin_changed?
   before_save :geocode, :if => :address_changed?
@@ -15,7 +15,7 @@ class HiringPartner < ActiveRecord::Base
     profile = Linkedin::Profile.get_profile(self.linkedin)
     self.address = profile.current_companies[0][:address]
     self.website = profile.current_companies[0][:website]
-    self.company_name = profile.current_companies[0][:current_company]
+    self.name = profile.current_companies[0][:current_company]
   end
 
   def gmaps4rails_address

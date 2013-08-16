@@ -9,7 +9,7 @@
           .hero-unit
             = image_tag @hiring_partner.user.gravatar, id: "profile-picture"
             %h2.heading.heading-1
-              = @hiring_partner.company_name
+              = @hiring_partner.name
             %p &nbsp; 
             %div.btns
               %a.btn.btn-custom.pull-left{:href => @hiring_partner.linkedin}View Full Profile

@@ -11,7 +11,7 @@
     %div.btn-group.pull-right
       = link_to root_path, class: 'btn dropdown-toggle', :'data-toggle' => 'dropdown' do
         - unless current_user.student.nil?
-          = image_tag (current_user.gravatar, class: 'user_pic')
+          = image_tag current_user.gravatar, class: 'user_pic'
         = current_user.name
         %span.caret
       %ul.dropdown-menu
