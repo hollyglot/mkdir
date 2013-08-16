@@ -29,10 +29,16 @@ class HiringPartner < ActiveRecord::Base
       if company[:current_company] = self.name
           unless company[:address].nil?
             address = company[:address]
-            self.state = Geocoder.search(address).first.state
+            geocode_address = Geocoder.search(address)
+            unless geocode_address.first.state.nil?
+              self.state = geocode_address.first.state
+            elsif geocode_address.first.province
+              self.state = geocode_address.first.province
+            else
+              self.state = ""
+            end
             self.city = Geocoder.search(address).first.city
             self.address = address
-          
           end
           self.website = company[:website]
           self.industry = company[:industry]

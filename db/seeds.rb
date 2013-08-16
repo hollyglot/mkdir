@@ -62,25 +62,25 @@ puts user3.first_name
 puts user4.first_name
 puts user5.first_name
 
-student = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Holly').id, :cohort => 'Summer 2013', :city => 'Austin', :state => 'Texas', :postal_code => '78741', :linkedin => 'http://www.linkedin.com/in/hollyrgibson', :developer_type => 'Full Stack Developer', :job_status => 'Available for Hire', :entrepreneur => 'not looking', :mentor => 'Available to Mentor', :gmaps => 'true'
+student = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Holly').id, :cohort => 'Summer 2013', :city => 'Austin', :state => 'Texas', :postal_code => '78741', :linkedin => 'http://www.linkedin.com/in/hollyrgibson', :developer_type => 'Full Stack Developer', :job_status => 'Available for Hire', :entrepreneur => 'not looking', :mentor => 'Available to Mentor'
 
-student2 = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Nick').id, :cohort => 'Summer 2013', :city => 'Austin', :state => 'Texas', :postal_code => '78701', :linkedin => 'http://www.linkedin.com/in/nickgibson', :developer_type => 'Full Stack Developer', :job_status => 'Available for Hire', :entrepreneur => 'not looking', :mentor => 'Available to Mentor', :gmaps => 'true'
+student2 = Student.find_or_create_by_user_id :user_id => User.find_by_first_name('Nick').id, :cohort => 'Summer 2013', :city => 'Austin', :state => 'Texas', :postal_code => '78701', :linkedin => 'http://www.linkedin.com/in/nickgibson', :developer_type => 'Full Stack Developer', :job_status => 'Available for Hire', :entrepreneur => 'not looking', :mentor => 'Available to Mentor'
 
 puts 'students: ' 
 puts student.user.first_name 
 puts student2.user.first_name
 
-mentor = Mentor.find_or_create_by_user_id :user_id => User.find_by_first_name('Brad').id, :city => 'Austin', :state => 'Texas', :postal_code => '78701', :linkedin => 'http://www.linkedin.com/in/bradfults', :developer_type => 'Full Stack Developer', :gmaps => 'true'
+mentor = Mentor.find_or_create_by_user_id :user_id => User.find_by_first_name('Brad').id, :city => 'Austin', :state => 'Texas', :postal_code => '78701', :linkedin => 'http://www.linkedin.com/in/bradfults', :developer_type => 'Full Stack Developer'
 
 puts 'mentor: ' 
 puts mentor.user.first_name 
 
-staff = StaffMember.find_or_create_by_user_id :user_id => User.find_by_first_name('Matt').id, :city => 'Austin', :state => 'Texas', :postal_code => '78752', :linkedin => 'http://www.linkedin.com/in/mattbuck', :developer_type => 'Full Stack Developer', :gmaps => 'true'
+staff = StaffMember.find_or_create_by_user_id :user_id => User.find_by_first_name('Matt').id, :city => 'Austin', :state => 'Texas', :postal_code => '78752', :linkedin => 'http://www.linkedin.com/in/mattbuck', :developer_type => 'Full Stack Developer'
 
 puts 'staff: ' 
 puts staff.user.first_name 
 
-hiring = HiringPartner.find_or_create_by_user_id :user_id => User.find_by_first_name('Lance').id, :linkedin => 'http://www.linkedin.com/in/lancevaughn', :name => 'CabForward', :gmaps => 'true'
+hiring = HiringPartner.find_or_create_by_user_id :user_id => User.find_by_first_name('Lance').id, :linkedin => 'http://www.linkedin.com/in/lancevaughn', :name => 'CabForward'
 
 puts 'hiring: ' 
 puts hiring.user.first_name
