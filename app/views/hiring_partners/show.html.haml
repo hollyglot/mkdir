@@ -8,12 +8,12 @@
           .badge.badge-info.pull-right 1st
           .hero-unit
             = image_tag @hiring_partner.user.gravatar, id: "profile-picture"
-            %h2.heading.heading-1
-              = @hiring_partner.name
-            %p &nbsp; 
-            %div.btns
-              %a.btn.btn-custom.pull-left{:href => @hiring_partner.linkedin}View Full Profile
-            %h1.heading
+            .container#hiring-partner-profile-container
+              %h2.heading.heading-1
+                = @hiring_partner.name
+              %p &nbsp; 
+              %div.btns
+                %a.btn.btn-custom.pull-left{:href => @hiring_partner.linkedin}View Full Profile
           %span.badge.badge-info.interests
             
           %br
