@@ -18,6 +18,7 @@ gem 'cancan'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'gravatar-ultimate'
+gem 'github_api'
 
 
 group :development do

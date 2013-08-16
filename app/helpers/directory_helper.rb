@@ -19,6 +19,7 @@ module DirectoryHelper
         :width   => 30,
         :height  => 30,
         :marker_anchor => [5, 10],
+        :shadow_picture => image_path("shadow.png"),
         :shadow_width => 110,
         :shadow_height => 110,
         :shadow_anchor => [5, 10],

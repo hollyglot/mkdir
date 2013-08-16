@@ -3,7 +3,7 @@
     .span12
       .div-2
         .well.div-1.div-3
-          %h1#profile_heading Alumni Profile
+          %h1#profile_heading Student Profile
         .well.div-1.div-4
           - if @profile
             %img.pull-left.image{:src => @profile.picture}
@@ -64,7 +64,7 @@
               %a{:href => @student.blog}
                 .icon.icon-rss
             - unless @student.github.blank? 
-              %a{:href => @student.github}
+              %a{:href => "http://www.github.com/#{@student.github}"}
                 .icon.icon-github
             - unless @student.linkedin.blank?
               %a{:href => @student.linkedin}
@@ -76,8 +76,21 @@
       .span4#skills
         .div-2
           .well#well_header
-            %h1#profile_heading Skills & Expertise
+            %h1#profile_heading Activity
           .well#well_backdrop
+            .hero-unit
+              %h5 Github Repos Recently Starred
+              %ul
+                %li
+                  / - github = Github.new
+                  / = link_to github.activity.starring.starred(:user => "#{@student.github}").first.url do
+                  /   = github.activity.starring.starred(:user => "#{@student.github}").first.name
+                %li
+                  / - github = Github.new
+                  / = link_to github.activity.starring.starred(:user => "#{@student.github}").first.url do
+                  /   = github.activity.starring.starred(:user => "#{@student.github}").last.name
+            %h5{:style => "color:white"} Skills & Expertise
+            %hr{:style => "border-top:0px"}
             %p.p-1
             - @profile.skills.sort().each do |skill|
               %span.badge.badge-info.skills

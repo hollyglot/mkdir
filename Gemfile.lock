@@ -67,12 +67,21 @@ GEM
     eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
     font-awesome-rails (3.2.1.2)
       railties (>= 3.2, < 5.0)
     geocoder (1.1.8)
+    github_api (0.10.2)
+      addressable
+      faraday (~> 0.8.7)
+      hashie (>= 1.2)
+      multi_json (~> 1.4)
+      nokogiri (~> 1.6.0)
+      oauth2
     gmaps4rails (1.5.6)
     gravatar-ultimate (1.0.3)
     haml (4.0.3)
@@ -82,6 +91,7 @@ GEM
       activesupport (>= 3.1, < 4.1)
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
+    hashie (2.0.5)
     hike (1.2.3)
     hpricot (0.8.6)
     html2haml (1.0.1)
@@ -91,6 +101,7 @@ GEM
       ruby_parser (~> 3.1.1)
     http-cookie (1.0.1)
       domain_name (~> 0.5)
+    httpauth (0.2.0)
     hub (1.10.6)
     i18n (0.6.1)
     journey (1.0.4)
@@ -101,6 +112,8 @@ GEM
       jquery-rails
       railties (>= 3.1.0)
     json (1.8.0)
+    jwt (0.1.8)
+      multi_json (>= 1.5)
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -123,12 +136,21 @@ GEM
     mime-types (1.23)
     mini_portile (0.5.1)
     multi_json (1.7.8)
+    multi_xml (0.5.5)
+    multipart-post (1.2.0)
     nested_form (0.3.2)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     ntlm-http (0.1.1)
+    oauth2 (0.9.2)
+      faraday (~> 0.8)
+      httpauth (~> 0.2)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      multi_xml (~> 0.5)
+      rack (~> 1.2)
     orm_adapter (0.4.0)
     pg (0.16.0)
     polyglot (0.3.3)
@@ -240,6 +262,7 @@ DEPENDENCIES
   figaro
   font-awesome-rails
   geocoder
+  github_api
   gmaps4rails
   gravatar-ultimate
   haml-rails

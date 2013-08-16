@@ -5,13 +5,21 @@
         %div.well
           %ul.nav.nav-list
             %li
-              %a{:href =>"#"} Available for Hire
+              =link_to root_path do
+                = image_tag("Student.png")
+                Students
             %li
-              %a{:href =>"#"} Available to Mentor
+              =link_to root_path do
+                = image_tag("Mentor.png")
+                Mentors
             %li
-              %a{:href =>"#"} Seeking Developers
+              =link_to root_path do
+                = image_tag("Hiring.png")
+                Hiring Partners
             %li
-              %a{:href =>"#"} Seeking CoFounders     
+              =link_to root_path do
+                = image_tag("Staff.png")
+                MakerSquare Staff
       %span.span9
         %ul.breadcrumb
           %li
