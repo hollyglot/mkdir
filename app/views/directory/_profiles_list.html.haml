@@ -18,11 +18,11 @@
     %table
       %thead
         %tr{:style => "color: #34495e;"}
-          %th 
-          %th Name
-          %th City
-          %th State
-          %th Category
+          %th
+          %th{:style => "width:190px"} Name
+          %th{:style => "width:120px"} City
+          %th{:style => "width:100px"} State
+          %th{:style => "width:100px"} Category
       - @people.each do |person|
         %tbody  
           %tr
@@ -30,13 +30,13 @@
               %div.linkedin-img
                 = link_to person do
                   =image_tag person.user.gravatar, class: "shadow"
-            %td
-              = link_to person.name, person  
-            %td
+            %td{:style => "width:190px"}
+              = link_to person.name, person 
+            %td{:style => "width:120px"}
               = person.city
-            %td
+            %td{:style => "width:100px"}
               = person.state
-            %td
+            %td{:style => "width:100px"}
               = person.category
 - else
   %div.display_table

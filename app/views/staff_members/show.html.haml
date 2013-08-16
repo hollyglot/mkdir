@@ -8,16 +8,16 @@
           .badge.badge-info.pull-right 1st
           .hero-unit
             = image_tag @staff_member.user.gravatar, id: "profile-picture"
-            %h2.heading.heading-1
-              = @staff_member.user.name
-            - unless @staff_member.linkedin.empty? 
-              %p
-                = @staff_member.job_title
-            %p &nbsp;
-            - unless @staff_member.linkedin.empty?
-              %div.btns
-                %a.btn.btn-custom.pull-left{:href => @staff_member.linkedin}View Full Profile
-            %h1.heading
+            .container#staff-profile-container
+              %h2.heading.heading-1
+                = @staff_member.user.name
+              - unless @staff_member.linkedin.empty? 
+                %p
+                  = @staff_member.job_title
+              %p &nbsp;
+              - unless @staff_member.linkedin.empty?
+                %div.btns
+                  %a.btn.btn-custom.pull-left{:href => @staff_member.linkedin}View Full Profile
           %span.badge.badge-info.interests
             = @staff_member.developer_type
           %br
