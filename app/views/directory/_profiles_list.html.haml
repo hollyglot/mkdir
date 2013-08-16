@@ -37,12 +37,7 @@
             %td
               = person.state
             %td
-              - if person.class == 'HiringPartner'
-                Hiring Partner
-              - elsif person.class == 'StaffMember'
-                Staff
-              - else
-                = person.class
+              = person.category
 - else
   %div.display_table
     %table
