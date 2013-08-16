@@ -1,14 +1,5 @@
 class StaffMembersController < ApplicationController
-  # GET /staff_members
-  # GET /staff_members.json
-  def index
-    @staff_members = StaffMember.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @staff_members }
-    end
-  end
 
   # GET /staff_members/1
   # GET /staff_members/1.json

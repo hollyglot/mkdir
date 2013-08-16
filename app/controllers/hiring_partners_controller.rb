@@ -1,14 +1,5 @@
 class HiringPartnersController < ApplicationController
-  # GET /hiring_partners
-  # GET /hiring_partners.json
-  def index
-    @hiring_partners = HiringPartner.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @hiring_partners }
-    end
-  end
 
   # GET /hiring_partners/1
   # GET /hiring_partners/1.json
