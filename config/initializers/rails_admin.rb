@@ -413,21 +413,23 @@ RailsAdmin.config do |config|
   config.model HiringPartner do
     edit do
       field :user
+      field :name
       field :linkedin
     end
 
     show do
       field :user
+      field :name
       field :linkedin
-      field :company
-      field :address
+      field :city
+      field :state
     end
 
     list do
       field :user
       field :linkedin
-      field :company
-      field :address
+      field :city
+      field :state
     end
   end
 
