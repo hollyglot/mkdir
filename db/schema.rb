@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130816170329) do
+ActiveRecord::Schema.define(:version => 20130816190225) do
 
   create_table "hiring_partners", :force => true do |t|
     t.integer  "user_id"
@@ -20,12 +20,17 @@ ActiveRecord::Schema.define(:version => 20130816170329) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "gmaps"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "name"
     t.string   "website"
     t.text     "state"
     t.text     "city"
+    t.text     "industry"
+    t.text     "company_type"
+    t.text     "company_size"
+    t.integer  "founded"
+    t.text     "description"
   end
 
   add_index "hiring_partners", ["user_id"], :name => "index_hiring_partners_on_user_id"

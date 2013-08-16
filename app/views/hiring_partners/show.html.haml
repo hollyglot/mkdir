@@ -15,7 +15,7 @@
               %div.btns
                 %a.btn.btn-custom.pull-left{:href => @hiring_partner.linkedin}View Full Profile
           %span.badge.badge-info.interests
-            
+            = @hiring_partner.industry
           %br
           %br
           %table.table
@@ -24,7 +24,7 @@
                 %td
                   %strong Website
                 %td 
-                  = @hiring_partner.website
+                  %a{:href => "#{@hiring_partner.website}"}= @hiring_partner.website
               %tr
                 %td
                   %strong Email
@@ -35,3 +35,24 @@
                   %strong Address
                 %td 
                   = @hiring_partner.address
+    .span4#skills
+      .div-2
+        .well#well_header
+          %h1#profile_heading Activity
+        .well#well_backdrop
+          .hero-unit
+            %h5 Github Repos Recently Starred
+            %ul
+              %li
+                / - github = Github.new
+                / = link_to github.activity.starring.starred(:user => "#{@staff_member.github}").first.url do
+                /   = github.activity.starring.starred(:user => "#{@staff_member.github}").first.name
+              %li
+                / - github = Github.new
+                / = link_to github.activity.starring.starred(:user => "#{@staff_member.github}").first.url do
+                /   = github.activity.starring.starred(:user => "#{@staff_member.github}").last.name
+          %h5{:style => "color:white"} Skills & Expertise
+          %hr{:style => "border-top:0px"}
+          %p.p-1
+            %span.badge.badge-info.skills
+            Skills
