@@ -5,6 +5,7 @@ module DirectoryHelper
 
   def style_map_markers(people)
     people.to_gmaps4rails do |person, marker|
+
       marker.infowindow "
         <a href=\"/#{person.link_path}/#{person.id}\">
           <img src=\"#{person.user.gravatar}\" height=\"60\" width=\"60\" align=\"left\" style=\"margin-right:15px\">

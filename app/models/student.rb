@@ -15,6 +15,9 @@ class Student < ActiveRecord::Base
   def category
     return "Student"
   end
+  def link_path
+    return "students"
+  end
 
   private
 

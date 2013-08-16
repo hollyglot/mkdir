@@ -13,6 +13,11 @@ class HiringPartner < ActiveRecord::Base
     return "Hiring Partner"
   end
 
+  def link_path
+    return "hiring_partners"
+  end
+
+
   private 
 
   def populate_from_linkedin
