@@ -12,6 +12,10 @@ class Student < ActiveRecord::Base
 
   acts_as_gmappable :process_geocoding => false
 
+  def category
+    return "Student"
+  end
+
   private
 
   def populate_name

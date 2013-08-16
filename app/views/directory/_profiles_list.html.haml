@@ -37,12 +37,7 @@
             %td{:style => "width:100px"}
               = person.state
             %td{:style => "width:100px"}
-              - if person.class == 'HiringPartner'
-                Hiring Partner
-              - elsif person.class == 'StaffMember'
-                Staff
-              - else
-                = person.class
+              = person.category
 - else
   %div.display_table
     %table

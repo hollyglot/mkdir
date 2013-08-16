@@ -12,6 +12,11 @@ class Mentor < ActiveRecord::Base
 
   acts_as_gmappable :process_geocoding => false
 
+
+  def category
+    return "Mentor"
+  end
+
   private
 
   # Populates mentor name
