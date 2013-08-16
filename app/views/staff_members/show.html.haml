@@ -1,0 +1,59 @@
+.container.container-1
+  .div.row-fluid
+    .span12
+      .div-2
+        .well.div-1.div-3
+          %h1#profile_heading staff_member Profile
+        .well.div-1.div-4
+          = image_tag Gravatar.new(@staff_member.user.email).image_url, class: "pull-left")
+          .badge.badge-info.pull-right 1st
+          .hero-unit
+            %h2.heading.heading-1
+              = @staff_member.user.name
+            - unless @staff_member.linkedin_info.empty? 
+              %p
+                = @staff_member.linkedin_info.title
+            %p &nbsp;
+            - if @profile
+              %div.btns
+                %a.btn.btn-custom.pull-left{:href => @staff_member.linkedin_info.linkedin_url}View Full Profile
+            %h1.heading
+          %span.badge.badge-info.interests
+            = @staff_member.developer_type
+          %br
+          %br
+          %table.table
+            %tbody
+              %tr
+                %td
+                  %strong Email
+                %td
+                  %a{:href=> "mailto:#{@staff_member.user.email}"}= @staff_member.user.email
+              %tr
+                %td
+                  %strong Mobile
+                %td
+                  - unless @staff_member.phone.nil? 
+                    = number_to_phone(@staff_member.phone, area_code: true) 
+              %tr
+                %td
+                  %strong City
+                %td 
+                  - unless @staff_member.city.empty? 
+                    = @staff_member.city + ","
+          
+                  - unless @staff_member.state.empty? 
+                    = @staff_member.state      
+          .well.no-hover
+            - unless @staff_member.blog.blank? 
+              %a{:href => @staff_member.blog}
+                .icon.icon-rss
+            - unless @staff_member.github.blank? 
+              %a{:href => @staff_member.github}
+                .icon.icon-github
+            - unless @staff_member.linkedin.blank?
+              %a{:href => @staff_member.linkedin}
+                .icon.icon-linkedin-sign
+            - unless @staff_member.twitter.blank?
+              %a{:href=> "http://www.twitter.com/#{@staff_member.twitter}"}
+                .icon.icon-twitter-sign

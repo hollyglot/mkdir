@@ -271,6 +271,64 @@ RailsAdmin.config do |config|
   #     # using `field` instead of `configure` will exclude all other fields and force the ordering
   # end
 
+  ###  StaffMember  ###
+
+  config.model StaffMember do
+    edit do
+      field :user
+      field :city
+      field :state do
+        label "State/Province/Territory"
+      end
+      field :postal_code
+      field :country
+      # field :address do
+      #   read_only true
+      # end
+      # field :latitude do
+      #   read_only true
+      # end
+      # field :longitude do
+      #   read_only true
+      # end
+      field :phone
+      field :linkedin
+      field :github
+      field :twitter
+      field :blog
+      field :website
+      field :developer_type do
+        partial "developer_type_selector"
+      end
+    end
+
+    show do
+      field :user
+      field :city
+      field :state
+      field :postal_code
+      field :country
+      # field :address
+      # field :latitude
+      # field :longitude
+      field :phone
+      field :linkedin
+      field :github
+      field :twitter
+      field :blog
+      field :website
+      field :developer_type
+    end
+
+    list do
+      field :user
+      field :city
+      field :state
+      field :postal_code
+      field :country
+    end
+  end
+
   ###  Role  ###
 
   config.model Role do
@@ -346,6 +404,30 @@ RailsAdmin.config do |config|
       field :state
       field :postal_code
       field :country
+    end
+  end
+
+
+  ###  HiringPartner  ###
+
+  config.model HiringPartner do
+    edit do
+      field :user
+      field :linkedin
+    end
+
+    show do
+      field :user
+      field :linkedin
+      field :company
+      field :address
+    end
+
+    list do
+      field :user
+      field :linkedin
+      field :company
+      field :address
     end
   end
 

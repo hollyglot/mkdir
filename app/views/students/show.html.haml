@@ -5,19 +5,18 @@
         .well.div-1.div-3
           %h1#profile_heading Student Profile
         .well.div-1.div-4
-          - if @profile
-            %img.pull-left.image{:src => @profile.picture}
           .badge.badge-info.pull-right 1st
           .hero-unit
+            = image_tag Gravatar.new(@student.user.email).image_url, id: "profile-picture"
             %h2.heading.heading-1
-              = @student.user.name
-            - if @profile  
-              %p
-                = @profile.title
+            /   = @student.user.name
+            / - unless @student.linkedin_info.empty? 
+            /   %p
+            /     = @student.linkedin_info.title
             %p &nbsp;
             - if @profile
               %div.btns
-                %a.btn.btn-custom.pull-left{:href => @profile.linkedin_url}View Full Profile
+                %a.btn.btn-custom.pull-left{:href => @student.linkedin_info.linkedin_url}View Full Profile
             %h1.heading
           %span.badge.badge-info.interests
             = @student.developer_type
@@ -72,23 +71,24 @@
             - unless @student.twitter.blank?
               %a{:href=> "http://www.twitter.com/#{@student.twitter}"}
                 .icon.icon-twitter-sign
-    - if @profile
-      .span4#skills
-        .div-2
-          .well#well_header
-            %h1#profile_heading Activity
-          .well#well_backdrop
-            .hero-unit
-              %h5 Github Repos Recently Starred
-              %ul
-                %li
-                  / - github = Github.new
-                  / = link_to github.activity.starring.starred(:user => "#{@student.github}").first.url do
-                  /   = github.activity.starring.starred(:user => "#{@student.github}").first.name
-                %li
-                  / - github = Github.new
-                  / = link_to github.activity.starring.starred(:user => "#{@student.github}").first.url do
-                  /   = github.activity.starring.starred(:user => "#{@student.github}").last.name
+    
+    .span4#skills
+      .div-2
+        .well#well_header
+          %h1#profile_heading Activity
+        .well#well_backdrop
+          .hero-unit
+            %h5 Github Repos Recently Starred
+            %ul
+              %li
+                / - github = Github.new
+                / = link_to github.activity.starring.starred(:user => "#{@student.github}").first.url do
+                /   = github.activity.starring.starred(:user => "#{@student.github}").first.name
+              %li
+                / - github = Github.new
+                / = link_to github.activity.starring.starred(:user => "#{@student.github}").first.url do
+                /   = github.activity.starring.starred(:user => "#{@student.github}").last.name
+          - if @profile
             %h5{:style => "color:white"} Skills & Expertise
             %hr{:style => "border-top:0px"}
             %p.p-1

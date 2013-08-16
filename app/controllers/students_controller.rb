@@ -6,7 +6,6 @@ class StudentsController < ApplicationController
   # GET /students/1.json
   def show
     @student = Student.find(params[:id])
-    @profile = grab_linkedin_info(@student)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @student }
@@ -73,11 +72,4 @@ class StudentsController < ApplicationController
     end
   end
 
-  private
-
-  def grab_linkedin_info(user) 
-    if user.linkedin?
-      Linkedin::Profile.get_profile(user.linkedin)
-    end
-  end
 end

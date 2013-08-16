@@ -1,0 +1,31 @@
+= form_for @hiring_partner do |f|
+  - if @hiring_partner.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@hiring_partner.errors.count, "error")} prohibited this hiring_partner from being saved:"
+      %ul
+        - @hiring_partner.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :user
+    = f.text_field :user
+  .field
+    = f.label :linkedin
+    = f.text_field :linkedin
+  .field
+    = f.label :linkedin_info
+    = f.text_area :linkedin_info
+  .field
+    = f.label :address
+    = f.text_field :address
+  .field
+    = f.label :latitude
+    = f.text_field :latitude
+  .field
+    = f.label :longitude
+    = f.text_field :longitude
+  .field
+    = f.label :gmaps
+    = f.check_box :gmaps
+  .actions
+    = f.submit 'Save'

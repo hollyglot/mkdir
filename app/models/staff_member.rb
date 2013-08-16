@@ -1,8 +1,8 @@
-class Mentor < ActiveRecord::Base
+class StaffMember < ActiveRecord::Base
   validates :city, :state, :postal_code, :user_id, presence: true
-  attr_accessible :address, :blog, :city, :country, :developer_type, :github, :latitude, :linkedin, :longitude, :name, :phone, :postal_code, :state, :twitter, :user_id, :website 
-
   belongs_to :user
+  attr_accessible :address, :blog, :city, :country, :developer_type, :github, :gmaps, :latitude, :linkedin, :linkedin_info, :longitude, :name, :phone, :postal_code, :state, :twitter, :website
+
   after_validation :merge_address
   after_validation :populate_name
   before_save :populate_linkedin_info
@@ -13,7 +13,6 @@ class Mentor < ActiveRecord::Base
 
   private
 
-  # Populates mentor name
   def populate_name
     self.name = self.user.name
   end
@@ -30,7 +29,7 @@ class Mentor < ActiveRecord::Base
 
   def gmaps4rails_address
     # Ideally this should #{self.address}, but the callbacks are causing Student.create not to save because the merge_address method is being called after the acts_as_gmappable.
-    "#{self.city} #{self.state} #{self.postal_code} #{country}"
+    "#{self.city} #{self.state_province} #{self.postal_code} #{country}"
   end
 
   def self.search_name(query)

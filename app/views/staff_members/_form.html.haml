@@ -1,0 +1,67 @@
+= form_for @staff_member do |f|
+  - if @staff_member.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@staff_member.errors.count, "error")} prohibited this staff_member from being saved:"
+      %ul
+        - @staff_member.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :user
+    = f.text_field :user
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :address
+    = f.text_field :address
+  .field
+    = f.label :city
+    = f.text_field :city
+  .field
+    = f.label :state
+    = f.text_field :state
+  .field
+    = f.label :postal_code
+    = f.text_field :postal_code
+  .field
+    = f.label :country
+    = f.text_field :country
+  .field
+    = f.label :phone
+    = f.text_field :phone
+  .field
+    = f.label :linkedin
+    = f.text_field :linkedin
+  .field
+    = f.label :linkedin_info
+    = f.text_area :linkedin_info
+  .field
+    = f.label :github
+    = f.text_field :github
+  .field
+    = f.label :twitter
+    = f.text_field :twitter
+  .field
+    = f.label :blog
+    = f.text_field :blog
+  .field
+    = f.label :website
+    = f.text_field :website
+  .field
+    = f.label :developer_type
+    = f.text_field :developer_type
+  .field
+    = f.label :gmaps
+    = f.check_box :gmaps
+  .field
+    = f.label :longitude
+    = f.text_field :longitude
+  .field
+    = f.label :latitude
+    = f.text_field :latitude
+  .field
+    = f.label :gmaps
+    = f.check_box :gmaps
+  .actions
+    = f.submit 'Save'

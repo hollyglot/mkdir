@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
   has_one :student
   has_one :mentor
+  has_one :staff_member
+  has_one :hiring_partner
 
   def role?(role)
     return !!self.roles.find_by_name(role.to_s)
@@ -25,6 +27,13 @@ class User < ActiveRecord::Base
     if self.mentor
       self.mentor.name = self.name
     end
+    if self.staff_member
+      self.staff_member.name = self.name
+    end
+    if self.hiring_partner
+      self.hiring_partner.name = self.name
+    end
+
   end
   
 end

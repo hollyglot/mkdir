@@ -16,3 +16,18 @@ ADMIN2_FIRST_NAME: Nick
 ADMIN2_LAST_NAME: Gibson
 ADMIN2_EMAIL: aki.nicholas.gibson@gmail.com
 ADMIN2_PASSWORD: password
+
+MENTOR_FIRST_NAME: Brad
+MENTOR_LAST_NAME: Fults
+MENTOR_EMAIL: bfults@gmail.com
+MENTOR_PASSWORD: password
+
+STAFF_FIRST_NAME: Matt 
+STAFF_LAST_NAME: Buck
+STAFF_EMAIL: techpeace@gmail.com
+STAFF_PASSWORD: password
+
+HIRING_FIRST_NAME: Lance 
+HIRING_LAST_NAME: Vaughn
+HIRING_EMAIL: info@cabforward.com
+HIRING_PASSWORD: password
