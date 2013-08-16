@@ -40,7 +40,7 @@
             %li
               = link_to '<i class="icon-user"></i> View Your Staff Profile'.html_safe, staff_member_path(current_user.staff_member.id)
             %li
-              = link_to '<i class="icon-double-angle-right"></i> Edit Your Staff Member Profile'.html_safe, edit_staff_member_path(current_user.staff_member.id)
+              = link_to '<i class="icon-double-angle-right"></i> Edit Your Staff Profile'.html_safe, edit_staff_member_path(current_user.staff_member.id)
         %li.divider
           %li
             = link_to '<i class="icon-power-off"></i> Logout'.html_safe, destroy_user_session_path, :method=>'delete'

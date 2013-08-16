@@ -5,9 +5,9 @@
         .well.div-1.div-3
           %h1#profile_heading Hiring Partner Profile
         .well.div-1.div-4
-          = image_tag (@hiring_partner.user.gravatar).image_url, class: "pull-left")
           .badge.badge-info.pull-right 1st
           .hero-unit
+            = image_tag @hiring_partner.user.gravatar, id: "profile-picture"
             %h2.heading.heading-1
               = @hiring_partner.company_name
             %p &nbsp; 

@@ -5,9 +5,9 @@
         .well.div-1.div-3
           %h1#profile_heading Mentor Profile
         .well.div-1.div-4
-          = image_tag (@mentor.user.gravatar, class: "pull-left")
           .badge.badge-info.pull-right 1st
           .hero-unit
+            = image_tag @mentor.user.gravatar, id: "profile-picture"
             %h2.heading.heading-1
               = @mentor.user.name 
             - unless @mentor.linkedin.empty? 
@@ -57,13 +57,26 @@
             - unless @mentor.twitter.blank?
               %a{:href=> "http://www.twitter.com/#{@mentor.twitter}"}
                 .icon.icon-twitter-sign
-- if @profile
-  .span4#skills
-    .div-2
-      .well#well_header
-        %h1#profile_heading Skills & Expertise
-      .well#well_backdrop
-        %p.p-1
-        - @profile.skills.sort().each do |skill|
-          %span.badge.badge-info.skills
-            = skill
+    .span4#skills
+      .div-2
+        .well#well_header
+          %h1#profile_heading Activity
+        .well#well_backdrop
+          .hero-unit
+            %h5 Github Repos Recently Starred
+            %ul
+              %li
+                / - github = Github.new
+                / = link_to github.activity.starring.starred(:user => "#{@mentor.github}").first.url do
+                /   = github.activity.starring.starred(:user => "#{@mentor.github}").first.name
+              %li
+                / - github = Github.new
+                / = link_to github.activity.starring.starred(:user => "#{@mentor.github}").first.url do
+                /   = github.activity.starring.starred(:user => "#{@mentor.github}").last.name
+          - unless @mentor.linkedin.blank?
+            %h5{:style => "color:white"} Skills & Expertise
+            %hr{:style => "border-top:0px"}
+            %p.p-1
+            - @mentor.skills.sort().each do |skill|
+              %span.badge.badge-info.skills
+                = skill
