@@ -80,7 +80,7 @@ staff = StaffMember.find_or_create_by_user_id :user_id => User.find_by_first_nam
 puts 'staff: ' 
 puts staff.user.first_name 
 
-hiring = HiringPartner.find_or_create_by_user_id :user_id => User.find_by_first_name('Lance').id, :linkedin => 'http://www.linkedin.com/in/lancevaughn', :gmaps => 'true'
+hiring = HiringPartner.find_or_create_by_user_id :user_id => User.find_by_first_name('Lance').id, :linkedin => 'http://www.linkedin.com/in/lancevaughn', :name => 'CabForward', :gmaps => 'true'
 
 puts 'hiring: ' 
 puts hiring.user.first_name
